@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29609.76
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TractoLeoUI", "WindowsFormsApp1\TractoLeoUI.csproj", "{9BE45780-8DFF-42AD-A909-E65F8AD76828}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TractoLeo-UI", "WindowsFormsApp1\TractoLeo-UI.csproj", "{9BE45780-8DFF-42AD-A909-E65F8AD76828}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
