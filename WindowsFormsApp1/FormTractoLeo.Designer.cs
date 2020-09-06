@@ -163,6 +163,7 @@
             this.btnProductos.FlatAppearance.BorderSize = 0;
             this.btnProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProductos.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnProductos.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.btnProductos.ForeColor = System.Drawing.Color.White;
             this.btnProductos.IconChar = FontAwesome.Sharp.IconChar.Dolly;
             this.btnProductos.IconColor = System.Drawing.Color.White;
@@ -263,7 +264,7 @@
             // 
             this.btnMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMinimize.FlatAppearance.BorderSize = 0;
-            this.btnMinimize.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(138)))), ((int)(((byte)(114)))));
+            this.btnMinimize.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(148)))), ((int)(((byte)(42)))));
             this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimize.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.btnMinimize.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
@@ -299,10 +300,11 @@
             // lblTitleChildForm
             // 
             this.lblTitleChildForm.AutoSize = true;
+            this.lblTitleChildForm.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitleChildForm.ForeColor = System.Drawing.Color.White;
             this.lblTitleChildForm.Location = new System.Drawing.Point(44, 33);
             this.lblTitleChildForm.Name = "lblTitleChildForm";
-            this.lblTitleChildForm.Size = new System.Drawing.Size(32, 13);
+            this.lblTitleChildForm.Size = new System.Drawing.Size(44, 16);
             this.lblTitleChildForm.TabIndex = 1;
             this.lblTitleChildForm.Text = "Inicio";
             // 
