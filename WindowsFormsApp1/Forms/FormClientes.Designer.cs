@@ -142,7 +142,7 @@
             // txtCorreo
             // 
             this.txtCorreo.Location = new System.Drawing.Point(586, 166);
-            this.txtCorreo.MaxLength = 9;
+            this.txtCorreo.MaxLength = 50;
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(180, 20);
             this.txtCorreo.TabIndex = 11;
@@ -161,7 +161,7 @@
             // txtDireccion
             // 
             this.txtDireccion.Location = new System.Drawing.Point(586, 215);
-            this.txtDireccion.MaxLength = 9;
+            this.txtDireccion.MaxLength = 100;
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(180, 20);
             this.txtDireccion.TabIndex = 13;
@@ -182,6 +182,7 @@
             this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // FormClientes
             // 

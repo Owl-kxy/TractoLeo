@@ -7,7 +7,7 @@ using System.Data.Sql;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
-namespace TractoLeo_POS
+namespace WindowsFormsApp1
 {
     class Conexion
     {
