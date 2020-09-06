@@ -66,7 +66,7 @@
             this.PanelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.PanelMenu.Location = new System.Drawing.Point(0, 0);
             this.PanelMenu.Name = "PanelMenu";
-            this.PanelMenu.Size = new System.Drawing.Size(220, 582);
+            this.PanelMenu.Size = new System.Drawing.Size(220, 561);
             this.PanelMenu.TabIndex = 2;
             // 
             // iconButton6
@@ -237,7 +237,7 @@
             this.PanelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelTitleBar.Location = new System.Drawing.Point(220, 0);
             this.PanelTitleBar.Name = "PanelTitleBar";
-            this.PanelTitleBar.Size = new System.Drawing.Size(724, 75);
+            this.PanelTitleBar.Size = new System.Drawing.Size(864, 75);
             this.PanelTitleBar.TabIndex = 3;
             this.PanelTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PanelTitleBar_MouseDown);
             // 
@@ -252,7 +252,7 @@
             this.btnMaximize.IconChar = FontAwesome.Sharp.IconChar.WindowMaximize;
             this.btnMaximize.IconColor = System.Drawing.Color.White;
             this.btnMaximize.IconSize = 16;
-            this.btnMaximize.Location = new System.Drawing.Point(649, 0);
+            this.btnMaximize.Location = new System.Drawing.Point(789, 0);
             this.btnMaximize.Name = "btnMaximize";
             this.btnMaximize.Rotation = 0D;
             this.btnMaximize.Size = new System.Drawing.Size(39, 23);
@@ -270,7 +270,7 @@
             this.btnMinimize.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
             this.btnMinimize.IconColor = System.Drawing.Color.White;
             this.btnMinimize.IconSize = 16;
-            this.btnMinimize.Location = new System.Drawing.Point(613, 0);
+            this.btnMinimize.Location = new System.Drawing.Point(753, 0);
             this.btnMinimize.Name = "btnMinimize";
             this.btnMinimize.Rotation = 0D;
             this.btnMinimize.Size = new System.Drawing.Size(39, 23);
@@ -289,7 +289,7 @@
             this.btnExit.IconChar = FontAwesome.Sharp.IconChar.Times;
             this.btnExit.IconColor = System.Drawing.Color.White;
             this.btnExit.IconSize = 16;
-            this.btnExit.Location = new System.Drawing.Point(685, 0);
+            this.btnExit.Location = new System.Drawing.Point(825, 0);
             this.btnExit.Name = "btnExit";
             this.btnExit.Rotation = 0D;
             this.btnExit.Size = new System.Drawing.Size(39, 23);
@@ -326,7 +326,7 @@
             this.panelShadow.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelShadow.Location = new System.Drawing.Point(220, 75);
             this.panelShadow.Name = "panelShadow";
-            this.panelShadow.Size = new System.Drawing.Size(724, 9);
+            this.panelShadow.Size = new System.Drawing.Size(864, 9);
             this.panelShadow.TabIndex = 4;
             // 
             // panelDesktop
@@ -336,7 +336,7 @@
             this.panelDesktop.Location = new System.Drawing.Point(220, 84);
             this.panelDesktop.Margin = new System.Windows.Forms.Padding(0);
             this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(724, 498);
+            this.panelDesktop.Size = new System.Drawing.Size(864, 477);
             this.panelDesktop.TabIndex = 5;
             // 
             // FormTractoLeo
@@ -345,13 +345,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(944, 582);
+            this.ClientSize = new System.Drawing.Size(1084, 561);
             this.Controls.Add(this.panelDesktop);
             this.Controls.Add(this.panelShadow);
             this.Controls.Add(this.PanelTitleBar);
             this.Controls.Add(this.PanelMenu);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "FormTractoLeo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TractoLeo";
             this.TransparencyKey = System.Drawing.Color.Black;
             this.PanelMenu.ResumeLayout(false);
