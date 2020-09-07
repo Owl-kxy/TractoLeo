@@ -43,6 +43,8 @@ namespace WindowsFormsApp1.Forms
             cbMarca.ValueMember = "id_marca";
         }
 
+
+        // POR CORREGIR
         private void cbMarca_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cbMarca.SelectedValue.ToString() != null)
