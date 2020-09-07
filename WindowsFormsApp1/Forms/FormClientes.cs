@@ -24,6 +24,8 @@ namespace WindowsFormsApp1.Forms
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             Crear_Cliente();
+            MessageBox.Show("Cliente agregado");
+            Limpiar_Campos();
         }
 
         private void Crear_Cliente()
@@ -44,10 +46,19 @@ namespace WindowsFormsApp1.Forms
             cmd.Parameters.Add("@correo_cliente", SqlDbType.VarChar, (70)).Value = txtCorreo.Text;
             cmd.Parameters.Add("@direccion_cliente", SqlDbType.VarChar, (100)).Value = txtDireccion.Text;
 
-
             cmd.ExecuteNonQuery();
 
             con.desconecta();
+        }
+
+        private void Limpiar_Campos()
+        {
+            txtNombreCliente.Text = string.Empty;
+            txtApellidoPaterno.Text = string.Empty;
+            txtApellidoMaterno.Text = string.Empty;
+            txtTelefono.Text = string.Empty;
+            txtCorreo.Text = string.Empty;
+            txtDireccion.Text = string.Empty;
         }
     }
 }

@@ -118,6 +118,15 @@ namespace TractoLeoUI
         private void btnProductos_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color2);
+            OpenChildForm(new FormProducto());
+            lblTitleChildForm.Text = "Productos";
+        }
+
+        private void btnCrearProd_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color3);
+            OpenChildForm(new CrearProducto());
+            lblTitleChildForm.Text = "Insertar Productos";
         }
 
         private void btnInicio_Click(object sender, EventArgs e)

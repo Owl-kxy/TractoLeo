@@ -33,7 +33,7 @@
             this.iconButton6 = new FontAwesome.Sharp.IconButton();
             this.iconButton5 = new FontAwesome.Sharp.IconButton();
             this.iconButton4 = new FontAwesome.Sharp.IconButton();
-            this.iconButton3 = new FontAwesome.Sharp.IconButton();
+            this.btnCrearProd = new FontAwesome.Sharp.IconButton();
             this.btnProductos = new FontAwesome.Sharp.IconButton();
             this.btnClientes = new FontAwesome.Sharp.IconButton();
             this.PanelLogo = new System.Windows.Forms.Panel();
@@ -59,7 +59,7 @@
             this.PanelMenu.Controls.Add(this.iconButton6);
             this.PanelMenu.Controls.Add(this.iconButton5);
             this.PanelMenu.Controls.Add(this.iconButton4);
-            this.PanelMenu.Controls.Add(this.iconButton3);
+            this.PanelMenu.Controls.Add(this.btnCrearProd);
             this.PanelMenu.Controls.Add(this.btnProductos);
             this.PanelMenu.Controls.Add(this.btnClientes);
             this.PanelMenu.Controls.Add(this.PanelLogo);
@@ -135,27 +135,29 @@
             this.iconButton4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButton4.UseVisualStyleBackColor = true;
             // 
-            // iconButton3
+            // btnCrearProd
             // 
-            this.iconButton3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.iconButton3.FlatAppearance.BorderSize = 0;
-            this.iconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton3.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconButton3.ForeColor = System.Drawing.Color.White;
-            this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.UserPlus;
-            this.iconButton3.IconColor = System.Drawing.Color.White;
-            this.iconButton3.IconSize = 40;
-            this.iconButton3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton3.Location = new System.Drawing.Point(0, 260);
-            this.iconButton3.Name = "iconButton3";
-            this.iconButton3.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.iconButton3.Rotation = 0D;
-            this.iconButton3.Size = new System.Drawing.Size(220, 60);
-            this.iconButton3.TabIndex = 3;
-            this.iconButton3.Text = "iconButton3";
-            this.iconButton3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton3.UseVisualStyleBackColor = true;
+            this.btnCrearProd.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCrearProd.FlatAppearance.BorderSize = 0;
+            this.btnCrearProd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCrearProd.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnCrearProd.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCrearProd.ForeColor = System.Drawing.Color.White;
+            this.btnCrearProd.IconChar = FontAwesome.Sharp.IconChar.UserPlus;
+            this.btnCrearProd.IconColor = System.Drawing.Color.White;
+            this.btnCrearProd.IconSize = 40;
+            this.btnCrearProd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCrearProd.Location = new System.Drawing.Point(0, 260);
+            this.btnCrearProd.Name = "btnCrearProd";
+            this.btnCrearProd.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.btnCrearProd.Rotation = 0D;
+            this.btnCrearProd.Size = new System.Drawing.Size(220, 60);
+            this.btnCrearProd.TabIndex = 3;
+            this.btnCrearProd.Text = "Insertar Producto";
+            this.btnCrearProd.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCrearProd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCrearProd.UseVisualStyleBackColor = true;
+            this.btnCrearProd.Click += new System.EventHandler(this.btnCrearProd_Click);
             // 
             // btnProductos
             // 
@@ -372,7 +374,7 @@
         private FontAwesome.Sharp.IconButton iconButton6;
         private FontAwesome.Sharp.IconButton iconButton5;
         private FontAwesome.Sharp.IconButton iconButton4;
-        private FontAwesome.Sharp.IconButton iconButton3;
+        private FontAwesome.Sharp.IconButton btnCrearProd;
         private FontAwesome.Sharp.IconButton btnProductos;
         private System.Windows.Forms.PictureBox btnInicio;
         private System.Windows.Forms.Panel PanelTitleBar;
