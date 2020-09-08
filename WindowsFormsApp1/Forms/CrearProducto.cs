@@ -43,31 +43,26 @@ namespace WindowsFormsApp1.Forms
             cbMarca.ValueMember = "id_marca";
         }
 
-
-        // POR CORREGIR
         private void cbMarca_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cbMarca.SelectedValue.ToString() != null)
             {
+                cbSeries.Enabled = true;
+
                 con.conecta();
 
+                string parametro = cbMarca.SelectedValue.ToString();
+                int parametronum;
+                Int32.TryParse(parametro, out parametronum);
+
                 DataTable dt = new DataTable();
-                DataRow dr = dt.NewRow();
+                SqlDataAdapter da = new SqlDataAdapter("CargarSerie", con.cadenaSql);
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
 
-                string SP = "SELECT nombre_serie " +
-                            "FROM Tbl_Series AS series " +
-                            "INNER JOIN " +
-                                "Tbl_Marca AS marca ON " +
-                                    "series.id_marca = marca.id_marca " +
-                            "WHERE marca.id_marca = @idmarca";
-                SqlCommand cmd = new SqlCommand(SP, con.cadenaSql);
-                SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                da.SelectCommand.Parameters.Add("@id_marca", SqlDbType.Int).Value = parametronum;
+                da.SelectCommand.ExecuteNonQuery();
 
-                //SqlDataAdapter da = new SqlDataAdapter("RellenaSerie", con.cadenaSql);
-                //da.SelectCommand.Parameters.AddWithValue("@id_marca",cbMarca.SelectedValue.ToString());
-                //da.SelectCommand.CommandType = CommandType.StoredProcedure;
-
-                sda.Fill(dt);
+                da.Fill(dt);
 
                 con.desconecta();
 
