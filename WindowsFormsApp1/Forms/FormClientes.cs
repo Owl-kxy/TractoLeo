@@ -38,7 +38,7 @@ namespace WindowsFormsApp1.Forms
 
             cmd.Connection = con.cadenaSql;
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = "Agregar_Clientes";
+            cmd.CommandText = "SP_InsertarCliente";
             cmd.Parameters.Add("@nombre_cliente", SqlDbType.VarChar, (50)).Value = txtNombreCliente.Text;
             cmd.Parameters.Add("@apePaterno_cliente", SqlDbType.VarChar, (50)).Value = txtApellidoPaterno.Text;
             cmd.Parameters.Add("@apeMaterno_cliente", SqlDbType.VarChar, (50)).Value = txtApellidoMaterno.Text;

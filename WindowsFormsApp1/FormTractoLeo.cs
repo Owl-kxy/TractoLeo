@@ -108,25 +108,37 @@ namespace TractoLeoUI
             lblTitleChildForm.Text = childForm.Text;
         }
 
-        private void btnClientes_Click(object sender, EventArgs e)
+        private void btnBuscarRepuesto_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color1);
-            OpenChildForm(new FormClientes());
-            lblTitleChildForm.Text = "Clientes";
         }
 
-        private void btnProductos_Click(object sender, EventArgs e)
+        private void btnBuscarClientes_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color2);
-            OpenChildForm(new FormProducto());
-            lblTitleChildForm.Text = "Productos";
         }
 
-        private void btnCrearProd_Click(object sender, EventArgs e)
+        private void btnAgregarProductos_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color3);
-            OpenChildForm(new CrearProducto());
-            lblTitleChildForm.Text = "Insertar Productos";
+            lblTitleChildForm.Text = "Agregar productos";
+        }
+
+        private void btnAgregarCliente_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color4);
+            OpenChildForm(new FormClientes());
+            lblTitleChildForm.Text = "Agregar clientes";
+        }
+
+        private void btnEditarCliente_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color5);
+        }
+
+        private void btnAgregarStock_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color6);
         }
 
         private void btnInicio_Click(object sender, EventArgs e)
@@ -182,6 +194,5 @@ namespace TractoLeoUI
             else
                 FormBorderStyle = FormBorderStyle.Sizable;
         }
-
     }
 }

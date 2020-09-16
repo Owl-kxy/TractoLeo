@@ -11,7 +11,7 @@ namespace WindowsFormsApp1
 {
     class Conexion
     {
-        public SqlConnection cadenaSql = new SqlConnection("Data Source=.;Initial Catalog=TractoLeo-Test;Integrated Security=True");
+        public SqlConnection cadenaSql = new SqlConnection("Data Source=.\\SQLEXPRESS;Initial Catalog=TractoLeo-Test;Integrated Security=True");
         public void conecta()
         {
             cadenaSql.Open();
