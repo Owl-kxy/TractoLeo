@@ -111,17 +111,19 @@ namespace TractoLeoUI
         private void btnBuscarRepuesto_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color1);
+            lblTitleChildForm.Text = "Buscar repuestos en almacen";
         }
 
         private void btnBuscarClientes_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color2);
+            lblTitleChildForm.Text = "Buscar clientes";
         }
 
         private void btnAgregarProductos_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color3);
-            lblTitleChildForm.Text = "Agregar productos";
+            lblTitleChildForm.Text = "Agregar nuevos productos";
         }
 
         private void btnAgregarCliente_Click(object sender, EventArgs e)
@@ -134,11 +136,14 @@ namespace TractoLeoUI
         private void btnEditarCliente_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color5);
+            OpenChildForm(new FormEditarClientes());
+            lblTitleChildForm.Text = "Editar informacion del cliente";
         }
 
         private void btnAgregarStock_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color6);
+            lblTitleChildForm.Text = "Agregar stock de los productos";
         }
 
         private void btnInicio_Click(object sender, EventArgs e)

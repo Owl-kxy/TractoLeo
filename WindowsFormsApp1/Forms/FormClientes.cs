@@ -45,6 +45,8 @@ namespace WindowsFormsApp1.Forms
             cmd.Parameters.Add("@telf_cliente", SqlDbType.VarChar, (50)).Value = txtTelefono.Text;
             cmd.Parameters.Add("@correo_cliente", SqlDbType.VarChar, (70)).Value = txtCorreo.Text;
             cmd.Parameters.Add("@direccion_cliente", SqlDbType.VarChar, (100)).Value = txtDireccion.Text;
+            cmd.Parameters.Add("@dni_cliente", SqlDbType.VarChar, (8)).Value = txtDNI.Text;
+            cmd.Parameters.Add("@ruc_cliente", SqlDbType.VarChar, (11)).Value = txtRUC.Text;
 
             cmd.ExecuteNonQuery();
 
@@ -59,6 +61,8 @@ namespace WindowsFormsApp1.Forms
             txtTelefono.Text = string.Empty;
             txtCorreo.Text = string.Empty;
             txtDireccion.Text = string.Empty;
+            txtDNI.Text = string.Empty;
+            txtRUC.Text= string.Empty;
         }
     }
 }
