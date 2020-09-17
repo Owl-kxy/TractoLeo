@@ -123,6 +123,7 @@ namespace TractoLeoUI
         private void btnAgregarProductos_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color3);
+            OpenChildForm(new FormIngresarProducto());
             lblTitleChildForm.Text = "Agregar nuevos productos";
         }
 

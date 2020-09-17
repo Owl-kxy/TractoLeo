@@ -67,7 +67,7 @@
             this.PanelMenu.Location = new System.Drawing.Point(0, 0);
             this.PanelMenu.Margin = new System.Windows.Forms.Padding(4);
             this.PanelMenu.Name = "PanelMenu";
-            this.PanelMenu.Size = new System.Drawing.Size(293, 690);
+            this.PanelMenu.Size = new System.Drawing.Size(293, 853);
             this.PanelMenu.TabIndex = 2;
             // 
             // btnAgregarStock
@@ -255,7 +255,7 @@
             this.PanelTitleBar.Location = new System.Drawing.Point(293, 0);
             this.PanelTitleBar.Margin = new System.Windows.Forms.Padding(4);
             this.PanelTitleBar.Name = "PanelTitleBar";
-            this.PanelTitleBar.Size = new System.Drawing.Size(1152, 92);
+            this.PanelTitleBar.Size = new System.Drawing.Size(1189, 92);
             this.PanelTitleBar.TabIndex = 3;
             this.PanelTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PanelTitleBar_MouseDown);
             // 
@@ -270,7 +270,7 @@
             this.btnMaximize.IconChar = FontAwesome.Sharp.IconChar.WindowMaximize;
             this.btnMaximize.IconColor = System.Drawing.Color.White;
             this.btnMaximize.IconSize = 16;
-            this.btnMaximize.Location = new System.Drawing.Point(1052, 0);
+            this.btnMaximize.Location = new System.Drawing.Point(1089, 0);
             this.btnMaximize.Margin = new System.Windows.Forms.Padding(4);
             this.btnMaximize.Name = "btnMaximize";
             this.btnMaximize.Rotation = 0D;
@@ -289,7 +289,7 @@
             this.btnMinimize.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
             this.btnMinimize.IconColor = System.Drawing.Color.White;
             this.btnMinimize.IconSize = 16;
-            this.btnMinimize.Location = new System.Drawing.Point(1004, 0);
+            this.btnMinimize.Location = new System.Drawing.Point(1041, 0);
             this.btnMinimize.Margin = new System.Windows.Forms.Padding(4);
             this.btnMinimize.Name = "btnMinimize";
             this.btnMinimize.Rotation = 0D;
@@ -309,7 +309,7 @@
             this.btnExit.IconChar = FontAwesome.Sharp.IconChar.Times;
             this.btnExit.IconColor = System.Drawing.Color.White;
             this.btnExit.IconSize = 16;
-            this.btnExit.Location = new System.Drawing.Point(1100, 0);
+            this.btnExit.Location = new System.Drawing.Point(1137, 0);
             this.btnExit.Margin = new System.Windows.Forms.Padding(4);
             this.btnExit.Name = "btnExit";
             this.btnExit.Rotation = 0D;
@@ -351,7 +351,7 @@
             this.panelShadow.Location = new System.Drawing.Point(293, 92);
             this.panelShadow.Margin = new System.Windows.Forms.Padding(4);
             this.panelShadow.Name = "panelShadow";
-            this.panelShadow.Size = new System.Drawing.Size(1152, 11);
+            this.panelShadow.Size = new System.Drawing.Size(1189, 11);
             this.panelShadow.TabIndex = 4;
             // 
             // panelDesktop
@@ -361,7 +361,7 @@
             this.panelDesktop.Location = new System.Drawing.Point(293, 103);
             this.panelDesktop.Margin = new System.Windows.Forms.Padding(0);
             this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(1152, 587);
+            this.panelDesktop.Size = new System.Drawing.Size(1189, 750);
             this.panelDesktop.TabIndex = 5;
             // 
             // FormTractoLeo
@@ -370,7 +370,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(1445, 690);
+            this.ClientSize = new System.Drawing.Size(1482, 853);
             this.Controls.Add(this.panelDesktop);
             this.Controls.Add(this.panelShadow);
             this.Controls.Add(this.PanelTitleBar);

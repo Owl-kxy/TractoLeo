@@ -54,29 +54,35 @@
             // 
             // txtDireccion
             // 
-            this.txtDireccion.Location = new System.Drawing.Point(810, 423);
+            this.txtDireccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDireccion.ForeColor = System.Drawing.Color.DarkBlue;
+            this.txtDireccion.Location = new System.Drawing.Point(810, 420);
             this.txtDireccion.Margin = new System.Windows.Forms.Padding(4);
             this.txtDireccion.MaxLength = 100;
             this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(239, 22);
+            this.txtDireccion.Size = new System.Drawing.Size(239, 27);
             this.txtDireccion.TabIndex = 28;
             // 
             // txtCorreo
             // 
-            this.txtCorreo.Location = new System.Drawing.Point(810, 362);
+            this.txtCorreo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCorreo.ForeColor = System.Drawing.Color.DarkBlue;
+            this.txtCorreo.Location = new System.Drawing.Point(810, 359);
             this.txtCorreo.Margin = new System.Windows.Forms.Padding(4);
             this.txtCorreo.MaxLength = 50;
             this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(239, 22);
+            this.txtCorreo.Size = new System.Drawing.Size(239, 27);
             this.txtCorreo.TabIndex = 27;
             // 
             // txtTelefono
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(810, 298);
+            this.txtTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTelefono.ForeColor = System.Drawing.Color.DarkBlue;
+            this.txtTelefono.Location = new System.Drawing.Point(810, 299);
             this.txtTelefono.Margin = new System.Windows.Forms.Padding(4);
             this.txtTelefono.MaxLength = 9;
             this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(239, 22);
+            this.txtTelefono.Size = new System.Drawing.Size(239, 27);
             this.txtTelefono.TabIndex = 26;
             // 
             // lblApellidoMaterno
@@ -84,7 +90,7 @@
             this.lblApellidoMaterno.AutoSize = true;
             this.lblApellidoMaterno.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblApellidoMaterno.ForeColor = System.Drawing.Color.White;
-            this.lblApellidoMaterno.Location = new System.Drawing.Point(83, 428);
+            this.lblApellidoMaterno.Location = new System.Drawing.Point(59, 424);
             this.lblApellidoMaterno.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblApellidoMaterno.Name = "lblApellidoMaterno";
             this.lblApellidoMaterno.Size = new System.Drawing.Size(150, 19);
@@ -93,10 +99,12 @@
             // 
             // txtApellidoMaterno
             // 
-            this.txtApellidoMaterno.Location = new System.Drawing.Point(273, 423);
+            this.txtApellidoMaterno.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtApellidoMaterno.ForeColor = System.Drawing.Color.DarkBlue;
+            this.txtApellidoMaterno.Location = new System.Drawing.Point(273, 420);
             this.txtApellidoMaterno.Margin = new System.Windows.Forms.Padding(4);
             this.txtApellidoMaterno.Name = "txtApellidoMaterno";
-            this.txtApellidoMaterno.Size = new System.Drawing.Size(239, 22);
+            this.txtApellidoMaterno.Size = new System.Drawing.Size(239, 27);
             this.txtApellidoMaterno.TabIndex = 24;
             // 
             // lblApellidoPaterno
@@ -104,7 +112,7 @@
             this.lblApellidoPaterno.AutoSize = true;
             this.lblApellidoPaterno.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblApellidoPaterno.ForeColor = System.Drawing.Color.White;
-            this.lblApellidoPaterno.Location = new System.Drawing.Point(83, 367);
+            this.lblApellidoPaterno.Location = new System.Drawing.Point(64, 363);
             this.lblApellidoPaterno.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblApellidoPaterno.Name = "lblApellidoPaterno";
             this.lblApellidoPaterno.Size = new System.Drawing.Size(145, 19);
@@ -113,10 +121,12 @@
             // 
             // txtApellidoPaterno
             // 
-            this.txtApellidoPaterno.Location = new System.Drawing.Point(273, 362);
+            this.txtApellidoPaterno.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtApellidoPaterno.ForeColor = System.Drawing.Color.DarkBlue;
+            this.txtApellidoPaterno.Location = new System.Drawing.Point(273, 359);
             this.txtApellidoPaterno.Margin = new System.Windows.Forms.Padding(4);
             this.txtApellidoPaterno.Name = "txtApellidoPaterno";
-            this.txtApellidoPaterno.Size = new System.Drawing.Size(239, 22);
+            this.txtApellidoPaterno.Size = new System.Drawing.Size(239, 27);
             this.txtApellidoPaterno.TabIndex = 22;
             // 
             // lblInstrucciones
@@ -136,7 +146,7 @@
             this.lblNombreCliente.AutoSize = true;
             this.lblNombreCliente.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombreCliente.ForeColor = System.Drawing.Color.White;
-            this.lblNombreCliente.Location = new System.Drawing.Point(83, 307);
+            this.lblNombreCliente.Location = new System.Drawing.Point(133, 303);
             this.lblNombreCliente.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNombreCliente.Name = "lblNombreCliente";
             this.lblNombreCliente.Size = new System.Drawing.Size(76, 19);
@@ -145,10 +155,12 @@
             // 
             // txtNombreCliente
             // 
-            this.txtNombreCliente.Location = new System.Drawing.Point(273, 302);
+            this.txtNombreCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombreCliente.ForeColor = System.Drawing.Color.DarkBlue;
+            this.txtNombreCliente.Location = new System.Drawing.Point(273, 299);
             this.txtNombreCliente.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombreCliente.Name = "txtNombreCliente";
-            this.txtNombreCliente.Size = new System.Drawing.Size(239, 22);
+            this.txtNombreCliente.Size = new System.Drawing.Size(239, 27);
             this.txtNombreCliente.TabIndex = 19;
             // 
             // label1
@@ -156,7 +168,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(653, 428);
+            this.label1.Location = new System.Drawing.Point(644, 424);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(88, 19);
@@ -168,7 +180,7 @@
             this.lblCorreo.AutoSize = true;
             this.lblCorreo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCorreo.ForeColor = System.Drawing.Color.White;
-            this.lblCorreo.Location = new System.Drawing.Point(653, 366);
+            this.lblCorreo.Location = new System.Drawing.Point(667, 363);
             this.lblCorreo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCorreo.Name = "lblCorreo";
             this.lblCorreo.Size = new System.Drawing.Size(65, 19);
@@ -201,28 +213,33 @@
             // 
             // txtBuscarDNI
             // 
-            this.txtBuscarDNI.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBuscarDNI.Location = new System.Drawing.Point(297, 84);
+            this.txtBuscarDNI.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBuscarDNI.ForeColor = System.Drawing.Color.DarkBlue;
+            this.txtBuscarDNI.Location = new System.Drawing.Point(297, 80);
+            this.txtBuscarDNI.MaxLength = 8;
             this.txtBuscarDNI.Name = "txtBuscarDNI";
-            this.txtBuscarDNI.Size = new System.Drawing.Size(214, 22);
+            this.txtBuscarDNI.Size = new System.Drawing.Size(214, 27);
             this.txtBuscarDNI.TabIndex = 38;
             // 
             // txtBuscarRUC
             // 
-            this.txtBuscarRUC.Location = new System.Drawing.Point(297, 147);
+            this.txtBuscarRUC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBuscarRUC.ForeColor = System.Drawing.Color.DarkBlue;
+            this.txtBuscarRUC.Location = new System.Drawing.Point(297, 146);
+            this.txtBuscarRUC.MaxLength = 11;
             this.txtBuscarRUC.Name = "txtBuscarRUC";
-            this.txtBuscarRUC.Size = new System.Drawing.Size(214, 22);
+            this.txtBuscarRUC.Size = new System.Drawing.Size(214, 27);
             this.txtBuscarRUC.TabIndex = 39;
             // 
             // btnBuscarDNI
             // 
             this.btnBuscarDNI.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btnBuscarDNI.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscarDNI.ForeColor = System.Drawing.Color.Black;
+            this.btnBuscarDNI.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscarDNI.ForeColor = System.Drawing.Color.DarkBlue;
             this.btnBuscarDNI.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btnBuscarDNI.IconColor = System.Drawing.Color.Black;
+            this.btnBuscarDNI.IconColor = System.Drawing.Color.DarkBlue;
             this.btnBuscarDNI.IconSize = 16;
-            this.btnBuscarDNI.Location = new System.Drawing.Point(642, 75);
+            this.btnBuscarDNI.Location = new System.Drawing.Point(642, 73);
             this.btnBuscarDNI.Name = "btnBuscarDNI";
             this.btnBuscarDNI.Rotation = 0D;
             this.btnBuscarDNI.Size = new System.Drawing.Size(120, 40);
@@ -234,11 +251,12 @@
             // btnBuscarRUC
             // 
             this.btnBuscarRUC.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btnBuscarRUC.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscarRUC.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscarRUC.ForeColor = System.Drawing.Color.DarkBlue;
             this.btnBuscarRUC.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btnBuscarRUC.IconColor = System.Drawing.Color.Black;
+            this.btnBuscarRUC.IconColor = System.Drawing.Color.DarkBlue;
             this.btnBuscarRUC.IconSize = 16;
-            this.btnBuscarRUC.Location = new System.Drawing.Point(642, 138);
+            this.btnBuscarRUC.Location = new System.Drawing.Point(642, 139);
             this.btnBuscarRUC.Name = "btnBuscarRUC";
             this.btnBuscarRUC.Rotation = 0D;
             this.btnBuscarRUC.Size = new System.Drawing.Size(120, 40);
@@ -275,9 +293,10 @@
             // iconButton1
             // 
             this.iconButton1.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconButton1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton1.ForeColor = System.Drawing.Color.DarkBlue;
             this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconButton1.IconColor = System.Drawing.Color.Black;
+            this.iconButton1.IconColor = System.Drawing.Color.DarkBlue;
             this.iconButton1.IconSize = 16;
             this.iconButton1.Location = new System.Drawing.Point(498, 501);
             this.iconButton1.Name = "iconButton1";
@@ -349,11 +368,11 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtBuscarDNI;
         private System.Windows.Forms.TextBox txtBuscarRUC;
-        private FontAwesome.Sharp.IconButton btnBuscarDNI;
         private FontAwesome.Sharp.IconButton btnBuscarRUC;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private FontAwesome.Sharp.IconButton iconButton1;
         private System.Windows.Forms.Label lblid;
+        private FontAwesome.Sharp.IconButton btnBuscarDNI;
     }
 }
