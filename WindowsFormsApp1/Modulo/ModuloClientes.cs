@@ -84,7 +84,15 @@ namespace WindowsFormsApp1.Modulo
 
         private void gridViewClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            lblIdcli.Text = gridViewClientes.CurrentRow.Cells[0].Value.ToString();
+            txtEditNombre.Text=gridViewClientes.CurrentRow.Cells[1].Value.ToString();
+            txtEditPaterno.Text=gridViewClientes.CurrentRow.Cells[2].Value.ToString();
+            txtEditMaterno.Text=gridViewClientes.CurrentRow.Cells[3].Value.ToString();
+            txtEditTelf.Text=gridViewClientes.CurrentRow.Cells[4].Value.ToString();
+            txtEditCorreo.Text=gridViewClientes.CurrentRow.Cells[5].Value.ToString();
+            txtEditDireccion.Text=gridViewClientes.CurrentRow.Cells[6].Value.ToString();
+            txtEditDNI.Text=gridViewClientes.CurrentRow.Cells[7].Value.ToString();
+            txtEditRUC.Text=gridViewClientes.CurrentRow.Cells[8].Value.ToString();
         }
 
         private void btnBuscarDNI_Click(object sender, EventArgs e)
@@ -112,6 +120,36 @@ namespace WindowsFormsApp1.Modulo
 
             da.Fill(dt);
             gridViewClientes.DataSource = dt;
+
+            con.desconecta();
+        }
+
+        private void btnActualizarInformacion_Click(object sender, EventArgs e)
+        {
+            ActualizarDatos();
+            MessageBox.Show("Datos actualizados con exito");
+        }
+
+        private void ActualizarDatos()
+        {
+            SqlCommand cmd = new SqlCommand();
+
+            con.conecta();
+
+            cmd.Connection = con.cadenaSql;
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "SP_ActualizarCliente";
+            cmd.Parameters.Add("@id", SqlDbType.Int).Value = lblIdcli.Text;
+            cmd.Parameters.Add("@nombre_cliente", SqlDbType.VarChar, (50)).Value = txtEditNombre.Text;
+            cmd.Parameters.Add("@apePaterno_cliente", SqlDbType.VarChar, (50)).Value = txtEditPaterno.Text;
+            cmd.Parameters.Add("@apeMaterno_cliente", SqlDbType.VarChar, (50)).Value = txtEditMaterno.Text;
+            cmd.Parameters.Add("@telf_cliente", SqlDbType.VarChar, (50)).Value = txtEditTelf.Text;
+            cmd.Parameters.Add("@correo_cliente", SqlDbType.VarChar, (70)).Value = txtEditCorreo.Text;
+            cmd.Parameters.Add("@direccion_cliente", SqlDbType.VarChar, (100)).Value = txtEditDireccion.Text;
+            cmd.Parameters.Add("@dni_cliente", SqlDbType.VarChar, (8)).Value = txtEditDireccion.Text;
+            cmd.Parameters.Add("@ruc_cliente", SqlDbType.VarChar, (11)).Value = txtEditDireccion.Text;
+
+            cmd.ExecuteNonQuery();
 
             con.desconecta();
         }
