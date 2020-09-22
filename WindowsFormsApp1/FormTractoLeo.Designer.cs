@@ -28,8 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormTractoLeo));
             this.PanelMenu = new System.Windows.Forms.Panel();
+            this.btnModuloClientes = new FontAwesome.Sharp.IconButton();
             this.btnAgregarStock = new FontAwesome.Sharp.IconButton();
             this.btnEditarCliente = new FontAwesome.Sharp.IconButton();
             this.btnAgregarCliente = new FontAwesome.Sharp.IconButton();
@@ -46,16 +48,21 @@
             this.iconCurrentChildForm = new FontAwesome.Sharp.IconPictureBox();
             this.panelShadow = new System.Windows.Forms.Panel();
             this.panelDesktop = new System.Windows.Forms.Panel();
+            this.lblfecha = new System.Windows.Forms.Label();
+            this.lblhora = new System.Windows.Forms.Label();
+            this.fechahora = new System.Windows.Forms.Timer(this.components);
             this.PanelMenu.SuspendLayout();
             this.PanelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnInicio)).BeginInit();
             this.PanelTitleBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconCurrentChildForm)).BeginInit();
+            this.panelDesktop.SuspendLayout();
             this.SuspendLayout();
             // 
             // PanelMenu
             // 
             this.PanelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.PanelMenu.Controls.Add(this.btnModuloClientes);
             this.PanelMenu.Controls.Add(this.btnAgregarStock);
             this.PanelMenu.Controls.Add(this.btnEditarCliente);
             this.PanelMenu.Controls.Add(this.btnAgregarCliente);
@@ -69,6 +76,31 @@
             this.PanelMenu.Name = "PanelMenu";
             this.PanelMenu.Size = new System.Drawing.Size(293, 853);
             this.PanelMenu.TabIndex = 2;
+            // 
+            // btnModuloClientes
+            // 
+            this.btnModuloClientes.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnModuloClientes.FlatAppearance.BorderSize = 0;
+            this.btnModuloClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModuloClientes.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnModuloClientes.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModuloClientes.ForeColor = System.Drawing.Color.White;
+            this.btnModuloClientes.IconChar = FontAwesome.Sharp.IconChar.PeopleCarry;
+            this.btnModuloClientes.IconColor = System.Drawing.Color.White;
+            this.btnModuloClientes.IconSize = 40;
+            this.btnModuloClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnModuloClientes.Location = new System.Drawing.Point(0, 616);
+            this.btnModuloClientes.Margin = new System.Windows.Forms.Padding(4);
+            this.btnModuloClientes.Name = "btnModuloClientes";
+            this.btnModuloClientes.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
+            this.btnModuloClientes.Rotation = 0D;
+            this.btnModuloClientes.Size = new System.Drawing.Size(293, 74);
+            this.btnModuloClientes.TabIndex = 7;
+            this.btnModuloClientes.Text = "Formulario clientes";
+            this.btnModuloClientes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnModuloClientes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnModuloClientes.UseVisualStyleBackColor = true;
+            this.btnModuloClientes.Click += new System.EventHandler(this.btnModuloClientes_Click);
             // 
             // btnAgregarStock
             // 
@@ -357,12 +389,41 @@
             // panelDesktop
             // 
             this.panelDesktop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.panelDesktop.Controls.Add(this.lblfecha);
+            this.panelDesktop.Controls.Add(this.lblhora);
             this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDesktop.Location = new System.Drawing.Point(293, 103);
             this.panelDesktop.Margin = new System.Windows.Forms.Padding(0);
             this.panelDesktop.Name = "panelDesktop";
             this.panelDesktop.Size = new System.Drawing.Size(1189, 750);
             this.panelDesktop.TabIndex = 5;
+            // 
+            // lblfecha
+            // 
+            this.lblfecha.AutoSize = true;
+            this.lblfecha.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblfecha.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lblfecha.Location = new System.Drawing.Point(277, 439);
+            this.lblfecha.Name = "lblfecha";
+            this.lblfecha.Size = new System.Drawing.Size(142, 49);
+            this.lblfecha.TabIndex = 1;
+            this.lblfecha.Text = "label2";
+            // 
+            // lblhora
+            // 
+            this.lblhora.AutoSize = true;
+            this.lblhora.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblhora.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lblhora.Location = new System.Drawing.Point(452, 348);
+            this.lblhora.Name = "lblhora";
+            this.lblhora.Size = new System.Drawing.Size(214, 74);
+            this.lblhora.TabIndex = 0;
+            this.lblhora.Text = "label1";
+            // 
+            // fechahora
+            // 
+            this.fechahora.Enabled = true;
+            this.fechahora.Tick += new System.EventHandler(this.fechahora_Tick);
             // 
             // FormTractoLeo
             // 
@@ -387,6 +448,8 @@
             this.PanelTitleBar.ResumeLayout(false);
             this.PanelTitleBar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconCurrentChildForm)).EndInit();
+            this.panelDesktop.ResumeLayout(false);
+            this.panelDesktop.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -409,6 +472,10 @@
         private FontAwesome.Sharp.IconButton btnMaximize;
         private FontAwesome.Sharp.IconButton btnMinimize;
         private FontAwesome.Sharp.IconButton btnExit;
+        private System.Windows.Forms.Label lblfecha;
+        private System.Windows.Forms.Label lblhora;
+        private System.Windows.Forms.Timer fechahora;
+        private FontAwesome.Sharp.IconButton btnModuloClientes;
     }
 }
 

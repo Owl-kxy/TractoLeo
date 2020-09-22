@@ -10,12 +10,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using FontAwesome.Sharp;
 using WindowsFormsApp1.Forms;
+using WindowsFormsApp1.Modulo;
 
 namespace TractoLeoUI
 {
     public partial class FormTractoLeo : Form
     {
-
+        
         private IconButton currentBtn;
         private Panel leftBorderBtn;
         private Form currentChildForm;
@@ -32,6 +33,7 @@ namespace TractoLeoUI
             this.ControlBox = false;
             this.DoubleBuffered = true;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
+
         }
 
         //Estructura de colores
@@ -147,6 +149,13 @@ namespace TractoLeoUI
             lblTitleChildForm.Text = "Agregar stock de los productos";
         }
 
+        private void btnModuloClientes_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color4);
+            OpenChildForm(new ModuloClientes());
+            lblTitleChildForm.Text = "Agregar clientes";
+        }
+
         private void btnInicio_Click(object sender, EventArgs e)
         {
             currentChildForm.Close();
@@ -199,6 +208,14 @@ namespace TractoLeoUI
                 FormBorderStyle = FormBorderStyle.None;
             else
                 FormBorderStyle = FormBorderStyle.Sizable;
+        }
+
+        // Fecha y Hora
+
+        private void fechahora_Tick(object sender, EventArgs e)
+        {
+            lblhora.Text = DateTime.Now.ToString("HH:mm:ss");
+            lblfecha.Text = DateTime.Now.ToLongDateString();
         }
     }
 }
