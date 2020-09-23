@@ -55,30 +55,30 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.label18 = new System.Windows.Forms.Label();
-            this.txtIngresoProd = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.lblStockCambiar = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.lblProdCambiar = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.txtStockAgregar = new System.Windows.Forms.TextBox();
+            this.btnAgregaStock = new FontAwesome.Sharp.IconButton();
+            this.lblidproducto = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.ImgProducto = new System.Windows.Forms.PictureBox();
+            this.btnBuscarImagen = new FontAwesome.Sharp.IconButton();
+            this.btnGuardarImg = new FontAwesome.Sharp.IconButton();
+            this.txtProdNuevo = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.txtProductoStock = new System.Windows.Forms.TextBox();
-            this.btnConsutaStockActual = new FontAwesome.Sharp.IconButton();
-            this.cbxStockNuevo = new System.Windows.Forms.ComboBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.btnAgregarStock = new FontAwesome.Sharp.IconButton();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.txtPrecioNuevo = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txtStockNuevo = new System.Windows.Forms.TextBox();
+            this.cbxMarcaProd = new System.Windows.Forms.ComboBox();
+            this.cbxSerieProd = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewProductos)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ImgProducto)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -205,6 +205,9 @@
             // 
             this.gridViewProductos.AllowUserToAddRows = false;
             this.gridViewProductos.AllowUserToDeleteRows = false;
+            this.gridViewProductos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gridViewProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.gridViewProductos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.gridViewProductos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -244,6 +247,11 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.LightGray;
+            this.tabPage2.Controls.Add(this.label20);
+            this.tabPage2.Controls.Add(this.lblidproducto);
+            this.tabPage2.Controls.Add(this.btnAgregaStock);
+            this.tabPage2.Controls.Add(this.txtStockAgregar);
+            this.tabPage2.Controls.Add(this.label19);
             this.tabPage2.Controls.Add(this.label8);
             this.tabPage2.Controls.Add(this.label6);
             this.tabPage2.Controls.Add(this.lblStockProd);
@@ -269,7 +277,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(1)))));
-            this.label8.Location = new System.Drawing.Point(316, 383);
+            this.label8.Location = new System.Drawing.Point(320, 352);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(38, 23);
@@ -281,7 +289,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(1)))));
-            this.label6.Location = new System.Drawing.Point(86, 450);
+            this.label6.Location = new System.Drawing.Point(90, 419);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(63, 23);
@@ -293,7 +301,7 @@
             this.lblStockProd.AutoSize = true;
             this.lblStockProd.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStockProd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(1)))));
-            this.lblStockProd.Location = new System.Drawing.Point(316, 450);
+            this.lblStockProd.Location = new System.Drawing.Point(320, 419);
             this.lblStockProd.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblStockProd.Name = "lblStockProd";
             this.lblStockProd.Size = new System.Drawing.Size(0, 23);
@@ -304,7 +312,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(1)))));
-            this.label7.Location = new System.Drawing.Point(86, 383);
+            this.label7.Location = new System.Drawing.Point(90, 352);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(70, 23);
@@ -316,7 +324,7 @@
             this.lblPrecioProd.AutoSize = true;
             this.lblPrecioProd.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPrecioProd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(1)))));
-            this.lblPrecioProd.Location = new System.Drawing.Point(353, 383);
+            this.lblPrecioProd.Location = new System.Drawing.Point(357, 352);
             this.lblPrecioProd.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPrecioProd.Name = "lblPrecioProd";
             this.lblPrecioProd.Size = new System.Drawing.Size(16, 23);
@@ -328,7 +336,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(1)))));
-            this.label5.Location = new System.Drawing.Point(86, 320);
+            this.label5.Location = new System.Drawing.Point(90, 289);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(55, 23);
@@ -340,7 +348,7 @@
             this.lblSerieProd.AutoSize = true;
             this.lblSerieProd.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSerieProd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(1)))));
-            this.lblSerieProd.Location = new System.Drawing.Point(316, 320);
+            this.lblSerieProd.Location = new System.Drawing.Point(320, 289);
             this.lblSerieProd.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSerieProd.Name = "lblSerieProd";
             this.lblSerieProd.Size = new System.Drawing.Size(16, 23);
@@ -352,7 +360,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(1)))));
-            this.label3.Location = new System.Drawing.Point(86, 258);
+            this.label3.Location = new System.Drawing.Point(90, 227);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(79, 23);
@@ -364,7 +372,7 @@
             this.lblMarcaProd.AutoSize = true;
             this.lblMarcaProd.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMarcaProd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(1)))));
-            this.lblMarcaProd.Location = new System.Drawing.Point(316, 258);
+            this.lblMarcaProd.Location = new System.Drawing.Point(320, 227);
             this.lblMarcaProd.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMarcaProd.Name = "lblMarcaProd";
             this.lblMarcaProd.Size = new System.Drawing.Size(16, 23);
@@ -376,7 +384,7 @@
             this.lblNombreProd.AutoSize = true;
             this.lblNombreProd.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombreProd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(1)))));
-            this.lblNombreProd.Location = new System.Drawing.Point(86, 181);
+            this.lblNombreProd.Location = new System.Drawing.Point(228, 164);
             this.lblNombreProd.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNombreProd.Name = "lblNombreProd";
             this.lblNombreProd.Size = new System.Drawing.Size(16, 23);
@@ -386,9 +394,9 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Maroon;
-            this.pictureBox1.Location = new System.Drawing.Point(725, 181);
+            this.pictureBox1.Location = new System.Drawing.Point(702, 150);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(299, 306);
+            this.pictureBox1.Size = new System.Drawing.Size(300, 292);
             this.pictureBox1.TabIndex = 34;
             this.pictureBox1.TabStop = false;
             // 
@@ -406,22 +414,18 @@
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.dataGridView1);
-            this.tabPage3.Controls.Add(this.btnAgregarStock);
-            this.tabPage3.Controls.Add(this.label18);
-            this.tabPage3.Controls.Add(this.txtIngresoProd);
-            this.tabPage3.Controls.Add(this.label17);
-            this.tabPage3.Controls.Add(this.label15);
-            this.tabPage3.Controls.Add(this.lblStockCambiar);
-            this.tabPage3.Controls.Add(this.label16);
-            this.tabPage3.Controls.Add(this.lblProdCambiar);
-            this.tabPage3.Controls.Add(this.label14);
+            this.tabPage3.BackColor = System.Drawing.Color.LightGray;
+            this.tabPage3.Controls.Add(this.cbxSerieProd);
+            this.tabPage3.Controls.Add(this.cbxMarcaProd);
             this.tabPage3.Controls.Add(this.label13);
-            this.tabPage3.Controls.Add(this.label10);
+            this.tabPage3.Controls.Add(this.txtStockNuevo);
             this.tabPage3.Controls.Add(this.label11);
-            this.tabPage3.Controls.Add(this.txtProductoStock);
-            this.tabPage3.Controls.Add(this.btnConsutaStockActual);
-            this.tabPage3.Controls.Add(this.cbxStockNuevo);
+            this.tabPage3.Controls.Add(this.txtPrecioNuevo);
+            this.tabPage3.Controls.Add(this.label10);
+            this.tabPage3.Controls.Add(this.txtProdNuevo);
+            this.tabPage3.Controls.Add(this.btnGuardarImg);
+            this.tabPage3.Controls.Add(this.btnBuscarImagen);
+            this.tabPage3.Controls.Add(this.ImgProducto);
             this.tabPage3.Controls.Add(this.label12);
             this.tabPage3.Location = new System.Drawing.Point(4, 4);
             this.tabPage3.Name = "tabPage3";
@@ -429,168 +433,6 @@
             this.tabPage3.Size = new System.Drawing.Size(1104, 637);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "tabPage3";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(1)))));
-            this.label18.Location = new System.Drawing.Point(645, 394);
-            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(187, 23);
-            this.label18.TabIndex = 54;
-            this.label18.Text = "productos nuevos";
-            // 
-            // txtIngresoProd
-            // 
-            this.txtIngresoProd.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIngresoProd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(1)))));
-            this.txtIngresoProd.Location = new System.Drawing.Point(489, 392);
-            this.txtIngresoProd.MaxLength = 4;
-            this.txtIngresoProd.Name = "txtIngresoProd";
-            this.txtIngresoProd.Size = new System.Drawing.Size(140, 28);
-            this.txtIngresoProd.TabIndex = 53;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(1)))));
-            this.label17.Location = new System.Drawing.Point(485, 340);
-            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(206, 23);
-            this.label17.TabIndex = 52;
-            this.label17.Text = "Productos entrantes";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(1)))));
-            this.label15.Location = new System.Drawing.Point(485, 275);
-            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(197, 23);
-            this.label15.TabIndex = 51;
-            this.label15.Text = "Informacion actual";
-            // 
-            // lblStockCambiar
-            // 
-            this.lblStockCambiar.AutoSize = true;
-            this.lblStockCambiar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStockCambiar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(1)))));
-            this.lblStockCambiar.Location = new System.Drawing.Point(178, 394);
-            this.lblStockCambiar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblStockCambiar.Name = "lblStockCambiar";
-            this.lblStockCambiar.Size = new System.Drawing.Size(0, 23);
-            this.lblStockCambiar.TabIndex = 50;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(1)))));
-            this.label16.Location = new System.Drawing.Point(49, 394);
-            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(68, 23);
-            this.label16.TabIndex = 49;
-            this.label16.Text = "Stock:";
-            // 
-            // lblProdCambiar
-            // 
-            this.lblProdCambiar.AutoSize = true;
-            this.lblProdCambiar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProdCambiar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(1)))));
-            this.lblProdCambiar.Location = new System.Drawing.Point(178, 337);
-            this.lblProdCambiar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblProdCambiar.Name = "lblProdCambiar";
-            this.lblProdCambiar.Size = new System.Drawing.Size(0, 23);
-            this.lblProdCambiar.TabIndex = 48;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(1)))));
-            this.label14.Location = new System.Drawing.Point(49, 337);
-            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(111, 23);
-            this.label14.TabIndex = 47;
-            this.label14.Text = "Producto: ";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(1)))));
-            this.label13.Location = new System.Drawing.Point(49, 272);
-            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(197, 23);
-            this.label13.TabIndex = 46;
-            this.label13.Text = "Informacion actual";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(1)))));
-            this.label10.Location = new System.Drawing.Point(341, 131);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(187, 23);
-            this.label10.TabIndex = 45;
-            this.label10.Text = "Ingrese el nombre";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(1)))));
-            this.label11.Location = new System.Drawing.Point(49, 131);
-            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(229, 23);
-            this.label11.TabIndex = 44;
-            this.label11.Text = "Seleccione la entrada";
-            // 
-            // txtProductoStock
-            // 
-            this.txtProductoStock.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtProductoStock.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(1)))));
-            this.txtProductoStock.Location = new System.Drawing.Point(345, 182);
-            this.txtProductoStock.Name = "txtProductoStock";
-            this.txtProductoStock.Size = new System.Drawing.Size(300, 28);
-            this.txtProductoStock.TabIndex = 39;
-            // 
-            // btnConsutaStockActual
-            // 
-            this.btnConsutaStockActual.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btnConsutaStockActual.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConsutaStockActual.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(1)))));
-            this.btnConsutaStockActual.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btnConsutaStockActual.IconColor = System.Drawing.Color.Black;
-            this.btnConsutaStockActual.IconSize = 16;
-            this.btnConsutaStockActual.Location = new System.Drawing.Point(700, 176);
-            this.btnConsutaStockActual.Name = "btnConsutaStockActual";
-            this.btnConsutaStockActual.Rotation = 0D;
-            this.btnConsutaStockActual.Size = new System.Drawing.Size(157, 40);
-            this.btnConsutaStockActual.TabIndex = 43;
-            this.btnConsutaStockActual.Text = "Consultar";
-            this.btnConsutaStockActual.UseVisualStyleBackColor = true;
-            // 
-            // cbxStockNuevo
-            // 
-            this.cbxStockNuevo.FormattingEnabled = true;
-            this.cbxStockNuevo.Location = new System.Drawing.Point(53, 182);
-            this.cbxStockNuevo.Name = "cbxStockNuevo";
-            this.cbxStockNuevo.Size = new System.Drawing.Size(236, 29);
-            this.cbxStockNuevo.TabIndex = 42;
             // 
             // label12
             // 
@@ -600,35 +442,178 @@
             this.label12.Location = new System.Drawing.Point(49, 70);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(202, 23);
+            this.label12.Size = new System.Drawing.Size(254, 23);
             this.label12.TabIndex = 41;
-            this.label12.Text = "Busque el producto";
+            this.label12.Text = "Ingresar nuevo producto";
             // 
-            // btnAgregarStock
+            // label19
             // 
-            this.btnAgregarStock.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btnAgregarStock.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarStock.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(1)))));
-            this.btnAgregarStock.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btnAgregarStock.IconColor = System.Drawing.Color.Black;
-            this.btnAgregarStock.IconSize = 16;
-            this.btnAgregarStock.Location = new System.Drawing.Point(892, 382);
-            this.btnAgregarStock.Name = "btnAgregarStock";
-            this.btnAgregarStock.Rotation = 0D;
-            this.btnAgregarStock.Size = new System.Drawing.Size(157, 40);
-            this.btnAgregarStock.TabIndex = 55;
-            this.btnAgregarStock.Text = "Agregar";
-            this.btnAgregarStock.UseVisualStyleBackColor = true;
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(1)))));
+            this.label19.Location = new System.Drawing.Point(698, 482);
+            this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(147, 23);
+            this.label19.TabIndex = 45;
+            this.label19.Text = "Agregar stock";
             // 
-            // dataGridView1
+            // txtStockAgregar
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(53, 465);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1011, 135);
-            this.dataGridView1.TabIndex = 56;
+            this.txtStockAgregar.Location = new System.Drawing.Point(870, 481);
+            this.txtStockAgregar.MaxLength = 4;
+            this.txtStockAgregar.Name = "txtStockAgregar";
+            this.txtStockAgregar.Size = new System.Drawing.Size(132, 28);
+            this.txtStockAgregar.TabIndex = 46;
+            // 
+            // btnAgregaStock
+            // 
+            this.btnAgregaStock.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnAgregaStock.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnAgregaStock.IconColor = System.Drawing.Color.Black;
+            this.btnAgregaStock.IconSize = 16;
+            this.btnAgregaStock.Location = new System.Drawing.Point(785, 536);
+            this.btnAgregaStock.Name = "btnAgregaStock";
+            this.btnAgregaStock.Rotation = 0D;
+            this.btnAgregaStock.Size = new System.Drawing.Size(146, 46);
+            this.btnAgregaStock.TabIndex = 47;
+            this.btnAgregaStock.Text = "Agregar";
+            this.btnAgregaStock.UseVisualStyleBackColor = true;
+            this.btnAgregaStock.Click += new System.EventHandler(this.btnAgregaStock_Click);
+            // 
+            // lblidproducto
+            // 
+            this.lblidproducto.AutoSize = true;
+            this.lblidproducto.Location = new System.Drawing.Point(939, 56);
+            this.lblidproducto.Name = "lblidproducto";
+            this.lblidproducto.Size = new System.Drawing.Size(0, 21);
+            this.lblidproducto.TabIndex = 48;
+            this.lblidproducto.Visible = false;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(1)))));
+            this.label20.Location = new System.Drawing.Point(90, 164);
+            this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(130, 23);
+            this.label20.TabIndex = 49;
+            this.label20.Text = "Producto >>";
+            // 
+            // ImgProducto
+            // 
+            this.ImgProducto.Location = new System.Drawing.Point(789, 136);
+            this.ImgProducto.Name = "ImgProducto";
+            this.ImgProducto.Size = new System.Drawing.Size(230, 243);
+            this.ImgProducto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ImgProducto.TabIndex = 57;
+            this.ImgProducto.TabStop = false;
+            // 
+            // btnBuscarImagen
+            // 
+            this.btnBuscarImagen.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnBuscarImagen.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnBuscarImagen.IconColor = System.Drawing.Color.Black;
+            this.btnBuscarImagen.IconSize = 16;
+            this.btnBuscarImagen.Location = new System.Drawing.Point(826, 417);
+            this.btnBuscarImagen.Name = "btnBuscarImagen";
+            this.btnBuscarImagen.Rotation = 0D;
+            this.btnBuscarImagen.Size = new System.Drawing.Size(157, 46);
+            this.btnBuscarImagen.TabIndex = 58;
+            this.btnBuscarImagen.Text = "Browse";
+            this.btnBuscarImagen.UseVisualStyleBackColor = true;
+            this.btnBuscarImagen.Click += new System.EventHandler(this.btnBuscarImagen_Click);
+            // 
+            // btnGuardarImg
+            // 
+            this.btnGuardarImg.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnGuardarImg.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnGuardarImg.IconColor = System.Drawing.Color.Black;
+            this.btnGuardarImg.IconSize = 16;
+            this.btnGuardarImg.Location = new System.Drawing.Point(385, 492);
+            this.btnGuardarImg.Name = "btnGuardarImg";
+            this.btnGuardarImg.Rotation = 0D;
+            this.btnGuardarImg.Size = new System.Drawing.Size(112, 46);
+            this.btnGuardarImg.TabIndex = 59;
+            this.btnGuardarImg.Text = "Save";
+            this.btnGuardarImg.UseVisualStyleBackColor = true;
+            this.btnGuardarImg.Click += new System.EventHandler(this.btnGuardarImg_Click);
+            // 
+            // txtProdNuevo
+            // 
+            this.txtProdNuevo.Location = new System.Drawing.Point(280, 168);
+            this.txtProdNuevo.Name = "txtProdNuevo";
+            this.txtProdNuevo.Size = new System.Drawing.Size(100, 28);
+            this.txtProdNuevo.TabIndex = 60;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(1)))));
+            this.label10.Location = new System.Drawing.Point(49, 168);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(100, 23);
+            this.label10.TabIndex = 61;
+            this.label10.Text = "Producto";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(1)))));
+            this.label11.Location = new System.Drawing.Point(49, 295);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(70, 23);
+            this.label11.TabIndex = 63;
+            this.label11.Text = "Precio";
+            // 
+            // txtPrecioNuevo
+            // 
+            this.txtPrecioNuevo.Location = new System.Drawing.Point(280, 295);
+            this.txtPrecioNuevo.Name = "txtPrecioNuevo";
+            this.txtPrecioNuevo.Size = new System.Drawing.Size(182, 28);
+            this.txtPrecioNuevo.TabIndex = 62;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(1)))));
+            this.label13.Location = new System.Drawing.Point(49, 383);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(63, 23);
+            this.label13.TabIndex = 65;
+            this.label13.Text = "Stock";
+            // 
+            // txtStockNuevo
+            // 
+            this.txtStockNuevo.Location = new System.Drawing.Point(280, 383);
+            this.txtStockNuevo.Name = "txtStockNuevo";
+            this.txtStockNuevo.Size = new System.Drawing.Size(182, 28);
+            this.txtStockNuevo.TabIndex = 64;
+            // 
+            // cbxMarcaProd
+            // 
+            this.cbxMarcaProd.FormattingEnabled = true;
+            this.cbxMarcaProd.Location = new System.Drawing.Point(280, 221);
+            this.cbxMarcaProd.Name = "cbxMarcaProd";
+            this.cbxMarcaProd.Size = new System.Drawing.Size(182, 29);
+            this.cbxMarcaProd.TabIndex = 66;
+            this.cbxMarcaProd.SelectedIndexChanged += new System.EventHandler(this.cbxMarcaProd_SelectedIndexChanged);
+            // 
+            // cbxSerieProd
+            // 
+            this.cbxSerieProd.FormattingEnabled = true;
+            this.cbxSerieProd.Location = new System.Drawing.Point(574, 221);
+            this.cbxSerieProd.Name = "cbxSerieProd";
+            this.cbxSerieProd.Size = new System.Drawing.Size(179, 29);
+            this.cbxSerieProd.TabIndex = 67;
             // 
             // ModuloProductos
             // 
@@ -650,7 +635,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ImgProducto)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -681,22 +666,22 @@
         public System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.ComboBox cbxConsulta;
         private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox txtIngresoProd;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label lblStockCambiar;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label lblProdCambiar;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox txtProductoStock;
-        private FontAwesome.Sharp.IconButton btnConsutaStockActual;
-        private System.Windows.Forms.ComboBox cbxStockNuevo;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private FontAwesome.Sharp.IconButton btnAgregarStock;
+        private FontAwesome.Sharp.IconButton btnAgregaStock;
+        private System.Windows.Forms.TextBox txtStockAgregar;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label lblidproducto;
+        private System.Windows.Forms.Label label20;
+        private FontAwesome.Sharp.IconButton btnBuscarImagen;
+        private System.Windows.Forms.PictureBox ImgProducto;
+        private FontAwesome.Sharp.IconButton btnGuardarImg;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox txtStockNuevo;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox txtPrecioNuevo;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txtProdNuevo;
+        private System.Windows.Forms.ComboBox cbxMarcaProd;
+        private System.Windows.Forms.ComboBox cbxSerieProd;
     }
 }

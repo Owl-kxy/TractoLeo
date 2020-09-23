@@ -20,9 +20,7 @@ namespace WindowsFormsApp1.Modulo
         {
             InitializeComponent();
             VerClientes();
-            cbxConsultaClientes.Items.Add("DNI");
-            cbxConsultaClientes.Items.Add("RUC");
-            cbxConsultaClientes.Items.Add("Nombre");
+            RellenarCbxConsulta();
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -195,6 +193,13 @@ namespace WindowsFormsApp1.Modulo
             cmd.ExecuteNonQuery();
 
             con.desconecta();
+        }
+
+        public void RellenarCbxConsulta()
+        {
+            cbxConsultaClientes.Items.Add("DNI");
+            cbxConsultaClientes.Items.Add("RUC");
+            cbxConsultaClientes.Items.Add("Nombre");
         }
     }
 }
