@@ -28,16 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabMantenimiento = new System.Windows.Forms.TabPage();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.txtBuscarRUC = new System.Windows.Forms.TextBox();
-            this.btnBuscarRUC = new FontAwesome.Sharp.IconButton();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtBuscarDNI = new System.Windows.Forms.TextBox();
-            this.btnBuscarDNI = new FontAwesome.Sharp.IconButton();
+            this.txtBusquedaClientes = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.btnVerTodo = new FontAwesome.Sharp.IconButton();
             this.gridViewClientes = new System.Windows.Forms.DataGridView();
@@ -62,6 +57,7 @@
             this.lblNombreCliente = new System.Windows.Forms.Label();
             this.tabMantenimientoCliente = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.lblIdcli = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txtEditRUC = new System.Windows.Forms.TextBox();
             this.txtEditDireccion = new System.Windows.Forms.TextBox();
@@ -80,10 +76,9 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.lblIdcli = new System.Windows.Forms.Label();
+            this.cbxConsultaClientes = new System.Windows.Forms.ComboBox();
+            this.btnConsultarClientes = new FontAwesome.Sharp.IconButton();
             this.tabMantenimiento.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewClientes)).BeginInit();
             this.tabCrearCliente.SuspendLayout();
             this.tabMantenimientoCliente.SuspendLayout();
@@ -93,8 +88,9 @@
             // tabMantenimiento
             // 
             this.tabMantenimiento.BackColor = System.Drawing.Color.LightGray;
-            this.tabMantenimiento.Controls.Add(this.groupBox2);
-            this.tabMantenimiento.Controls.Add(this.groupBox1);
+            this.tabMantenimiento.Controls.Add(this.btnConsultarClientes);
+            this.tabMantenimiento.Controls.Add(this.txtBusquedaClientes);
+            this.tabMantenimiento.Controls.Add(this.cbxConsultaClientes);
             this.tabMantenimiento.Controls.Add(this.label4);
             this.tabMantenimiento.Controls.Add(this.btnVerTodo);
             this.tabMantenimiento.Controls.Add(this.gridViewClientes);
@@ -102,85 +98,18 @@
             this.tabMantenimiento.Location = new System.Drawing.Point(4, 4);
             this.tabMantenimiento.Name = "tabMantenimiento";
             this.tabMantenimiento.Padding = new System.Windows.Forms.Padding(3);
-            this.tabMantenimiento.Size = new System.Drawing.Size(1137, 649);
+            this.tabMantenimiento.Size = new System.Drawing.Size(1107, 649);
             this.tabMantenimiento.TabIndex = 2;
             this.tabMantenimiento.Text = "Mantenimiento de clientes";
             // 
-            // groupBox2
+            // txtBusquedaClientes
             // 
-            this.groupBox2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.groupBox2.Controls.Add(this.txtBuscarRUC);
-            this.groupBox2.Controls.Add(this.btnBuscarRUC);
-            this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(1)))));
-            this.groupBox2.Location = new System.Drawing.Point(613, 133);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(465, 133);
-            this.groupBox2.TabIndex = 29;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Buscar por RUC";
-            // 
-            // txtBuscarRUC
-            // 
-            this.txtBuscarRUC.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBuscarRUC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(1)))));
-            this.txtBuscarRUC.Location = new System.Drawing.Point(39, 57);
-            this.txtBuscarRUC.Name = "txtBuscarRUC";
-            this.txtBuscarRUC.Size = new System.Drawing.Size(236, 28);
-            this.txtBuscarRUC.TabIndex = 1;
-            // 
-            // btnBuscarRUC
-            // 
-            this.btnBuscarRUC.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btnBuscarRUC.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscarRUC.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btnBuscarRUC.IconColor = System.Drawing.Color.Black;
-            this.btnBuscarRUC.IconSize = 16;
-            this.btnBuscarRUC.Location = new System.Drawing.Point(312, 50);
-            this.btnBuscarRUC.Name = "btnBuscarRUC";
-            this.btnBuscarRUC.Rotation = 0D;
-            this.btnBuscarRUC.Size = new System.Drawing.Size(120, 40);
-            this.btnBuscarRUC.TabIndex = 2;
-            this.btnBuscarRUC.Text = "Buscar";
-            this.btnBuscarRUC.UseVisualStyleBackColor = true;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.groupBox1.Controls.Add(this.txtBuscarDNI);
-            this.groupBox1.Controls.Add(this.btnBuscarDNI);
-            this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(1)))));
-            this.groupBox1.Location = new System.Drawing.Point(63, 133);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(465, 133);
-            this.groupBox1.TabIndex = 28;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Buscar por DNI";
-            // 
-            // txtBuscarDNI
-            // 
-            this.txtBuscarDNI.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBuscarDNI.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(1)))));
-            this.txtBuscarDNI.Location = new System.Drawing.Point(28, 57);
-            this.txtBuscarDNI.Name = "txtBuscarDNI";
-            this.txtBuscarDNI.Size = new System.Drawing.Size(236, 28);
-            this.txtBuscarDNI.TabIndex = 1;
-            // 
-            // btnBuscarDNI
-            // 
-            this.btnBuscarDNI.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnBuscarDNI.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btnBuscarDNI.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscarDNI.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btnBuscarDNI.IconColor = System.Drawing.Color.Black;
-            this.btnBuscarDNI.IconSize = 16;
-            this.btnBuscarDNI.Location = new System.Drawing.Point(313, 51);
-            this.btnBuscarDNI.Name = "btnBuscarDNI";
-            this.btnBuscarDNI.Rotation = 0D;
-            this.btnBuscarDNI.Size = new System.Drawing.Size(120, 40);
-            this.btnBuscarDNI.TabIndex = 2;
-            this.btnBuscarDNI.Text = "Buscar";
-            this.btnBuscarDNI.UseVisualStyleBackColor = false;
-            this.btnBuscarDNI.Click += new System.EventHandler(this.btnBuscarDNI_Click);
+            this.txtBusquedaClientes.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBusquedaClientes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(1)))));
+            this.txtBusquedaClientes.Location = new System.Drawing.Point(323, 181);
+            this.txtBusquedaClientes.Name = "txtBusquedaClientes";
+            this.txtBusquedaClientes.Size = new System.Drawing.Size(236, 28);
+            this.txtBusquedaClientes.TabIndex = 1;
             // 
             // label4
             // 
@@ -202,7 +131,7 @@
             this.btnVerTodo.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnVerTodo.IconColor = System.Drawing.Color.Black;
             this.btnVerTodo.IconSize = 16;
-            this.btnVerTodo.Location = new System.Drawing.Point(510, 293);
+            this.btnVerTodo.Location = new System.Drawing.Point(772, 181);
             this.btnVerTodo.Name = "btnVerTodo";
             this.btnVerTodo.Rotation = 0D;
             this.btnVerTodo.Size = new System.Drawing.Size(120, 40);
@@ -218,33 +147,33 @@
             this.gridViewClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.gridViewClientes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.gridViewClientes.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(1)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridViewClientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(1)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridViewClientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.gridViewClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(1)))));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gridViewClientes.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(1)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridViewClientes.DefaultCellStyle = dataGridViewCellStyle2;
             this.gridViewClientes.Location = new System.Drawing.Point(63, 368);
             this.gridViewClientes.Name = "gridViewClientes";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(1)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridViewClientes.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(1)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridViewClientes.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.gridViewClientes.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.gridViewClientes.RowTemplate.Height = 24;
             this.gridViewClientes.Size = new System.Drawing.Size(1015, 235);
@@ -277,7 +206,7 @@
             this.tabCrearCliente.Name = "tabCrearCliente";
             this.tabCrearCliente.Padding = new System.Windows.Forms.Padding(3);
             this.tabCrearCliente.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.tabCrearCliente.Size = new System.Drawing.Size(1137, 649);
+            this.tabCrearCliente.Size = new System.Drawing.Size(1107, 649);
             this.tabCrearCliente.TabIndex = 1;
             this.tabCrearCliente.Text = "Ingresar clientes";
             // 
@@ -506,7 +435,7 @@
             this.tabMantenimientoCliente.Location = new System.Drawing.Point(25, 32);
             this.tabMantenimientoCliente.Name = "tabMantenimientoCliente";
             this.tabMantenimientoCliente.SelectedIndex = 0;
-            this.tabMantenimientoCliente.Size = new System.Drawing.Size(1145, 683);
+            this.tabMantenimientoCliente.Size = new System.Drawing.Size(1115, 683);
             this.tabMantenimientoCliente.TabIndex = 0;
             // 
             // tabPage1
@@ -537,6 +466,15 @@
             this.tabPage1.Size = new System.Drawing.Size(1137, 649);
             this.tabPage1.TabIndex = 3;
             this.tabPage1.Text = "Editar informacion del cliente";
+            // 
+            // lblIdcli
+            // 
+            this.lblIdcli.AutoSize = true;
+            this.lblIdcli.Location = new System.Drawing.Point(892, 31);
+            this.lblIdcli.Name = "lblIdcli";
+            this.lblIdcli.Size = new System.Drawing.Size(0, 21);
+            this.lblIdcli.TabIndex = 56;
+            this.lblIdcli.Visible = false;
             // 
             // label5
             // 
@@ -754,14 +692,28 @@
             this.label13.TabIndex = 39;
             this.label13.Text = "Nombre";
             // 
-            // lblIdcli
+            // cbxConsultaClientes
             // 
-            this.lblIdcli.AutoSize = true;
-            this.lblIdcli.Location = new System.Drawing.Point(892, 31);
-            this.lblIdcli.Name = "lblIdcli";
-            this.lblIdcli.Size = new System.Drawing.Size(0, 21);
-            this.lblIdcli.TabIndex = 56;
-            this.lblIdcli.Visible = false;
+            this.cbxConsultaClientes.FormattingEnabled = true;
+            this.cbxConsultaClientes.Location = new System.Drawing.Point(139, 181);
+            this.cbxConsultaClientes.Name = "cbxConsultaClientes";
+            this.cbxConsultaClientes.Size = new System.Drawing.Size(121, 29);
+            this.cbxConsultaClientes.TabIndex = 30;
+            // 
+            // btnConsultarClientes
+            // 
+            this.btnConsultarClientes.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnConsultarClientes.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnConsultarClientes.IconColor = System.Drawing.Color.Black;
+            this.btnConsultarClientes.IconSize = 16;
+            this.btnConsultarClientes.Location = new System.Drawing.Point(635, 176);
+            this.btnConsultarClientes.Name = "btnConsultarClientes";
+            this.btnConsultarClientes.Rotation = 0D;
+            this.btnConsultarClientes.Size = new System.Drawing.Size(101, 45);
+            this.btnConsultarClientes.TabIndex = 31;
+            this.btnConsultarClientes.Text = "Consultar";
+            this.btnConsultarClientes.UseVisualStyleBackColor = true;
+            this.btnConsultarClientes.Click += new System.EventHandler(this.btnConsultarClientes_Click);
             // 
             // ModuloClientes
             // 
@@ -774,10 +726,6 @@
             this.Text = "ModuloClientes";
             this.tabMantenimiento.ResumeLayout(false);
             this.tabMantenimiento.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewClientes)).EndInit();
             this.tabCrearCliente.ResumeLayout(false);
             this.tabCrearCliente.PerformLayout();
@@ -812,13 +760,8 @@
         private System.Windows.Forms.Label lblNombreCliente;
         private System.Windows.Forms.TabControl tabMantenimientoCliente;
         private System.Windows.Forms.DataGridView gridViewClientes;
-        private FontAwesome.Sharp.IconButton btnBuscarDNI;
-        private System.Windows.Forms.TextBox txtBuscarDNI;
+        private System.Windows.Forms.TextBox txtBusquedaClientes;
         private FontAwesome.Sharp.IconButton btnVerTodo;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox txtBuscarRUC;
-        private FontAwesome.Sharp.IconButton btnBuscarRUC;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Label label5;
@@ -840,5 +783,7 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label lblIdcli;
+        private System.Windows.Forms.ComboBox cbxConsultaClientes;
+        private FontAwesome.Sharp.IconButton btnConsultarClientes;
     }
 }

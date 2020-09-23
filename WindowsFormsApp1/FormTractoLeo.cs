@@ -113,6 +113,7 @@ namespace TractoLeoUI
         private void btnBuscarRepuesto_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color1);
+            OpenChildForm(new ModuloProductos());
             lblTitleChildForm.Text = "Buscar repuestos en almacen";
         }
 

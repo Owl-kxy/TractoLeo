@@ -20,6 +20,9 @@ namespace WindowsFormsApp1.Modulo
         {
             InitializeComponent();
             VerClientes();
+            cbxConsultaClientes.Items.Add("DNI");
+            cbxConsultaClientes.Items.Add("RUC");
+            cbxConsultaClientes.Items.Add("Nombre");
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -29,11 +32,53 @@ namespace WindowsFormsApp1.Modulo
             Limpiar_Campos();
         }
 
+        private void btnConsultarClientes_Click(object sender, EventArgs e)
+        {
+
+            if (cbxConsultaClientes.SelectedIndex == -1)
+                MessageBox.Show("Seleccione una opcion");
+            else
+            {
+                string valorseleccionado = cbxConsultaClientes.SelectedItem.ToString();
+
+                if (valorseleccionado == "DNI")
+                    BusquedaClientesDNI();
+
+                if (valorseleccionado == "RUC")
+                    BusquedaClientesRUC();
+
+                if (valorseleccionado == "Nombre")
+                    BusquedaClientesNombre();
+            }
+        }
+
+        private void btnVerTodo_Click(object sender, EventArgs e)
+        {
+            VerClientes();
+        }
+
+        private void btnActualizarInformacion_Click(object sender, EventArgs e)
+        {
+            ActualizarDatos();
+            MessageBox.Show("Datos actualizados con exito");
+        }
+
+        private void gridViewClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            lblIdcli.Text = gridViewClientes.CurrentRow.Cells[0].Value.ToString();
+            txtEditNombre.Text = gridViewClientes.CurrentRow.Cells[1].Value.ToString();
+            txtEditPaterno.Text = gridViewClientes.CurrentRow.Cells[2].Value.ToString();
+            txtEditMaterno.Text = gridViewClientes.CurrentRow.Cells[3].Value.ToString();
+            txtEditTelf.Text = gridViewClientes.CurrentRow.Cells[4].Value.ToString();
+            txtEditCorreo.Text = gridViewClientes.CurrentRow.Cells[5].Value.ToString();
+            txtEditDireccion.Text = gridViewClientes.CurrentRow.Cells[6].Value.ToString();
+            txtEditDNI.Text = gridViewClientes.CurrentRow.Cells[7].Value.ToString();
+            txtEditRUC.Text = gridViewClientes.CurrentRow.Cells[8].Value.ToString();
+        }
+
         private void Crear_Cliente()
         {
             SqlCommand cmd = new SqlCommand();
-            DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter();
 
             con.conecta();
 
@@ -82,26 +127,13 @@ namespace WindowsFormsApp1.Modulo
             con.desconecta();
         }
 
-        private void gridViewClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            lblIdcli.Text = gridViewClientes.CurrentRow.Cells[0].Value.ToString();
-            txtEditNombre.Text=gridViewClientes.CurrentRow.Cells[1].Value.ToString();
-            txtEditPaterno.Text=gridViewClientes.CurrentRow.Cells[2].Value.ToString();
-            txtEditMaterno.Text=gridViewClientes.CurrentRow.Cells[3].Value.ToString();
-            txtEditTelf.Text=gridViewClientes.CurrentRow.Cells[4].Value.ToString();
-            txtEditCorreo.Text=gridViewClientes.CurrentRow.Cells[5].Value.ToString();
-            txtEditDireccion.Text=gridViewClientes.CurrentRow.Cells[6].Value.ToString();
-            txtEditDNI.Text=gridViewClientes.CurrentRow.Cells[7].Value.ToString();
-            txtEditRUC.Text=gridViewClientes.CurrentRow.Cells[8].Value.ToString();
-        }
-
-        private void btnBuscarDNI_Click(object sender, EventArgs e)
+        private void BusquedaClientesDNI()
         {
             con.conecta();
             DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter("SP_BuscarxDNI",con.cadenaSql);
+            SqlDataAdapter da = new SqlDataAdapter("SP_BuscarxDNI", con.cadenaSql);
             da.SelectCommand.CommandType = CommandType.StoredProcedure;
-            da.SelectCommand.Parameters.Add("@dni", SqlDbType.VarChar, (8)).Value = txtBuscarDNI.Text;
+            da.SelectCommand.Parameters.Add("@dni", SqlDbType.VarChar, (8)).Value = txtBusquedaClientes.Text;
             da.SelectCommand.ExecuteNonQuery();
 
             da.Fill(dt);
@@ -110,12 +142,13 @@ namespace WindowsFormsApp1.Modulo
             con.desconecta();
         }
 
-        private void btnVerTodo_Click(object sender, EventArgs e)
+        private void BusquedaClientesRUC()
         {
             con.conecta();
             DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter("SP_VerTodosClientes", con.cadenaSql);
+            SqlDataAdapter da = new SqlDataAdapter("SP_BuscarxRUC", con.cadenaSql);
             da.SelectCommand.CommandType = CommandType.StoredProcedure;
+            da.SelectCommand.Parameters.Add("@ruc", SqlDbType.VarChar, (11)).Value = txtBusquedaClientes.Text;
             da.SelectCommand.ExecuteNonQuery();
 
             da.Fill(dt);
@@ -124,11 +157,21 @@ namespace WindowsFormsApp1.Modulo
             con.desconecta();
         }
 
-        private void btnActualizarInformacion_Click(object sender, EventArgs e)
+        private void BusquedaClientesNombre()
         {
-            ActualizarDatos();
-            MessageBox.Show("Datos actualizados con exito");
+            con.conecta();
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter("SP_BuscarxNombre", con.cadenaSql);
+            da.SelectCommand.CommandType = CommandType.StoredProcedure;
+            da.SelectCommand.Parameters.Add("@nombre_cliente", SqlDbType.VarChar, (100)).Value = txtBusquedaClientes.Text;
+            da.SelectCommand.ExecuteNonQuery();
+
+            da.Fill(dt);
+            gridViewClientes.DataSource = dt;
+
+            con.desconecta();
         }
+
 
         private void ActualizarDatos()
         {

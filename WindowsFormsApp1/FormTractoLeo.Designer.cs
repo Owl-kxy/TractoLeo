@@ -85,7 +85,7 @@
             this.btnModuloClientes.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.btnModuloClientes.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModuloClientes.ForeColor = System.Drawing.Color.White;
-            this.btnModuloClientes.IconChar = FontAwesome.Sharp.IconChar.PeopleCarry;
+            this.btnModuloClientes.IconChar = FontAwesome.Sharp.IconChar.UserCog;
             this.btnModuloClientes.IconColor = System.Drawing.Color.White;
             this.btnModuloClientes.IconSize = 40;
             this.btnModuloClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
