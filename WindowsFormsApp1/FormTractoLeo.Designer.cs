@@ -32,11 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormTractoLeo));
             this.PanelMenu = new System.Windows.Forms.Panel();
             this.btnModuloClientes = new FontAwesome.Sharp.IconButton();
-            this.btnAgregarStock = new FontAwesome.Sharp.IconButton();
-            this.btnEditarCliente = new FontAwesome.Sharp.IconButton();
-            this.btnAgregarCliente = new FontAwesome.Sharp.IconButton();
-            this.btnAgregarProductos = new FontAwesome.Sharp.IconButton();
-            this.btnBuscarClientes = new FontAwesome.Sharp.IconButton();
             this.btnBuscarRepuesto = new FontAwesome.Sharp.IconButton();
             this.PanelLogo = new System.Windows.Forms.Panel();
             this.btnInicio = new System.Windows.Forms.PictureBox();
@@ -63,11 +58,6 @@
             // 
             this.PanelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
             this.PanelMenu.Controls.Add(this.btnModuloClientes);
-            this.PanelMenu.Controls.Add(this.btnAgregarStock);
-            this.PanelMenu.Controls.Add(this.btnEditarCliente);
-            this.PanelMenu.Controls.Add(this.btnAgregarCliente);
-            this.PanelMenu.Controls.Add(this.btnAgregarProductos);
-            this.PanelMenu.Controls.Add(this.btnBuscarClientes);
             this.PanelMenu.Controls.Add(this.btnBuscarRepuesto);
             this.PanelMenu.Controls.Add(this.PanelLogo);
             this.PanelMenu.Dock = System.Windows.Forms.DockStyle.Left;
@@ -89,143 +79,18 @@
             this.btnModuloClientes.IconColor = System.Drawing.Color.White;
             this.btnModuloClientes.IconSize = 40;
             this.btnModuloClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnModuloClientes.Location = new System.Drawing.Point(0, 616);
+            this.btnModuloClientes.Location = new System.Drawing.Point(0, 246);
             this.btnModuloClientes.Margin = new System.Windows.Forms.Padding(4);
             this.btnModuloClientes.Name = "btnModuloClientes";
             this.btnModuloClientes.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
             this.btnModuloClientes.Rotation = 0D;
             this.btnModuloClientes.Size = new System.Drawing.Size(293, 74);
             this.btnModuloClientes.TabIndex = 7;
-            this.btnModuloClientes.Text = "Formulario clientes";
+            this.btnModuloClientes.Text = "Modulo clientes";
             this.btnModuloClientes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnModuloClientes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnModuloClientes.UseVisualStyleBackColor = true;
             this.btnModuloClientes.Click += new System.EventHandler(this.btnModuloClientes_Click);
-            // 
-            // btnAgregarStock
-            // 
-            this.btnAgregarStock.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnAgregarStock.FlatAppearance.BorderSize = 0;
-            this.btnAgregarStock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregarStock.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btnAgregarStock.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarStock.ForeColor = System.Drawing.Color.White;
-            this.btnAgregarStock.IconChar = FontAwesome.Sharp.IconChar.PeopleCarry;
-            this.btnAgregarStock.IconColor = System.Drawing.Color.White;
-            this.btnAgregarStock.IconSize = 40;
-            this.btnAgregarStock.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAgregarStock.Location = new System.Drawing.Point(0, 542);
-            this.btnAgregarStock.Margin = new System.Windows.Forms.Padding(4);
-            this.btnAgregarStock.Name = "btnAgregarStock";
-            this.btnAgregarStock.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
-            this.btnAgregarStock.Rotation = 0D;
-            this.btnAgregarStock.Size = new System.Drawing.Size(293, 74);
-            this.btnAgregarStock.TabIndex = 6;
-            this.btnAgregarStock.Text = "Agregar stock";
-            this.btnAgregarStock.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAgregarStock.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAgregarStock.UseVisualStyleBackColor = true;
-            this.btnAgregarStock.Click += new System.EventHandler(this.btnAgregarStock_Click);
-            // 
-            // btnEditarCliente
-            // 
-            this.btnEditarCliente.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnEditarCliente.FlatAppearance.BorderSize = 0;
-            this.btnEditarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditarCliente.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btnEditarCliente.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditarCliente.ForeColor = System.Drawing.Color.White;
-            this.btnEditarCliente.IconChar = FontAwesome.Sharp.IconChar.UserEdit;
-            this.btnEditarCliente.IconColor = System.Drawing.Color.White;
-            this.btnEditarCliente.IconSize = 40;
-            this.btnEditarCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEditarCliente.Location = new System.Drawing.Point(0, 468);
-            this.btnEditarCliente.Margin = new System.Windows.Forms.Padding(4);
-            this.btnEditarCliente.Name = "btnEditarCliente";
-            this.btnEditarCliente.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
-            this.btnEditarCliente.Rotation = 0D;
-            this.btnEditarCliente.Size = new System.Drawing.Size(293, 74);
-            this.btnEditarCliente.TabIndex = 5;
-            this.btnEditarCliente.Text = "Editar cliente";
-            this.btnEditarCliente.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEditarCliente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnEditarCliente.UseVisualStyleBackColor = true;
-            this.btnEditarCliente.Click += new System.EventHandler(this.btnEditarCliente_Click);
-            // 
-            // btnAgregarCliente
-            // 
-            this.btnAgregarCliente.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnAgregarCliente.FlatAppearance.BorderSize = 0;
-            this.btnAgregarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregarCliente.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btnAgregarCliente.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarCliente.ForeColor = System.Drawing.Color.White;
-            this.btnAgregarCliente.IconChar = FontAwesome.Sharp.IconChar.UserPlus;
-            this.btnAgregarCliente.IconColor = System.Drawing.Color.White;
-            this.btnAgregarCliente.IconSize = 40;
-            this.btnAgregarCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAgregarCliente.Location = new System.Drawing.Point(0, 394);
-            this.btnAgregarCliente.Margin = new System.Windows.Forms.Padding(4);
-            this.btnAgregarCliente.Name = "btnAgregarCliente";
-            this.btnAgregarCliente.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
-            this.btnAgregarCliente.Rotation = 0D;
-            this.btnAgregarCliente.Size = new System.Drawing.Size(293, 74);
-            this.btnAgregarCliente.TabIndex = 4;
-            this.btnAgregarCliente.Text = "Agregar cliente";
-            this.btnAgregarCliente.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAgregarCliente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAgregarCliente.UseVisualStyleBackColor = true;
-            this.btnAgregarCliente.Click += new System.EventHandler(this.btnAgregarCliente_Click);
-            // 
-            // btnAgregarProductos
-            // 
-            this.btnAgregarProductos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnAgregarProductos.FlatAppearance.BorderSize = 0;
-            this.btnAgregarProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregarProductos.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btnAgregarProductos.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarProductos.ForeColor = System.Drawing.Color.White;
-            this.btnAgregarProductos.IconChar = FontAwesome.Sharp.IconChar.TruckLoading;
-            this.btnAgregarProductos.IconColor = System.Drawing.Color.White;
-            this.btnAgregarProductos.IconSize = 40;
-            this.btnAgregarProductos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAgregarProductos.Location = new System.Drawing.Point(0, 320);
-            this.btnAgregarProductos.Margin = new System.Windows.Forms.Padding(4);
-            this.btnAgregarProductos.Name = "btnAgregarProductos";
-            this.btnAgregarProductos.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
-            this.btnAgregarProductos.Rotation = 0D;
-            this.btnAgregarProductos.Size = new System.Drawing.Size(293, 74);
-            this.btnAgregarProductos.TabIndex = 3;
-            this.btnAgregarProductos.Text = "Ingresar producto";
-            this.btnAgregarProductos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAgregarProductos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAgregarProductos.UseVisualStyleBackColor = true;
-            this.btnAgregarProductos.Click += new System.EventHandler(this.btnAgregarProductos_Click);
-            // 
-            // btnBuscarClientes
-            // 
-            this.btnBuscarClientes.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnBuscarClientes.FlatAppearance.BorderSize = 0;
-            this.btnBuscarClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscarClientes.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btnBuscarClientes.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscarClientes.ForeColor = System.Drawing.Color.White;
-            this.btnBuscarClientes.IconChar = FontAwesome.Sharp.IconChar.UserCheck;
-            this.btnBuscarClientes.IconColor = System.Drawing.Color.White;
-            this.btnBuscarClientes.IconSize = 40;
-            this.btnBuscarClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBuscarClientes.Location = new System.Drawing.Point(0, 246);
-            this.btnBuscarClientes.Margin = new System.Windows.Forms.Padding(4);
-            this.btnBuscarClientes.Name = "btnBuscarClientes";
-            this.btnBuscarClientes.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
-            this.btnBuscarClientes.Rotation = 0D;
-            this.btnBuscarClientes.Size = new System.Drawing.Size(293, 74);
-            this.btnBuscarClientes.TabIndex = 2;
-            this.btnBuscarClientes.Text = "Buscar clientes";
-            this.btnBuscarClientes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBuscarClientes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnBuscarClientes.UseVisualStyleBackColor = true;
-            this.btnBuscarClientes.Click += new System.EventHandler(this.btnBuscarClientes_Click);
             // 
             // btnBuscarRepuesto
             // 
@@ -246,7 +111,7 @@
             this.btnBuscarRepuesto.Rotation = 0D;
             this.btnBuscarRepuesto.Size = new System.Drawing.Size(293, 74);
             this.btnBuscarRepuesto.TabIndex = 1;
-            this.btnBuscarRepuesto.Text = "Buscar repuesto";
+            this.btnBuscarRepuesto.Text = "Modulo productos";
             this.btnBuscarRepuesto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnBuscarRepuesto.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnBuscarRepuesto.UseVisualStyleBackColor = true;
@@ -458,11 +323,6 @@
         private System.Windows.Forms.Panel PanelMenu;
         private System.Windows.Forms.Panel PanelLogo;
         private FontAwesome.Sharp.IconButton btnBuscarRepuesto;
-        private FontAwesome.Sharp.IconButton btnAgregarStock;
-        private FontAwesome.Sharp.IconButton btnEditarCliente;
-        private FontAwesome.Sharp.IconButton btnAgregarCliente;
-        private FontAwesome.Sharp.IconButton btnAgregarProductos;
-        private FontAwesome.Sharp.IconButton btnBuscarClientes;
         private System.Windows.Forms.PictureBox btnInicio;
         private System.Windows.Forms.Panel PanelTitleBar;
         private System.Windows.Forms.Label lblTitleChildForm;

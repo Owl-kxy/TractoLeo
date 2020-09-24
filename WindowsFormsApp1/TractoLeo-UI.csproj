@@ -53,36 +53,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conexion.cs" />
-    <Compile Include="Forms\CrearProducto.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\CrearProducto.Designer.cs">
-      <DependentUpon>CrearProducto.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\FormClientes.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FormClientes.Designer.cs">
-      <DependentUpon>FormClientes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\FormEditarClientes.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FormEditarClientes.Designer.cs">
-      <DependentUpon>FormEditarClientes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\FormIngresarProducto.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FormIngresarProducto.Designer.cs">
-      <DependentUpon>FormIngresarProducto.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\FormProducto.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FormProducto.Designer.cs">
-      <DependentUpon>FormProducto.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormTractoLeo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,21 +73,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Forms\CrearProducto.resx">
-      <DependentUpon>CrearProducto.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormClientes.resx">
-      <DependentUpon>FormClientes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormEditarClientes.resx">
-      <DependentUpon>FormEditarClientes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormIngresarProducto.resx">
-      <DependentUpon>FormIngresarProducto.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormProducto.resx">
-      <DependentUpon>FormProducto.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormTractoLeo.resx">
       <DependentUpon>FormTractoLeo.cs</DependentUpon>
     </EmbeddedResource>
@@ -151,8 +106,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Imagenes\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

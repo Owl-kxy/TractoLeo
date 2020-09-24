@@ -18,12 +18,16 @@ namespace WindowsFormsApp1.Modulo
         Conexion con = new Conexion();
         string route = "";
         int idmarca;
+        int idmarca2;
+        int idserie;
+        int asociacion;
 
         public ModuloProductos()
         {
             InitializeComponent();
             RellenarCbxConsulta();
             RellenarcbxMarcaProd();
+            RellenarcbxMarcaProdCreado();
         }
 
         private void btnVerTodoProd_Click(object sender, EventArgs e)
@@ -70,6 +74,9 @@ namespace WindowsFormsApp1.Modulo
             BinaryReader binreader = new BinaryReader(stream);
             images = binreader.ReadBytes((int)stream.Length);
 
+            bool eval2 = Int32.TryParse(cbxSerieProd.SelectedValue.ToString(), out idserie);
+            bool eval1 = Int32.TryParse(cbxMarcaProd.SelectedValue.ToString(), out idmarca2);
+
             SqlCommand cmd = new SqlCommand();
 
             con.conecta();
@@ -77,6 +84,10 @@ namespace WindowsFormsApp1.Modulo
             cmd.Connection = con.cadenaSql;
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.CommandText = "SP_InsertarProducto";
+            cmd.Parameters.Add("@id_marca", SqlDbType.Int).Value = idmarca2;
+            cmd.Parameters.Add("@id_serie", SqlDbType.Int).Value = idserie;
+            cmd.Parameters.Add("@codigo", SqlDbType.VarChar, (100)).Value=txtCodProdNuevo.Text;
+            cmd.Parameters.Add("@descripcion",SqlDbType.VarChar,(100)).Value=txtDescripProdNuevo.Text;
             cmd.Parameters.Add("@image", SqlDbType.Image).Value = images;
             cmd.Parameters.Add("@nombre_prod", SqlDbType.VarChar, (100)).Value = txtProdNuevo.Text;
             cmd.Parameters.Add("@stock_prod", SqlDbType.VarChar, (100)).Value = txtStockNuevo.Text;
@@ -85,12 +96,13 @@ namespace WindowsFormsApp1.Modulo
             cmd.ExecuteNonQuery();
 
             con.desconecta();
-            MessageBox.Show(" cambios guardados");
+            MessageBox.Show("Cambios guardados");
         }
 
         private void btnAgregaStock_Click(object sender, EventArgs e)
         {
             ActualizarStock();
+            txtStockAgregar.Text = string.Empty;
         }
 
         private void gridViewProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -101,6 +113,35 @@ namespace WindowsFormsApp1.Modulo
             lblSerieProd.Text = gridViewProductos.CurrentRow.Cells[3].Value.ToString();
             lblStockProd.Text = gridViewProductos.CurrentRow.Cells[4].Value.ToString();
             lblPrecioProd.Text = gridViewProductos.CurrentRow.Cells[6].Value.ToString();
+
+            try
+            {
+                con.conecta();
+
+                SqlCommand cmd = new SqlCommand();
+
+                cmd.Connection = con.cadenaSql;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "SP_ObtenerImagen";
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+                DataSet ds = new DataSet();
+                da.Fill(ds, "Tbl_productos");
+                int c = ds.Tables["Tbl_productos"].Rows.Count;
+
+                if (c > 0)
+                {
+                    Byte[] byteBLOBData = new Byte[0];
+                    byteBLOBData = (Byte[])(ds.Tables["Tbl_productos"].Rows[c - 1]["image_producto"]);
+                    MemoryStream stmBLOBData = new MemoryStream(byteBLOBData);
+                    imgProductoSelec.Image = Image.FromStream(stmBLOBData);
+                }
+                
+                con.desconecta();
+            }
+            catch (Exception ex)
+            { MessageBox.Show(ex.Message); }
         }
 
         private void RellenarProductos()
@@ -225,6 +266,27 @@ namespace WindowsFormsApp1.Modulo
             cbxMarcaProd.ValueMember = "id_marca";
         }
 
+        private void RellenarcbxMarcaProdCreado()
+        {
+            con.conecta();
+
+            DataTable dt = new DataTable();
+            SqlCommand cmd = new SqlCommand();
+
+            cmd.Connection = con.cadenaSql;
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "SP_RellenarCbxMarca";
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+
+            con.desconecta();
+
+            cbxMarcaProdCreado.DataSource = dt;
+            cbxMarcaProdCreado.DisplayMember = "nombre_marca";
+            cbxMarcaProdCreado.ValueMember = "id_marca";
+        }
+
         private void cbxMarcaProd_SelectedIndexChanged(object sender, EventArgs e)
         {
             bool conversion= Int32.TryParse(cbxMarcaProd.SelectedValue.ToString(),out idmarca);
@@ -253,6 +315,46 @@ namespace WindowsFormsApp1.Modulo
             cbxSerieProd.DataSource = dt;
             cbxSerieProd.DisplayMember = "nombre_serie";
             cbxSerieProd.ValueMember = "id_serie";
+        }
+
+        private void btnGuardarMarca_Click(object sender, EventArgs e)
+        {
+            SqlCommand cmd = new SqlCommand();
+
+            con.conecta();
+
+            cmd.Connection = con.cadenaSql;
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "SP_CrearMarca";
+            cmd.Parameters.Add("@nombre_marca", SqlDbType.VarChar, (50)).Value =  txtMarcaCrear.Text;
+
+            cmd.ExecuteNonQuery();
+
+            con.desconecta();
+
+            MessageBox.Show("Marca creada con exito");
+        }
+
+        private void btnGuardarSerie_Click(object sender, EventArgs e)
+        {
+            SqlCommand cmd = new SqlCommand();
+
+            con.conecta();
+
+            cmd.Connection = con.cadenaSql;
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "SP_CrearSerie";
+
+            bool eval3 = Int32.TryParse(cbxMarcaProdCreado.SelectedValue.ToString(), out asociacion);
+
+            cmd.Parameters.Add("@nombre_serie", SqlDbType.VarChar, (50)).Value = txtSerieCrear.Text;
+            cmd.Parameters.Add("@id_marca", SqlDbType.Int).Value = asociacion;
+
+            cmd.ExecuteNonQuery();
+
+            con.desconecta();
+
+            MessageBox.Show("Serie creada con exito");
         }
     }
 }
