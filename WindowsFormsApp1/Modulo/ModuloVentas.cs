@@ -97,7 +97,100 @@ namespace WindowsFormsApp1.Modulo
             gridViewVerProds.DataSource = dt;
 
             con.desconecta();
-            MessageBox.Show("Cambios guardados");
+        }
+
+        private void gridViewVerProds_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+
+            idProdVenta.Text = gridViewVerProds.CurrentRow.Cells[0].Value.ToString();
+            txtProductVenta.Text = gridViewVerProds.CurrentRow.Cells[1].Value.ToString();
+            txtProdVentaStock.Text = gridViewVerProds.CurrentRow.Cells[2].Value.ToString();
+            txtxPrecioUnitVenta.Text = gridViewVerProds.CurrentRow.Cells[3].Value.ToString();
+        }
+
+        private void ValidarCantidad()
+        {
+            int cantventa;
+            int stockactual;
+
+            if (string.IsNullOrEmpty(txtQtyVenta.Text))
+                MessageBox.Show("Ingrese la cantidad a vender");
+
+            else 
+            {
+                cantventa = Convert.ToInt32(txtQtyVenta.Text);
+                stockactual = Convert.ToInt32(txtProdVentaStock.Text);
+
+                if (cantventa <= stockactual && cantventa>0)
+                    AgregarProdsCompra();
+
+                else
+                {
+                    if (cantventa > stockactual)
+                        MessageBox.Show("La cantidad no puede exceder el stock actual, ingrese otra cantidad");
+
+                    if (cantventa <= 0)
+                        MessageBox.Show("No puede ingresar una cantidad menor o igual a cero");
+                }
+                    
+            }
+
+        }
+
+        private void AgregarProdsCompra()
+        {
+
+            decimal preciounitario;
+            int cantidadventa;
+            decimal preciosubtotal;
+            int pedido;
+            int productoid;
+
+            pedido = Convert.ToInt32(lblIdPedido.Text);
+            productoid = Convert.ToInt32(idProdVenta.Text);
+            preciounitario = Convert.ToDecimal(txtxPrecioUnitVenta.Text);
+            cantidadventa = Convert.ToInt32(txtQtyVenta.Text);
+
+            preciosubtotal = preciounitario * cantidadventa;
+
+            SqlCommand cmd = new SqlCommand();
+
+            con.conecta();
+
+            cmd.Connection = con.cadenaSql;
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "SP_IngresarDetallePedido";
+            cmd.Parameters.Add("@idpedido", SqlDbType.Int).Value = pedido;
+            cmd.Parameters.Add("@idproducto", SqlDbType.Int).Value = productoid;
+            cmd.Parameters.Add("@nombreproducto", SqlDbType.VarChar, (100)).Value = txtProductVenta.Text;
+            cmd.Parameters.Add("@cantidadventa", SqlDbType.Int).Value = cantidadventa;
+            cmd.Parameters.Add(new SqlParameter("@preciounit", SqlDbType.Decimal) { Precision = 18, Scale = 2 }).Value = txtxPrecioUnitVenta.Text;
+            cmd.Parameters.Add(new SqlParameter("@preciosubtotal", SqlDbType.Decimal) { Precision = 18, Scale = 2 }).Value = preciosubtotal;
+
+            cmd.ExecuteNonQuery();
+
+            con.desconecta();
+        }
+
+        private void VerVenta()
+        {
+            con.conecta();
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter("SP_VerVenta", con.cadenaSql);
+            da.SelectCommand.Parameters.AddWithValue("@idpedido", lblIdPedido.Text);
+            da.SelectCommand.CommandType = CommandType.StoredProcedure;
+            da.SelectCommand.ExecuteNonQuery();
+
+            da.Fill(dt);
+            gridviewVentas.DataSource = dt;
+
+            con.desconecta();
+        }
+
+        private void btnAgregarProds_Click(object sender, EventArgs e)
+        {
+            ValidarCantidad();
+            VerVenta();
         }
     }
 }
