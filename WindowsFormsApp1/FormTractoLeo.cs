@@ -123,6 +123,13 @@ namespace TractoLeoUI
             lblTitleChildForm.Text = "Agregar clientes";
         }
 
+        private void btnVentas_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color3);
+            OpenChildForm(new ModuloVentas());
+            lblTitleChildForm.Text = "Crear venta";
+        }
+
         private void btnInicio_Click(object sender, EventArgs e)
         {
             currentChildForm.Close();
@@ -184,5 +191,6 @@ namespace TractoLeoUI
             lblhora.Text = DateTime.Now.ToString("HH:mm:ss");
             lblfecha.Text = DateTime.Now.ToLongDateString();
         }
+
     }
 }

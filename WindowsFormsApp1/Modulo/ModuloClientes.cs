@@ -94,6 +94,8 @@ namespace WindowsFormsApp1.Modulo
 
             cmd.ExecuteNonQuery();
 
+
+
             con.desconecta();
         }
 

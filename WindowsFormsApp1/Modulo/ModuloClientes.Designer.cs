@@ -32,7 +32,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabMantenimiento = new System.Windows.Forms.TabPage();
+            this.btnConsultarClientes = new FontAwesome.Sharp.IconButton();
             this.txtBusquedaClientes = new System.Windows.Forms.TextBox();
+            this.cbxConsultaClientes = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.btnVerTodo = new FontAwesome.Sharp.IconButton();
             this.gridViewClientes = new System.Windows.Forms.DataGridView();
@@ -76,8 +78,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.cbxConsultaClientes = new System.Windows.Forms.ComboBox();
-            this.btnConsultarClientes = new FontAwesome.Sharp.IconButton();
             this.tabMantenimiento.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewClientes)).BeginInit();
             this.tabCrearCliente.SuspendLayout();
@@ -102,6 +102,21 @@
             this.tabMantenimiento.TabIndex = 2;
             this.tabMantenimiento.Text = "Mantenimiento de clientes";
             // 
+            // btnConsultarClientes
+            // 
+            this.btnConsultarClientes.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnConsultarClientes.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnConsultarClientes.IconColor = System.Drawing.Color.Black;
+            this.btnConsultarClientes.IconSize = 16;
+            this.btnConsultarClientes.Location = new System.Drawing.Point(635, 176);
+            this.btnConsultarClientes.Name = "btnConsultarClientes";
+            this.btnConsultarClientes.Rotation = 0D;
+            this.btnConsultarClientes.Size = new System.Drawing.Size(131, 45);
+            this.btnConsultarClientes.TabIndex = 31;
+            this.btnConsultarClientes.Text = "Consultar";
+            this.btnConsultarClientes.UseVisualStyleBackColor = true;
+            this.btnConsultarClientes.Click += new System.EventHandler(this.btnConsultarClientes_Click);
+            // 
             // txtBusquedaClientes
             // 
             this.txtBusquedaClientes.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -111,12 +126,20 @@
             this.txtBusquedaClientes.Size = new System.Drawing.Size(236, 28);
             this.txtBusquedaClientes.TabIndex = 1;
             // 
+            // cbxConsultaClientes
+            // 
+            this.cbxConsultaClientes.FormattingEnabled = true;
+            this.cbxConsultaClientes.Location = new System.Drawing.Point(139, 181);
+            this.cbxConsultaClientes.Name = "cbxConsultaClientes";
+            this.cbxConsultaClientes.Size = new System.Drawing.Size(121, 29);
+            this.cbxConsultaClientes.TabIndex = 30;
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(1)))));
-            this.label4.Location = new System.Drawing.Point(40, 47);
+            this.label4.Location = new System.Drawing.Point(39, 78);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(388, 23);
@@ -126,12 +149,12 @@
             // btnVerTodo
             // 
             this.btnVerTodo.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btnVerTodo.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVerTodo.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVerTodo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(1)))));
             this.btnVerTodo.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnVerTodo.IconColor = System.Drawing.Color.Black;
             this.btnVerTodo.IconSize = 16;
-            this.btnVerTodo.Location = new System.Drawing.Point(772, 181);
+            this.btnVerTodo.Location = new System.Drawing.Point(827, 178);
             this.btnVerTodo.Name = "btnVerTodo";
             this.btnVerTodo.Rotation = 0D;
             this.btnVerTodo.Size = new System.Drawing.Size(120, 40);
@@ -340,6 +363,7 @@
             this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // label1
             // 
@@ -463,7 +487,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 4);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1137, 649);
+            this.tabPage1.Size = new System.Drawing.Size(1107, 649);
             this.tabPage1.TabIndex = 3;
             this.tabPage1.Text = "Editar informacion del cliente";
             // 
@@ -691,29 +715,6 @@
             this.label13.Size = new System.Drawing.Size(90, 23);
             this.label13.TabIndex = 39;
             this.label13.Text = "Nombre";
-            // 
-            // cbxConsultaClientes
-            // 
-            this.cbxConsultaClientes.FormattingEnabled = true;
-            this.cbxConsultaClientes.Location = new System.Drawing.Point(139, 181);
-            this.cbxConsultaClientes.Name = "cbxConsultaClientes";
-            this.cbxConsultaClientes.Size = new System.Drawing.Size(121, 29);
-            this.cbxConsultaClientes.TabIndex = 30;
-            // 
-            // btnConsultarClientes
-            // 
-            this.btnConsultarClientes.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btnConsultarClientes.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btnConsultarClientes.IconColor = System.Drawing.Color.Black;
-            this.btnConsultarClientes.IconSize = 16;
-            this.btnConsultarClientes.Location = new System.Drawing.Point(635, 176);
-            this.btnConsultarClientes.Name = "btnConsultarClientes";
-            this.btnConsultarClientes.Rotation = 0D;
-            this.btnConsultarClientes.Size = new System.Drawing.Size(101, 45);
-            this.btnConsultarClientes.TabIndex = 31;
-            this.btnConsultarClientes.Text = "Consultar";
-            this.btnConsultarClientes.UseVisualStyleBackColor = true;
-            this.btnConsultarClientes.Click += new System.EventHandler(this.btnConsultarClientes_Click);
             // 
             // ModuloClientes
             // 

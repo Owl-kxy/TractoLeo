@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormTractoLeo));
             this.PanelMenu = new System.Windows.Forms.Panel();
+            this.btnVentas = new FontAwesome.Sharp.IconButton();
             this.btnModuloClientes = new FontAwesome.Sharp.IconButton();
             this.btnBuscarRepuesto = new FontAwesome.Sharp.IconButton();
             this.PanelLogo = new System.Windows.Forms.Panel();
@@ -57,6 +58,7 @@
             // PanelMenu
             // 
             this.PanelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.PanelMenu.Controls.Add(this.btnVentas);
             this.PanelMenu.Controls.Add(this.btnModuloClientes);
             this.PanelMenu.Controls.Add(this.btnBuscarRepuesto);
             this.PanelMenu.Controls.Add(this.PanelLogo);
@@ -66,6 +68,31 @@
             this.PanelMenu.Name = "PanelMenu";
             this.PanelMenu.Size = new System.Drawing.Size(293, 853);
             this.PanelMenu.TabIndex = 2;
+            // 
+            // btnVentas
+            // 
+            this.btnVentas.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnVentas.FlatAppearance.BorderSize = 0;
+            this.btnVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVentas.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnVentas.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVentas.ForeColor = System.Drawing.Color.White;
+            this.btnVentas.IconChar = FontAwesome.Sharp.IconChar.CashRegister;
+            this.btnVentas.IconColor = System.Drawing.Color.White;
+            this.btnVentas.IconSize = 40;
+            this.btnVentas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnVentas.Location = new System.Drawing.Point(0, 320);
+            this.btnVentas.Margin = new System.Windows.Forms.Padding(4);
+            this.btnVentas.Name = "btnVentas";
+            this.btnVentas.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
+            this.btnVentas.Rotation = 0D;
+            this.btnVentas.Size = new System.Drawing.Size(293, 74);
+            this.btnVentas.TabIndex = 8;
+            this.btnVentas.Text = "Modulo ventas";
+            this.btnVentas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnVentas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnVentas.UseVisualStyleBackColor = true;
+            this.btnVentas.Click += new System.EventHandler(this.btnVentas_Click);
             // 
             // btnModuloClientes
             // 
@@ -152,7 +179,7 @@
             this.PanelTitleBar.Location = new System.Drawing.Point(293, 0);
             this.PanelTitleBar.Margin = new System.Windows.Forms.Padding(4);
             this.PanelTitleBar.Name = "PanelTitleBar";
-            this.PanelTitleBar.Size = new System.Drawing.Size(1189, 92);
+            this.PanelTitleBar.Size = new System.Drawing.Size(1289, 92);
             this.PanelTitleBar.TabIndex = 3;
             this.PanelTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PanelTitleBar_MouseDown);
             // 
@@ -167,7 +194,7 @@
             this.btnMaximize.IconChar = FontAwesome.Sharp.IconChar.WindowMaximize;
             this.btnMaximize.IconColor = System.Drawing.Color.White;
             this.btnMaximize.IconSize = 16;
-            this.btnMaximize.Location = new System.Drawing.Point(1089, 0);
+            this.btnMaximize.Location = new System.Drawing.Point(1189, 0);
             this.btnMaximize.Margin = new System.Windows.Forms.Padding(4);
             this.btnMaximize.Name = "btnMaximize";
             this.btnMaximize.Rotation = 0D;
@@ -186,7 +213,7 @@
             this.btnMinimize.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
             this.btnMinimize.IconColor = System.Drawing.Color.White;
             this.btnMinimize.IconSize = 16;
-            this.btnMinimize.Location = new System.Drawing.Point(1041, 0);
+            this.btnMinimize.Location = new System.Drawing.Point(1141, 0);
             this.btnMinimize.Margin = new System.Windows.Forms.Padding(4);
             this.btnMinimize.Name = "btnMinimize";
             this.btnMinimize.Rotation = 0D;
@@ -206,7 +233,7 @@
             this.btnExit.IconChar = FontAwesome.Sharp.IconChar.Times;
             this.btnExit.IconColor = System.Drawing.Color.White;
             this.btnExit.IconSize = 16;
-            this.btnExit.Location = new System.Drawing.Point(1137, 0);
+            this.btnExit.Location = new System.Drawing.Point(1237, 0);
             this.btnExit.Margin = new System.Windows.Forms.Padding(4);
             this.btnExit.Name = "btnExit";
             this.btnExit.Rotation = 0D;
@@ -248,7 +275,7 @@
             this.panelShadow.Location = new System.Drawing.Point(293, 92);
             this.panelShadow.Margin = new System.Windows.Forms.Padding(4);
             this.panelShadow.Name = "panelShadow";
-            this.panelShadow.Size = new System.Drawing.Size(1189, 11);
+            this.panelShadow.Size = new System.Drawing.Size(1289, 11);
             this.panelShadow.TabIndex = 4;
             // 
             // panelDesktop
@@ -260,15 +287,18 @@
             this.panelDesktop.Location = new System.Drawing.Point(293, 103);
             this.panelDesktop.Margin = new System.Windows.Forms.Padding(0);
             this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(1189, 750);
+            this.panelDesktop.Size = new System.Drawing.Size(1289, 750);
             this.panelDesktop.TabIndex = 5;
             // 
             // lblfecha
             // 
+            this.lblfecha.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblfecha.AutoSize = true;
             this.lblfecha.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblfecha.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.lblfecha.Location = new System.Drawing.Point(277, 439);
+            this.lblfecha.Location = new System.Drawing.Point(489, 588);
             this.lblfecha.Name = "lblfecha";
             this.lblfecha.Size = new System.Drawing.Size(142, 49);
             this.lblfecha.TabIndex = 1;
@@ -276,14 +306,18 @@
             // 
             // lblhora
             // 
+            this.lblhora.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblhora.AutoSize = true;
             this.lblhora.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblhora.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.lblhora.Location = new System.Drawing.Point(452, 348);
+            this.lblhora.Location = new System.Drawing.Point(639, 495);
             this.lblhora.Name = "lblhora";
             this.lblhora.Size = new System.Drawing.Size(214, 74);
             this.lblhora.TabIndex = 0;
             this.lblhora.Text = "label1";
+            this.lblhora.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // fechahora
             // 
@@ -296,7 +330,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(1482, 853);
+            this.ClientSize = new System.Drawing.Size(1582, 853);
             this.Controls.Add(this.panelDesktop);
             this.Controls.Add(this.panelShadow);
             this.Controls.Add(this.PanelTitleBar);
@@ -307,6 +341,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TractoLeo";
             this.TransparencyKey = System.Drawing.Color.Black;
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.PanelMenu.ResumeLayout(false);
             this.PanelLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnInicio)).EndInit();
@@ -336,6 +371,7 @@
         private System.Windows.Forms.Label lblhora;
         private System.Windows.Forms.Timer fechahora;
         private FontAwesome.Sharp.IconButton btnModuloClientes;
+        private FontAwesome.Sharp.IconButton btnVentas;
     }
 }
 
