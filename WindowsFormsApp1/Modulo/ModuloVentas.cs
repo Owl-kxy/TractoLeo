@@ -137,6 +137,35 @@ namespace WindowsFormsApp1.Modulo
 
         }
 
+        private void ValidarCantidadActualizada()
+        {
+            int cantventa;
+            int stockactual;
+
+            if (string.IsNullOrEmpty(txtQtyVenta.Text))
+                MessageBox.Show("Ingrese la cantidad a vender");
+
+            else
+            {
+                cantventa = Convert.ToInt32(txtQtyVenta.Text);
+                stockactual = Convert.ToInt32(txtProdVentaStock.Text);
+
+                if (cantventa <= stockactual && cantventa > 0)
+                    CambiarCantidadVenta();
+
+                else
+                {
+                    if (cantventa > stockactual)
+                        MessageBox.Show("La cantidad no puede exceder el stock actual, ingrese otra cantidad");
+
+                    if (cantventa <= 0)
+                        MessageBox.Show("No puede ingresar una cantidad menor o igual a cero");
+                }
+
+            }
+
+        }
+
         private void AgregarProdsCompra()
         {
 
@@ -191,6 +220,115 @@ namespace WindowsFormsApp1.Modulo
         {
             ValidarCantidad();
             VerVenta();
+        }
+
+        private void gridviewVentas_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            idProdVenta.Text = gridviewVentas.CurrentRow.Cells[0].Value.ToString();
+            txtProductVenta.Text = gridviewVentas.CurrentRow.Cells[1].Value.ToString();
+            txtQtyVenta.Text = gridviewVentas.CurrentRow.Cells[2].Value.ToString();
+            txtxPrecioUnitVenta.Text = gridviewVentas.CurrentRow.Cells[3].Value.ToString();
+            txtProdVentaStock.Text = gridviewVentas.CurrentRow.Cells[5].Value.ToString();
+        }
+
+        private void btnActualizarVenta_Click(object sender, EventArgs e)
+        {
+            ValidarCantidadActualizada();
+            VerVenta();
+        }
+
+        private void CambiarCantidadVenta ()
+        {
+            SqlCommand cmd = new SqlCommand();
+
+            con.conecta();
+
+            cmd.Connection = con.cadenaSql;
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "SP_ActualizarCantVenta";
+            cmd.Parameters.Add("@idproducto", SqlDbType.Int).Value = idProdVenta.Text;
+            cmd.Parameters.Add("@idpedido", SqlDbType.Int).Value = lblIdPedido.Text;
+            cmd.Parameters.Add("@cantnueva", SqlDbType.Int).Value = txtQtyVenta.Text;
+
+            cmd.ExecuteNonQuery();
+
+            con.desconecta();
+        }
+
+        private void btnNuevaVenta_Click(object sender, EventArgs e)
+        {
+            AperturaVenta();
+            VerNumeroPedido();
+        }
+
+        private void AperturaVenta()
+        {
+            SqlCommand cmd = new SqlCommand();
+
+            con.conecta();
+
+            cmd.Connection = con.cadenaSql;
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "SP_CrearPedido";
+            cmd.ExecuteNonQuery();
+
+            con.desconecta();
+        }
+
+        private void VerNumeroPedido()
+        {
+            SqlCommand cmd = new SqlCommand();
+
+            con.conecta();
+
+            cmd.Connection = con.cadenaSql;
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "SP_VerNumeroPedido";
+            cmd.ExecuteNonQuery();
+
+            SqlDataReader dr;
+
+            dr = cmd.ExecuteReader();
+            if (dr.HasRows == true)
+            {
+                dr.Read();
+                lblIdPedido.Text = dr["id_pedido"].ToString();
+
+                dr.Close();
+            }
+
+            con.desconecta();
+        }
+
+        private void btnTerminarVenta_Click(object sender, EventArgs e)
+        {
+            VerTotalPedido();
+        }
+
+        private void VerTotalPedido()
+        {
+            SqlCommand cmd = new SqlCommand();
+
+            con.conecta();
+
+            cmd.Connection = con.cadenaSql;
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "SP_VentalTotalPedido";
+            cmd.Parameters.Add("@idpedido", SqlDbType.Int).Value = lblIdPedido.Text;
+            cmd.ExecuteNonQuery();
+
+            SqlDataReader dr;
+
+            dr = cmd.ExecuteReader();
+            if (dr.HasRows == true)
+            {
+                dr.Read();
+                lblTotalPedido.Text = dr["VentaTotal"].ToString();
+
+                dr.Close();
+            }
+
+            con.desconecta();
         }
     }
 }
