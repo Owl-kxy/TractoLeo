@@ -10,6 +10,7 @@ using System.Data.SqlClient;
 using System.Data.Sql;
 using System.Windows.Forms;
 using System.IO;
+using System.Drawing.Imaging;
 
 namespace WindowsFormsApp1.Modulo
 {
@@ -70,6 +71,7 @@ namespace WindowsFormsApp1.Modulo
         private void btnGuardarImg_Click(object sender, EventArgs e)
         {
             byte[] images = null;
+
             FileStream stream = new FileStream(route, FileMode.Open, FileAccess.Read);
             BinaryReader binreader = new BinaryReader(stream);
             images = binreader.ReadBytes((int)stream.Length);
@@ -114,34 +116,11 @@ namespace WindowsFormsApp1.Modulo
             lblStockProd.Text = gridViewProductos.CurrentRow.Cells[4].Value.ToString();
             lblPrecioProd.Text = gridViewProductos.CurrentRow.Cells[6].Value.ToString();
 
-            try
-            {
-                con.conecta();
+            byte[] imgData = (byte[])gridViewProductos.CurrentRow.Cells[7].Value;
 
-                SqlCommand cmd = new SqlCommand();
+            MemoryStream ms = new MemoryStream(imgData);
+            imgProductoSelec.Image = Image.FromStream(ms);
 
-                cmd.Connection = con.cadenaSql;
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = "SP_ObtenerImagen";
-
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-
-                DataSet ds = new DataSet();
-                da.Fill(ds, "Tbl_productos");
-                int c = ds.Tables["Tbl_productos"].Rows.Count;
-
-                if (c > 0)
-                {
-                    Byte[] byteBLOBData = new Byte[0];
-                    byteBLOBData = (Byte[])(ds.Tables["Tbl_productos"].Rows[c - 1]["image_producto"]);
-                    MemoryStream stmBLOBData = new MemoryStream(byteBLOBData);
-                    imgProductoSelec.Image = Image.FromStream(stmBLOBData);
-                }
-                
-                con.desconecta();
-            }
-            catch (Exception ex)
-            { MessageBox.Show(ex.Message); }
         }
 
         private void RellenarProductos()

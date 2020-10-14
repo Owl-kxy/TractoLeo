@@ -19,11 +19,15 @@ namespace WindowsFormsApp1.Modulo
         int idmarca;
         int idserie;
         int idmarca2;
+        string ValuecbxCliente;
+        int idCliente;
 
         public ModuloVentas()
         {
             InitializeComponent();
             RellenarcbxMarcaVenta();
+            AutocompletarCbxCliente();
+            //RellenarCbxTipoDocumento();
         }
 
         private void RellenarcbxMarcaVenta()
@@ -303,6 +307,7 @@ namespace WindowsFormsApp1.Modulo
         private void btnTerminarVenta_Click(object sender, EventArgs e)
         {
             VerTotalPedido();
+            ActualizarStockPostVenta();
         }
 
         private void VerTotalPedido()
@@ -329,6 +334,49 @@ namespace WindowsFormsApp1.Modulo
             }
 
             con.desconecta();
+        }
+
+        private void ActualizarStockPostVenta()
+        {
+            SqlCommand cmd = new SqlCommand();
+
+            con.conecta();
+
+            cmd.Connection = con.cadenaSql;
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "SP_ActualizarStockVenta";
+            cmd.Parameters.Add("@idpedido", SqlDbType.Int).Value = lblIdPedido.Text;
+            cmd.ExecuteNonQuery();
+
+            con.desconecta();
+        }
+
+        private void AutocompletarCbxCliente()
+        {
+            SqlCommand cmd = new SqlCommand("SP_AutocompletarNombreCliente", con.cadenaSql);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+
+            da.Fill(dt);
+
+            cbxCliente.DataSource = dt;
+            cbxCliente.DisplayMember = "NombreCompleto";
+            cbxCliente.ValueMember = "id_cliente";
+
+            // Seccion de autocompletado
+            AutoCompleteStringCollection listaClientes = new AutoCompleteStringCollection();
+
+            foreach(DataRow dr in dt.Rows)
+                listaClientes.Add(Convert.ToString(dr["NombreCompleto"]));
+
+            cbxCliente.AutoCompleteCustomSource = listaClientes;
+            cbxCliente.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            cbxCliente.AutoCompleteSource = AutoCompleteSource.CustomSource;
+        }
+        //
+        private void cbxCliente_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lblGetIdCliente.Text = cbxCliente.SelectedValue.ToString();
         }
     }
 }
