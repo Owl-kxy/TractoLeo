@@ -101,6 +101,8 @@ namespace WindowsFormsApp1.Modulo
             gridViewVerProds.DataSource = dt;
 
             con.desconecta();
+
+            gridViewVerProds.Columns["stock_producto"].Visible = false;
         }
 
         private void gridViewVerProds_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -125,8 +127,11 @@ namespace WindowsFormsApp1.Modulo
                 cantventa = Convert.ToInt32(txtQtyVenta.Text);
                 stockactual = Convert.ToInt32(txtProdVentaStock.Text);
 
-                if (cantventa <= stockactual && cantventa>0)
+                if (cantventa <= stockactual && cantventa > 0)
+                {
                     AgregarProdsCompra();
+                    AgregarDetalle();
+                }
 
                 else
                 {
@@ -155,7 +160,10 @@ namespace WindowsFormsApp1.Modulo
                 stockactual = Convert.ToInt32(txtProdVentaStock.Text);
 
                 if (cantventa <= stockactual && cantventa > 0)
+                {
                     CambiarCantidadVenta();
+                    ActualizarRegDetallePedido();
+                }
 
                 else
                 {
@@ -172,7 +180,36 @@ namespace WindowsFormsApp1.Modulo
 
         private void AgregarProdsCompra()
         {
+            decimal preciounitario;
+            int cantidadventa;
+            int pedido;
+            int productoid;
 
+            pedido = Convert.ToInt32(lblIdPedido.Text);
+            productoid = Convert.ToInt32(idProdVenta.Text);
+            preciounitario = Convert.ToDecimal(txtxPrecioUnitVenta.Text);
+            cantidadventa = Convert.ToInt32(txtQtyVenta.Text);
+
+
+            SqlCommand cmd = new SqlCommand();
+
+            con.conecta();
+
+            cmd.Connection = con.cadenaSql;
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "SP_IngresarDetallePedido";
+            cmd.Parameters.Add("@idpedido", SqlDbType.Int).Value = pedido;
+            cmd.Parameters.Add("@idproducto", SqlDbType.Int).Value = productoid;
+            cmd.Parameters.Add("@nombreproducto", SqlDbType.VarChar, (100)).Value = txtProductVenta.Text;
+            cmd.Parameters.Add("@cantidadventa", SqlDbType.Int).Value = cantidadventa;
+            cmd.Parameters.Add(new SqlParameter("@preciounit", SqlDbType.Decimal) { Precision = 18, Scale = 2 }).Value = txtxPrecioUnitVenta.Text;
+            cmd.ExecuteNonQuery();
+
+            con.desconecta();
+        }
+
+        private void AgregarDetalle()
+        {
             decimal preciounitario;
             int cantidadventa;
             decimal preciosubtotal;
@@ -192,10 +229,9 @@ namespace WindowsFormsApp1.Modulo
 
             cmd.Connection = con.cadenaSql;
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = "SP_IngresarDetallePedido";
+            cmd.CommandText = "SP_IngresarDetalleLog";
             cmd.Parameters.Add("@idpedido", SqlDbType.Int).Value = pedido;
             cmd.Parameters.Add("@idproducto", SqlDbType.Int).Value = productoid;
-            cmd.Parameters.Add("@nombreproducto", SqlDbType.VarChar, (100)).Value = txtProductVenta.Text;
             cmd.Parameters.Add("@cantidadventa", SqlDbType.Int).Value = cantidadventa;
             cmd.Parameters.Add(new SqlParameter("@preciounit", SqlDbType.Decimal) { Precision = 18, Scale = 2 }).Value = txtxPrecioUnitVenta.Text;
             cmd.Parameters.Add(new SqlParameter("@preciosubtotal", SqlDbType.Decimal) { Precision = 18, Scale = 2 }).Value = preciosubtotal;
@@ -232,7 +268,7 @@ namespace WindowsFormsApp1.Modulo
             txtProductVenta.Text = gridviewVentas.CurrentRow.Cells[1].Value.ToString();
             txtQtyVenta.Text = gridviewVentas.CurrentRow.Cells[2].Value.ToString();
             txtxPrecioUnitVenta.Text = gridviewVentas.CurrentRow.Cells[3].Value.ToString();
-            txtProdVentaStock.Text = gridviewVentas.CurrentRow.Cells[5].Value.ToString();
+            txtProdVentaStock.Text = gridviewVentas.CurrentRow.Cells[4].Value.ToString();
         }
 
         private void btnActualizarVenta_Click(object sender, EventArgs e)
@@ -242,6 +278,24 @@ namespace WindowsFormsApp1.Modulo
         }
 
         private void CambiarCantidadVenta ()
+        {
+            SqlCommand cmd = new SqlCommand();
+
+            con.conecta();
+
+            cmd.Connection = con.cadenaSql;
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "SP_ActualizarCantVentaDetalleLog";
+            cmd.Parameters.Add("@idproducto", SqlDbType.Int).Value = idProdVenta.Text;
+            cmd.Parameters.Add("@idpedido", SqlDbType.Int).Value = lblIdPedido.Text;
+            cmd.Parameters.Add("@cantnueva", SqlDbType.Int).Value = txtQtyVenta.Text;
+
+            cmd.ExecuteNonQuery();
+
+            con.desconecta();
+        }
+
+        private void ActualizarRegDetallePedido()
         {
             SqlCommand cmd = new SqlCommand();
 
@@ -308,6 +362,43 @@ namespace WindowsFormsApp1.Modulo
         {
             VerTotalPedido();
             ActualizarStockPostVenta();
+            InformacionPedido();
+            InformacionLogs();
+        }
+
+        private void InformacionLogs()
+        {
+            SqlCommand cmd = new SqlCommand();
+
+            con.conecta();
+
+            cmd.Connection = con.cadenaSql;
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "SP_ActualizarInformacionLogs";
+            cmd.Parameters.Add("@idped", SqlDbType.Int).Value = lblIdPedido.Text;
+            cmd.Parameters.Add("@idcli", SqlDbType.Int).Value = lblGetIdCliente.Text;
+            cmd.Parameters.Add("@nomcli", SqlDbType.VarChar, (100)).Value = cbxCliente.Text;
+            cmd.Parameters.Add(new SqlParameter("@prectotal", SqlDbType.Decimal) { Precision = 18, Scale = 2 }).Value = lblTotalPedido.Text;
+            cmd.ExecuteNonQuery();
+
+            con.desconecta();
+        }
+
+        private void InformacionPedido()
+        {
+            SqlCommand cmd = new SqlCommand();
+
+            con.conecta();
+
+            cmd.Connection = con.cadenaSql;
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "SP_ActualizarInformacionPedido";
+            cmd.Parameters.Add("@idpedido", SqlDbType.Int).Value = lblIdPedido.Text;
+            cmd.Parameters.Add("@idcliente", SqlDbType.Int).Value = lblGetIdCliente.Text;
+            cmd.Parameters.Add("@nomcliente", SqlDbType.VarChar, (100)).Value = cbxCliente.Text;           
+            cmd.ExecuteNonQuery();
+
+            con.desconecta();
         }
 
         private void VerTotalPedido()

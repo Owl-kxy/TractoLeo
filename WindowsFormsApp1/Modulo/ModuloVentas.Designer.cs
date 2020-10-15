@@ -156,7 +156,6 @@
             this.txtxPrecioUnitVenta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(1)))));
             this.txtxPrecioUnitVenta.Location = new System.Drawing.Point(192, 326);
             this.txtxPrecioUnitVenta.Name = "txtxPrecioUnitVenta";
-            this.txtxPrecioUnitVenta.ReadOnly = true;
             this.txtxPrecioUnitVenta.Size = new System.Drawing.Size(172, 30);
             this.txtxPrecioUnitVenta.TabIndex = 8;
             // 

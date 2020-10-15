@@ -109,17 +109,20 @@ namespace WindowsFormsApp1.Modulo
 
         private void gridViewProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            lblidproducto.Text = gridViewProductos.CurrentRow.Cells[0].Value.ToString();
-            lblNombreProd.Text = gridViewProductos.CurrentRow.Cells[1].Value.ToString();
-            lblMarcaProd.Text = gridViewProductos.CurrentRow.Cells[2].Value.ToString();
-            lblSerieProd.Text = gridViewProductos.CurrentRow.Cells[3].Value.ToString();
-            lblStockProd.Text = gridViewProductos.CurrentRow.Cells[4].Value.ToString();
-            lblPrecioProd.Text = gridViewProductos.CurrentRow.Cells[6].Value.ToString();
 
             byte[] imgData = (byte[])gridViewProductos.CurrentRow.Cells[7].Value;
 
             MemoryStream ms = new MemoryStream(imgData);
             imgProductoSelec.Image = Image.FromStream(ms);
+
+            lblidproducto.Text = gridViewProductos.CurrentRow.Cells[0].Value.ToString();
+            txtNombreProductoEdit.Text = gridViewProductos.CurrentRow.Cells[1].Value.ToString();
+            txtMarcaEdit.Text = gridViewProductos.CurrentRow.Cells[2].Value.ToString();
+            txtSerieEdit.Text = gridViewProductos.CurrentRow.Cells[3].Value.ToString();
+            txtStockEdit.Text = gridViewProductos.CurrentRow.Cells[4].Value.ToString();
+            txtPrecioEdit.Text = gridViewProductos.CurrentRow.Cells[6].Value.ToString();
+            txtDescripcionEdit.Text = gridViewProductos.CurrentRow.Cells[8].Value.ToString();
+            txtCodigoEdit.Text = gridViewProductos.CurrentRow.Cells[9].Value.ToString();
 
         }
 
@@ -133,6 +136,10 @@ namespace WindowsFormsApp1.Modulo
 
             da.Fill(dt);
             gridViewProductos.DataSource = dt;
+
+            gridViewProductos.Columns["imagen"].Visible = false;
+            gridViewProductos.Columns["descripcion_producto"].Visible = false;
+            gridViewProductos.Columns["Id"].Visible = false;
 
             con.desconecta();
         }
@@ -150,6 +157,8 @@ namespace WindowsFormsApp1.Modulo
             gridViewProductos.DataSource = dt;
 
             con.desconecta();
+
+            //gridViewProductos.Columns["image_producto"].Visible = false;
         }
 
         private void BusquedaSerie()
@@ -195,7 +204,7 @@ namespace WindowsFormsApp1.Modulo
 
                 else
                 {
-                    int stock_actual = Convert.ToInt32(lblStockProd.Text);
+                    int stock_actual = Convert.ToInt32(txtStockEdit.Text);
                     int stock_agregar = Convert.ToInt32(txtStockAgregar.Text);
                     int nuevo_stock = stock_actual + stock_agregar;
 
@@ -335,5 +344,73 @@ namespace WindowsFormsApp1.Modulo
 
             MessageBox.Show("Serie creada con exito");
         }
+
+        //private void btnedit_Click(object sender, EventArgs e)
+        //{
+        //    txtprueba.ReadOnly = false;
+        //}
+
+        //private void btnactu_Click(object sender, EventArgs e)
+        //{
+        //    //update
+        //    txtprueba.Text = string.Empty;
+        //    txtprueba.ReadOnly = true;
+        //}
+
+        private void btnEditarProds_Click(object sender, EventArgs e)
+        {
+            txtNombreProductoEdit.ReadOnly = false;
+            txtPrecioEdit.ReadOnly = false;
+            txtCodigoEdit.ReadOnly = false;
+            txtDescripcionEdit.ReadOnly = false;
+        }
+
+        private void btnActualizarProds_Click(object sender, EventArgs e)
+        {
+            EditarInformacionProductos();
+            LimpiarCampos();
+        }
+
+        private void LimpiarCampos()
+        {
+            txtNombreProductoEdit.Text = string.Empty;
+            txtPrecioEdit.Text = string.Empty;
+            txtCodigoEdit.Text = string.Empty;
+            txtDescripcionEdit.Text = string.Empty;
+            txtMarcaEdit.Text = string.Empty;
+            txtSerieEdit.Text = string.Empty;
+            txtStockEdit.Text = string.Empty;
+            txtStockNuevo.Text = string.Empty;
+        }
+
+        private void EditarInformacionProductos()
+        {
+            SqlCommand cmd = new SqlCommand();
+
+            con.conecta();
+
+            cmd.Connection = con.cadenaSql;
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "SP_ActualizarDatosProducto";
+
+            cmd.Parameters.Add("@id", SqlDbType.Int).Value = lblidproducto.Text;
+            cmd.Parameters.Add("@nomprod", SqlDbType.VarChar, (100)).Value = txtNombreProductoEdit.Text;
+            cmd.Parameters.Add("@codigo", SqlDbType.VarChar, (100)).Value = txtCodigoEdit.Text;
+            cmd.Parameters.Add("@descripcion", SqlDbType.VarChar, (100)).Value = txtDescripcionEdit.Text;
+            cmd.Parameters.Add(new SqlParameter("@precio", SqlDbType.Decimal) { Precision = 18, Scale = 2 }).Value = txtPrecioEdit.Text;
+
+
+            cmd.ExecuteNonQuery();
+
+            con.desconecta();
+
+            MessageBox.Show("Informacion editada");
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
