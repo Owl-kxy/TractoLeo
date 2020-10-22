@@ -364,6 +364,10 @@ namespace WindowsFormsApp1.Modulo
             ActualizarStockPostVenta();
             InformacionPedido();
             InformacionLogs();
+
+            String idPedido = lblIdPedido.Text;
+            Factura f = new Factura(idPedido);
+            f.Show();
         }
 
         private void InformacionLogs()

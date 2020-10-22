@@ -59,6 +59,12 @@
     <Compile Include="FormTractoLeo.Designer.cs">
       <DependentUpon>FormTractoLeo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modulo\Factura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulo\Factura.Designer.cs">
+      <DependentUpon>Factura.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modulo\ModuloClientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +87,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormTractoLeo.resx">
       <DependentUpon>FormTractoLeo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo\Factura.resx">
+      <DependentUpon>Factura.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulo\ModuloClientes.resx">
       <DependentUpon>ModuloClientes.cs</DependentUpon>
