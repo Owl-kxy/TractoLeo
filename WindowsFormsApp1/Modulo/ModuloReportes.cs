@@ -16,5 +16,23 @@ namespace WindowsFormsApp1.Modulo
         {
             InitializeComponent();
         }
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            List<SP_ReporteClientes_Result> list = sPReporteClientesResultBindingSource.DataSource as List<SP_ReporteClientes_Result>;
+            if (list!=null)
+            {
+                using (ImprimirClientes fic = new ImprimirClientes(list))
+                {
+                    fic.ShowDialog();
+                }
+            }
+        }
+
+        private void ModuloReportes_Load(object sender, EventArgs e)
+        {
+            using (ReportClientesEntities db = new ReportClientesEntities())
+                sPReporteClientesResultBindingSource.DataSource = db.SP_ReporteClientes().ToList();
+        }
     }
 }

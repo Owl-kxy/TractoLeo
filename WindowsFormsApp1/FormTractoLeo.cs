@@ -130,6 +130,13 @@ namespace TractoLeoUI
             lblTitleChildForm.Text = "Crear venta";
         }
 
+        private void btnReportes_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color4);
+            OpenChildForm(new ModuloReportes());
+            lblTitleChildForm.Text = "Ver Reportes";
+        }
+
         private void btnInicio_Click(object sender, EventArgs e)
         {
             currentChildForm.Close();
