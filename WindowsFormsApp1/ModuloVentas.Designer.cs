@@ -61,6 +61,7 @@
             this.lblIdPedido = new System.Windows.Forms.Label();
             this.cbxCliente = new System.Windows.Forms.ComboBox();
             this.lblGetIdCliente = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.gridviewVentas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewVerProds)).BeginInit();
             this.SuspendLayout();
@@ -417,11 +418,13 @@
             // 
             // cbxCliente
             // 
+            this.cbxCliente.BackColor = System.Drawing.Color.White;
             this.cbxCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
+            this.cbxCliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(1)))));
             this.cbxCliente.FormattingEnabled = true;
             this.cbxCliente.Location = new System.Drawing.Point(192, 140);
             this.cbxCliente.Name = "cbxCliente";
-            this.cbxCliente.Size = new System.Drawing.Size(574, 30);
+            this.cbxCliente.Size = new System.Drawing.Size(537, 30);
             this.cbxCliente.TabIndex = 35;
             this.cbxCliente.SelectedIndexChanged += new System.EventHandler(this.cbxCliente_SelectedIndexChanged);
             // 
@@ -435,11 +438,25 @@
             this.lblGetIdCliente.Text = " ";
             this.lblGetIdCliente.Visible = false;
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker1.CalendarForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(1)))));
+            this.dateTimePicker1.Enabled = false;
+            this.dateTimePicker1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(192, 195);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(172, 28);
+            this.dateTimePicker1.TabIndex = 37;
+            // 
             // ModuloVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1630, 826);
+            this.ControlBox = false;
+            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.lblGetIdCliente);
             this.Controls.Add(this.cbxCliente);
             this.Controls.Add(this.lblIdPedido);
@@ -517,5 +534,6 @@
         private System.Windows.Forms.Label lblIdPedido;
         private System.Windows.Forms.ComboBox cbxCliente;
         private System.Windows.Forms.Label lblGetIdCliente;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }
