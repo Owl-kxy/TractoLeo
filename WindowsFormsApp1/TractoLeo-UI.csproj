@@ -139,8 +139,26 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RClientesReporte.edmx</DependentUpon>
     </Compile>
+    <Compile Include="RFacturaReporte.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RFacturaReporte.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RFacturaReporte.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RFacturaReporte.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RFacturaReporte.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RFacturaReporte.edmx</DependentUpon>
+    </Compile>
     <Compile Include="SP_ReporteClientes_Result.cs">
       <DependentUpon>RClientesReporte.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_ReporteFactura_Result.cs">
+      <DependentUpon>RFacturaReporte.tt</DependentUpon>
     </Compile>
     <EmbeddedResource Include="ClientesReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -198,6 +216,13 @@
     <None Include="RClientesReporte.edmx.diagram">
       <DependentUpon>RClientesReporte.edmx</DependentUpon>
     </None>
+    <EntityDeploy Include="RFacturaReporte.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>RFacturaReporte.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="RFacturaReporte.edmx.diagram">
+      <DependentUpon>RFacturaReporte.edmx</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -216,6 +241,16 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>RClientesReporte.edmx</DependentUpon>
       <LastGenOutput>RClientesReporte.cs</LastGenOutput>
+    </Content>
+    <Content Include="RFacturaReporte.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>RFacturaReporte.edmx</DependentUpon>
+      <LastGenOutput>RFacturaReporte.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="RFacturaReporte.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>RFacturaReporte.edmx</DependentUpon>
+      <LastGenOutput>RFacturaReporte.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
