@@ -10,6 +10,9 @@ using System.Data.SqlClient;
 using System.Data.Sql;
 using System.Windows.Forms;
 using System.IO;
+using CrystalDecisions.CrystalReports.Engine;
+using CrystalDecisions.Shared;
+
 
 namespace WindowsFormsApp1.Modulo
 {
@@ -365,9 +368,34 @@ namespace WindowsFormsApp1.Modulo
             InformacionPedido();
             InformacionLogs();
 
+            //String idPedido = lblIdPedido.Text;
+            //Factura f = new Factura(idPedido);
+            //f.Show();
+
+            //String codpedido = lblIdPedido.Text;
+            //ImprimirFactura form = new ImprimirFactura(codpedido);
+            //form.Show();
+
             String idPedido = lblIdPedido.Text;
-            Factura f = new Factura(idPedido);
-            f.Show();
+
+            RepFactura rpf = new RepFactura(idPedido);
+            rpf.Show();
+
+            //ImprimirBoleta form = new ImprimirBoleta();
+            //ReportDocument repDoc = new ReportDocument();
+            //ParameterField pf = new ParameterField();
+            //ParameterFields pfs = new ParameterFields();
+            //ParameterDiscreteValue param = new ParameterDiscreteValue();
+
+            //pf.Name = "@idpedido";
+            //param.Value = valId;
+            //pf.CurrentValues.Add(param);
+            //pfs.Add(pf);
+            //form.BoletaCR.ParameterFieldInfo = pfs;
+            //repDoc.Load(@"C:\Users\USER\Desktop\TractoLeo\TractoLeo\WindowsFormsApp1\Modulo\BoletaReport.rpt");
+            
+            //form.BoletaCR.ReportSource = repDoc;
+            //form.Show();
         }
 
         private void InformacionLogs()

@@ -4,16 +4,20 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="RFacturaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <Function Name="SP_ReporteFactura" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-        <EntityContainer Name="RFacturaModelStoreContainer" />
+      <Schema Namespace="FacturaModell.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <Function Name="SP_ReporteFactura" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idpedido" Type="int" Mode="In" />
+        </Function>
+        <EntityContainer Name="FacturaModellStoreContainer" />
       </Schema>
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="RFacturaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityContainer Name="RFacturaEntities" annotation:LazyLoadingEnabled="true" >
-          <FunctionImport Name="SP_ReporteFactura" ReturnType="Collection(RFacturaModel.SP_ReporteFactura_Result)" />
+      <Schema Namespace="FacturaModell" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="FacturaEntiti" annotation:LazyLoadingEnabled="true" >
+          <FunctionImport Name="SP_ReporteFactura" ReturnType="Collection(FacturaModell.SP_ReporteFactura_Result)">
+            <Parameter Name="idpedido" Mode="In" Type="Int32" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="SP_ReporteFactura_Result">
           <Property Type="Int32" Name="IDProducto" Nullable="true" />
@@ -28,10 +32,10 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="RFacturaModelStoreContainer" CdmEntityContainer="RFacturaEntities" >
-          <FunctionImportMapping FunctionImportName="SP_ReporteFactura" FunctionName="RFacturaModel.Store.SP_ReporteFactura">
+        <EntityContainerMapping StorageEntityContainer="FacturaModellStoreContainer" CdmEntityContainer="FacturaEntiti" >
+          <FunctionImportMapping FunctionImportName="SP_ReporteFactura" FunctionName="FacturaModell.Store.SP_ReporteFactura">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="RFacturaModel.SP_ReporteFactura_Result">
+              <ComplexTypeMapping TypeName="FacturaModell.SP_ReporteFactura_Result">
                 <ScalarProperty Name="IDProducto" ColumnName="IDProducto" />
                 <ScalarProperty Name="Producto" ColumnName="Producto" />
                 <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
@@ -55,7 +59,7 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />

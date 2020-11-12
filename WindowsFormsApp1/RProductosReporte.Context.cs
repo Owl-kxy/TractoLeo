@@ -15,10 +15,10 @@ namespace WindowsFormsApp1
     using System.Data.Entity.Core.Objects;
     using System.Linq;
     
-    public partial class FacturaEntiti : DbContext
+    public partial class ProductosEntities : DbContext
     {
-        public FacturaEntiti()
-            : base("name=FacturaEntiti")
+        public ProductosEntities()
+            : base("name=ProductosEntities")
         {
         }
     
@@ -28,13 +28,9 @@ namespace WindowsFormsApp1
         }
     
     
-        public virtual ObjectResult<SP_ReporteFactura_Result> SP_ReporteFactura(Nullable<int> idpedido)
+        public virtual ObjectResult<SP_ReporteProductos_Result> SP_ReporteProductos()
         {
-            var idpedidoParameter = idpedido.HasValue ?
-                new ObjectParameter("idpedido", idpedido) :
-                new ObjectParameter("idpedido", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_ReporteFactura_Result>("SP_ReporteFactura", idpedidoParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_ReporteProductos_Result>("SP_ReporteProductos");
         }
     }
 }

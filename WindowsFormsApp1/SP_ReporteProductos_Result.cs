@@ -11,13 +11,11 @@ namespace WindowsFormsApp1
 {
     using System;
     
-    public partial class SP_ReporteFactura_Result
+    public partial class SP_ReporteProductos_Result
     {
-        public string Producto { get; set; }
-        public int IDProducto { get; set; }
-        public int Cantidad { get; set; }
-        public decimal PrecioUnit { get; set; }
-        public decimal PrecioTotal { get; set; }
-        public int IdPedido { get; set; }
+        public string Nombre_del_producto { get; set; }
+        public string Marca { get; set; }
+        public string Serie { get; set; }
+        public int Stock { get; set; }
     }
 }
