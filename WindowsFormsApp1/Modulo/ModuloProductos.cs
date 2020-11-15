@@ -93,6 +93,7 @@ namespace WindowsFormsApp1.Modulo
             cmd.Parameters.Add("@image", SqlDbType.Image).Value = images;
             cmd.Parameters.Add("@nombre_prod", SqlDbType.VarChar, (100)).Value = txtProdNuevo.Text;
             cmd.Parameters.Add("@stock_prod", SqlDbType.VarChar, (100)).Value = txtStockNuevo.Text;
+            cmd.Parameters.Add("@ubicacion", SqlDbType.VarChar, (100)).Value = txtUbicacionNuevo.Text;
             cmd.Parameters.Add(new SqlParameter("@precio_prod", SqlDbType.Decimal) {Precision=18, Scale=2 }).Value= txtPrecioNuevo.Text;
 
             cmd.ExecuteNonQuery();
@@ -122,7 +123,8 @@ namespace WindowsFormsApp1.Modulo
             txtStockEdit.Text = gridViewProductos.CurrentRow.Cells[4].Value.ToString();
             txtPrecioEdit.Text = gridViewProductos.CurrentRow.Cells[6].Value.ToString();
             txtDescripcionEdit.Text = gridViewProductos.CurrentRow.Cells[8].Value.ToString();
-            txtCodigoEdit.Text = gridViewProductos.CurrentRow.Cells[9].Value.ToString();
+            txtCodigoEdit.Text = gridViewProductos.CurrentRow.Cells[5].Value.ToString();
+            txtUbicacionEdit.Text = gridViewProductos.CurrentRow.Cells[9].Value.ToString();
 
         }
 
@@ -138,7 +140,6 @@ namespace WindowsFormsApp1.Modulo
             gridViewProductos.DataSource = dt;
 
             gridViewProductos.Columns["imagen"].Visible = false;
-            gridViewProductos.Columns["descripcion_producto"].Visible = false;
             gridViewProductos.Columns["Id"].Visible = false;
 
             con.desconecta();
