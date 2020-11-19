@@ -418,7 +418,7 @@ namespace WindowsFormsApp1.Modulo
             cmd.Parameters.Add("@codigo", SqlDbType.VarChar, (100)).Value = txtCodigoEdit.Text;
             cmd.Parameters.Add("@descripcion", SqlDbType.VarChar, (100)).Value = txtDescripcionEdit.Text;
             cmd.Parameters.Add(new SqlParameter("@precio", SqlDbType.Decimal) { Precision = 18, Scale = 2 }).Value = txtPrecioEdit.Text;
-
+            cmd.Parameters.Add("@ubicacion", SqlDbType.VarChar, (100)).Value = txtUbicacionEdit.Text;
 
             cmd.ExecuteNonQuery();
 

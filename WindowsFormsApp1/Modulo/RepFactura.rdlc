@@ -512,8 +512,8 @@
             </Border>
           </Style>
         </PageHeader>
-        <PageHeight>29.7cm</PageHeight>
-        <PageWidth>21cm</PageWidth>
+        <PageHeight>20cm</PageHeight>
+        <PageWidth>10cm</PageWidth>
         <LeftMargin>2cm</LeftMargin>
         <RightMargin>2cm</RightMargin>
         <TopMargin>2cm</TopMargin>
