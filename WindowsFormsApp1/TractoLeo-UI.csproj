@@ -119,12 +119,6 @@
     <Compile Include="ImprimirClientes.Designer.cs">
       <DependentUpon>ImprimirClientes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modulo\ImprimirBoleta.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Modulo\ImprimirBoleta.Designer.cs">
-      <DependentUpon>ImprimirBoleta.cs</DependentUpon>
-    </Compile>
     <Compile Include="Modulo\ModuloClientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -233,9 +227,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ImprimirClientes.resx">
       <DependentUpon>ImprimirClientes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Modulo\ImprimirBoleta.resx">
-      <DependentUpon>ImprimirBoleta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulo\ModuloClientes.resx">
       <DependentUpon>ModuloClientes.cs</DependentUpon>
