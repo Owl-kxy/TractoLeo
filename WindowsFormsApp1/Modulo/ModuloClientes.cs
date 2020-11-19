@@ -59,6 +59,8 @@ namespace WindowsFormsApp1.Modulo
         {
             ActualizarDatos();
             MessageBox.Show("Datos actualizados con exito");
+            Limpiar_CamposEdit();
+
         }
 
         private void gridViewClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -109,6 +111,18 @@ namespace WindowsFormsApp1.Modulo
             txtDireccion.Text = string.Empty;
             txtDNI.Text = string.Empty;
             txtRUC.Text = string.Empty;
+        }
+
+        private void Limpiar_CamposEdit()
+        {
+            txtEditNombre.Text = string.Empty;
+            txtEditPaterno.Text = string.Empty;
+            txtEditMaterno.Text = string.Empty;
+            txtEditTelf.Text = string.Empty;
+            txtEditCorreo.Text = string.Empty;
+            txtEditDireccion.Text = string.Empty;
+            txtEditDNI.Text = string.Empty;
+            txtEditRUC.Text = string.Empty;
         }
 
         private void VerClientes()
@@ -189,8 +203,8 @@ namespace WindowsFormsApp1.Modulo
             cmd.Parameters.Add("@telf_cliente", SqlDbType.VarChar, (50)).Value = txtEditTelf.Text;
             cmd.Parameters.Add("@correo_cliente", SqlDbType.VarChar, (70)).Value = txtEditCorreo.Text;
             cmd.Parameters.Add("@direccion_cliente", SqlDbType.VarChar, (100)).Value = txtEditDireccion.Text;
-            cmd.Parameters.Add("@dni_cliente", SqlDbType.VarChar, (8)).Value = txtEditDireccion.Text;
-            cmd.Parameters.Add("@ruc_cliente", SqlDbType.VarChar, (11)).Value = txtEditDireccion.Text;
+            cmd.Parameters.Add("@dni_cliente", SqlDbType.VarChar, (8)).Value = txtEditDNI.Text;
+            cmd.Parameters.Add("@ruc_cliente", SqlDbType.VarChar, (11)).Value = txtEditRUC.Text;
 
             cmd.ExecuteNonQuery();
 
