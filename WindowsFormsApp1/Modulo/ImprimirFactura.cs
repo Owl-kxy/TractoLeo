@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApp1
+namespace WindowsFormsApp1.Modulo
 {
-    public partial class Form1 : Form
+    public partial class ImprimirFactura : Form
     {
-        public Form1()
+        public ImprimirFactura()
         {
             InitializeComponent();
         }
