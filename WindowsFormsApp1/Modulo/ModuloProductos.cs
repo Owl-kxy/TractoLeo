@@ -52,6 +52,9 @@ namespace WindowsFormsApp1.Modulo
 
                 if (val_seleccionado == "Nombre")
                     BusquedaNombre();
+
+                if (val_seleccionado == "Codigo")
+                    BusquedaCodigo();
             }
 
         }
@@ -157,9 +160,11 @@ namespace WindowsFormsApp1.Modulo
             da.Fill(dt);
             gridViewProductos.DataSource = dt;
 
+            gridViewProductos.Columns["imagen"].Visible = false;
+            gridViewProductos.Columns["Id"].Visible = false;
+
             con.desconecta();
 
-            //gridViewProductos.Columns["image_producto"].Visible = false;
         }
 
         private void BusquedaSerie()
@@ -173,6 +178,9 @@ namespace WindowsFormsApp1.Modulo
 
             da.Fill(dt);
             gridViewProductos.DataSource = dt;
+
+            gridViewProductos.Columns["imagen"].Visible = false;
+            gridViewProductos.Columns["Id"].Visible = false;
 
             con.desconecta();
         }
@@ -188,6 +196,27 @@ namespace WindowsFormsApp1.Modulo
 
             da.Fill(dt);
             gridViewProductos.DataSource = dt;
+
+            gridViewProductos.Columns["imagen"].Visible = false;
+            gridViewProductos.Columns["Id"].Visible = false;
+
+            con.desconecta();
+        }
+
+        private void BusquedaCodigo()
+        {
+            con.conecta();
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter("SP_BusquedaCodigoProducto", con.cadenaSql);
+            da.SelectCommand.CommandType = CommandType.StoredProcedure;
+            da.SelectCommand.Parameters.Add("@codigoprod", SqlDbType.VarChar, (50)).Value = txtBusquedaProd.Text;
+            da.SelectCommand.ExecuteNonQuery();
+
+            da.Fill(dt);
+            gridViewProductos.DataSource = dt;
+
+            gridViewProductos.Columns["imagen"].Visible = false;
+            gridViewProductos.Columns["Id"].Visible = false;
 
             con.desconecta();
         }
@@ -232,6 +261,7 @@ namespace WindowsFormsApp1.Modulo
             cbxConsulta.Items.Add("Marca");
             cbxConsulta.Items.Add("Serie");
             cbxConsulta.Items.Add("Nombre");
+            cbxConsulta.Items.Add("Codigo");
         }
 
         private void RellenarcbxMarcaProd()
@@ -346,24 +376,13 @@ namespace WindowsFormsApp1.Modulo
             MessageBox.Show("Serie creada con exito");
         }
 
-        //private void btnedit_Click(object sender, EventArgs e)
-        //{
-        //    txtprueba.ReadOnly = false;
-        //}
-
-        //private void btnactu_Click(object sender, EventArgs e)
-        //{
-        //    //update
-        //    txtprueba.Text = string.Empty;
-        //    txtprueba.ReadOnly = true;
-        //}
-
         private void btnEditarProds_Click(object sender, EventArgs e)
         {
             txtNombreProductoEdit.ReadOnly = false;
             txtPrecioEdit.ReadOnly = false;
             txtCodigoEdit.ReadOnly = false;
             txtDescripcionEdit.ReadOnly = false;
+            txtUbicacionEdit.ReadOnly = false;
         }
 
         private void btnActualizarProds_Click(object sender, EventArgs e)

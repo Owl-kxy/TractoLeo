@@ -22,15 +22,13 @@ namespace WindowsFormsApp1.Modulo
         int idmarca;
         int idserie;
         int idmarca2;
-        string ValuecbxCliente;
-        int idCliente;
+
 
         public ModuloVentas()
         {
             InitializeComponent();
             RellenarcbxMarcaVenta();
             AutocompletarCbxCliente();
-            //RellenarCbxTipoDocumento();
         }
 
         private void RellenarcbxMarcaVenta()
@@ -85,27 +83,48 @@ namespace WindowsFormsApp1.Modulo
 
         private void btnBuscarVenta_Click(object sender, EventArgs e)
         {
-            bool eval2 = Int32.TryParse(cbxSerieVenta.SelectedValue.ToString(), out idserie);
-            bool eval1 = Int32.TryParse(cbxMarcaVenta.SelectedValue.ToString(), out idmarca2);
+            if (cbxSerieVenta.SelectedIndex != -1 && cbxMarcaVenta.SelectedIndex != -1)
+            {
+                bool eval2 = Int32.TryParse(cbxSerieVenta.SelectedValue.ToString(), out idserie);
+                bool eval1 = Int32.TryParse(cbxMarcaVenta.SelectedValue.ToString(), out idmarca2);
 
-            con.conecta();
+                con.conecta();
 
-            DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter("SP_BuscarxMarcaxSerie", con.cadenaSql);
+                DataTable dt = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter("SP_BuscarxMarcaxSerie", con.cadenaSql);
 
-            da.SelectCommand.Parameters.AddWithValue("@idmarca", idmarca2);
-            da.SelectCommand.Parameters.AddWithValue("@idserie", idserie);
-            da.SelectCommand.Parameters.AddWithValue("@nombre", txtProdVenta.Text);
+                da.SelectCommand.Parameters.AddWithValue("@idmarca", idmarca2);
+                da.SelectCommand.Parameters.AddWithValue("@idserie", idserie);
+                da.SelectCommand.Parameters.AddWithValue("@nombre", txtProdVenta.Text);
 
-            da.SelectCommand.CommandType = CommandType.StoredProcedure;
-            da.SelectCommand.ExecuteNonQuery();
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                da.SelectCommand.ExecuteNonQuery();
 
-            da.Fill(dt);
-            gridViewVerProds.DataSource = dt;
+                da.Fill(dt);
+                gridViewVerProds.DataSource = dt;
 
-            con.desconecta();
+                con.desconecta();
 
-            gridViewVerProds.Columns["stock_producto"].Visible = false;
+                gridViewVerProds.Columns["Stock"].Visible = false;
+            }
+
+            if (string.IsNullOrEmpty(txtProdVenta.Text) == false)
+            {
+                con.conecta();
+
+                DataTable dt = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter("SP_BuscarProductoVender", con.cadenaSql);
+
+                da.SelectCommand.Parameters.AddWithValue("@nombre", txtProdVenta.Text);
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                da.SelectCommand.ExecuteNonQuery();
+
+                da.Fill(dt);
+                gridViewVerProds.DataSource = dt;
+
+                con.desconecta();
+                gridViewVerProds.Columns["Stock"].Visible = false;
+            }
         }
 
         private void gridViewVerProds_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -125,7 +144,7 @@ namespace WindowsFormsApp1.Modulo
             if (string.IsNullOrEmpty(txtQtyVenta.Text))
                 MessageBox.Show("Ingrese la cantidad a vender");
 
-            else 
+            else
             {
                 cantventa = Convert.ToInt32(txtQtyVenta.Text);
                 stockactual = Convert.ToInt32(txtProdVentaStock.Text);
@@ -144,7 +163,7 @@ namespace WindowsFormsApp1.Modulo
                     if (cantventa <= 0)
                         MessageBox.Show("No puede ingresar una cantidad menor o igual a cero");
                 }
-                    
+
             }
 
         }
@@ -280,7 +299,7 @@ namespace WindowsFormsApp1.Modulo
             VerVenta();
         }
 
-        private void CambiarCantidadVenta ()
+        private void CambiarCantidadVenta()
         {
             SqlCommand cmd = new SqlCommand();
 
@@ -363,39 +382,22 @@ namespace WindowsFormsApp1.Modulo
 
         private void btnTerminarVenta_Click(object sender, EventArgs e)
         {
-            VerTotalPedido();
-            ActualizarStockPostVenta();
-            InformacionPedido();
-            InformacionLogs();
+            if (lblIdPedido.Text == "")
+                MessageBox.Show("Antes de terminar cree una venta por favor");
 
-            //String idPedido = lblIdPedido.Text;
-            //Factura f = new Factura(idPedido);
-            //f.Show();
+            else
+            {
+                VerTotalPedido();
+                ActualizarStockPostVenta();
+                InformacionPedido();
+                InformacionLogs();
 
-            //String codpedido = lblIdPedido.Text;
-            //ImprimirFactura form = new ImprimirFactura(codpedido);
-            //form.Show();
+                String idPedido = lblIdPedido.Text;
+                String preciototal = lblTotalPedido.Text;
 
-            String idPedido = lblIdPedido.Text;
-
-            RepFactura rpf = new RepFactura(idPedido);
-            rpf.Show();
-
-            //ImprimirBoleta form = new ImprimirBoleta();
-            //ReportDocument repDoc = new ReportDocument();
-            //ParameterField pf = new ParameterField();
-            //ParameterFields pfs = new ParameterFields();
-            //ParameterDiscreteValue param = new ParameterDiscreteValue();
-
-            //pf.Name = "@idpedido";
-            //param.Value = valId;
-            //pf.CurrentValues.Add(param);
-            //pfs.Add(pf);
-            //form.BoletaCR.ParameterFieldInfo = pfs;
-            //repDoc.Load(@"C:\Users\USER\Desktop\TractoLeo\TractoLeo\WindowsFormsApp1\Modulo\BoletaReport.rpt");
-            
-            //form.BoletaCR.ReportSource = repDoc;
-            //form.Show();
+                RepFactura rpf = new RepFactura(idPedido,preciototal);
+                rpf.Show();
+            }
         }
 
         private void InformacionLogs()
@@ -496,10 +498,20 @@ namespace WindowsFormsApp1.Modulo
             cbxCliente.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             cbxCliente.AutoCompleteSource = AutoCompleteSource.CustomSource;
         }
-        //
+        
         private void cbxCliente_SelectedIndexChanged(object sender, EventArgs e)
         {
             lblGetIdCliente.Text = cbxCliente.SelectedValue.ToString();
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel17_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

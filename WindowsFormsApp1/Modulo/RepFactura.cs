@@ -19,10 +19,11 @@ namespace WindowsFormsApp1.Modulo
             InitializeComponent();
         }
 
-        public RepFactura(String idPedido)
+        public RepFactura(String idPedido, String totPedido)
         {
             InitializeComponent();
             label1.Text = idPedido;
+            label2.Text = totPedido;
         }
 
         private void RepFactura_Load(object sender, EventArgs e)
@@ -39,9 +40,11 @@ namespace WindowsFormsApp1.Modulo
             using (FacturaEntiti fdb = new FacturaEntiti())
             {
                 SP_ReporteFactura_ResultBindingSource.DataSource = fdb.SP_ReporteFactura(codigo).ToList();
+
                 Microsoft.Reporting.WinForms.ReportParameter[] rParams = new Microsoft.Reporting.WinForms.ReportParameter[]
                 {
-                    new Microsoft.Reporting.WinForms.ReportParameter("idpedido",label1.Text)
+                    new Microsoft.Reporting.WinForms.ReportParameter("idpedido",label1.Text),
+                    new Microsoft.Reporting.WinForms.ReportParameter("total",label2.Text)
                 };
 
                 reportViewer1.LocalReport.SetParameters(rParams);
