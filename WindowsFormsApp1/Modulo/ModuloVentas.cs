@@ -149,7 +149,7 @@ namespace WindowsFormsApp1.Modulo
                 cantventa = Convert.ToInt32(txtQtyVenta.Text);
                 stockactual = Convert.ToInt32(txtProdVentaStock.Text);
 
-                if (cantventa <= stockactual && cantventa > 0)
+                if (cantventa <= stockactual && cantventa > -1)
                 {
                     AgregarProdsCompra();
                     AgregarDetalle();

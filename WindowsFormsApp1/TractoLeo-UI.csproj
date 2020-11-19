@@ -249,7 +249,6 @@
     <EmbeddedResource Include="Modulo\ModuloVentas.resx">
       <DependentUpon>ModuloVentas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modulo\RepFactura.rdlc" />
     <EmbeddedResource Include="Modulo\RepFactura.resx">
       <DependentUpon>RepFactura.cs</DependentUpon>
     </EmbeddedResource>
