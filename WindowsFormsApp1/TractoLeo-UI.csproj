@@ -149,6 +149,12 @@
     <Compile Include="Modulo\RepFactura.Designer.cs">
       <DependentUpon>RepFactura.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modulo\RepFacturaInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulo\RepFacturaInfo.Designer.cs">
+      <DependentUpon>RepFacturaInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RClientesReporte.Context.cs">
@@ -177,6 +183,21 @@
     </Compile>
     <Compile Include="RepProductos.Designer.cs">
       <DependentUpon>RepProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RFacturaInfoCompleta.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RFacturaInfoCompleta.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RFacturaInfoCompleta.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RFacturaInfoCompleta.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RFacturaInfoCompleta.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RFacturaInfoCompleta.edmx</DependentUpon>
     </Compile>
     <Compile Include="RFacturaReporte.Context.cs">
       <AutoGen>True</AutoGen>
@@ -207,6 +228,9 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RProductosReporte.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="SP_FacturaCompleta_Result.cs">
+      <DependentUpon>RFacturaInfoCompleta.tt</DependentUpon>
     </Compile>
     <Compile Include="SP_ReporteClientes_Result.cs">
       <DependentUpon>RClientesReporte.tt</DependentUpon>
@@ -243,6 +267,9 @@
     <EmbeddedResource Include="Modulo\RepFactura.resx">
       <DependentUpon>RepFactura.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modulo\RepFacturaInfo.resx">
+      <DependentUpon>RepFacturaInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -259,6 +286,7 @@
       <DependentUpon>RepClientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RepFactur.rdlc" />
+    <EmbeddedResource Include="RepFacturaInfo.rdlc" />
     <EmbeddedResource Include="RepProductos.rdlc" />
     <EmbeddedResource Include="RepProductos.resx">
       <DependentUpon>RepProductos.cs</DependentUpon>
@@ -266,6 +294,7 @@
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Conexion.datasource" />
     <None Include="Properties\DataSources\RClientesEntities.datasource" />
+    <None Include="Properties\DataSources\SP_FacturaCompleta_Result1.datasource" />
     <None Include="Properties\DataSources\SP_ReporteClientes_Result.datasource" />
     <None Include="Properties\DataSources\SP_ReporteFactura_Result.datasource" />
     <None Include="Properties\DataSources\SP_ReporteProductos_Result.datasource" />
@@ -293,6 +322,13 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>RFacturaReporte.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <EntityDeploy Include="RFacturaInfoCompleta.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>RFacturaInfoCompleta.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="RFacturaInfoCompleta.edmx.diagram">
+      <DependentUpon>RFacturaInfoCompleta.edmx</DependentUpon>
+    </None>
     <None Include="RFacturaReporte.edmx.diagram">
       <DependentUpon>RFacturaReporte.edmx</DependentUpon>
     </None>
@@ -318,6 +354,16 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>RClientesReporte.edmx</DependentUpon>
       <LastGenOutput>RClientesReporte.cs</LastGenOutput>
+    </Content>
+    <Content Include="RFacturaInfoCompleta.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>RFacturaInfoCompleta.edmx</DependentUpon>
+      <LastGenOutput>RFacturaInfoCompleta.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="RFacturaInfoCompleta.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>RFacturaInfoCompleta.edmx</DependentUpon>
+      <LastGenOutput>RFacturaInfoCompleta.cs</LastGenOutput>
     </Content>
     <Content Include="RFacturaReporte.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
