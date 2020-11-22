@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="PedidosModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <Function Name="SP_ReportePedidos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <EntityContainer Name="PedidosModelStoreContainer" />
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PedidosModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="PedidosEntities" annotation:LazyLoadingEnabled="true" >
+          <FunctionImport Name="SP_ReportePedidos" ReturnType="Collection(PedidosModel.SP_ReportePedidos_Result)" />
+        </EntityContainer>
+        <ComplexType Name="SP_ReportePedidos_Result">
+          <Property Type="Int32" Name="id_pedido" Nullable="true" />
+          <Property Type="String" Name="nombre_cliente" Nullable="true" MaxLength="100" />
+          <Property Type="DateTime" Name="fecha_pedido" Nullable="true" />
+          <Property Type="String" Name="nombre_marca" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="nombre_serie" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="nombre_producto" Nullable="true" MaxLength="100" />
+          <Property Type="Int32" Name="cantidad_venta_producto" Nullable="true" />
+          <Property Type="Decimal" Name="precio_producto" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="Subtotal" Nullable="true" Precision="29" Scale="2" />
+          <Property Type="Decimal" Name="precio_total_pedido" Nullable="true" Precision="18" Scale="2" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PedidosModelStoreContainer" CdmEntityContainer="PedidosEntities" >
+          <FunctionImportMapping FunctionImportName="SP_ReportePedidos" FunctionName="PedidosModel.Store.SP_ReportePedidos">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="PedidosModel.SP_ReportePedidos_Result">
+                <ScalarProperty Name="id_pedido" ColumnName="id_pedido" />
+                <ScalarProperty Name="nombre_cliente" ColumnName="nombre_cliente" />
+                <ScalarProperty Name="fecha_pedido" ColumnName="fecha_pedido" />
+                <ScalarProperty Name="nombre_marca" ColumnName="nombre_marca" />
+                <ScalarProperty Name="nombre_serie" ColumnName="nombre_serie" />
+                <ScalarProperty Name="nombre_producto" ColumnName="nombre_producto" />
+                <ScalarProperty Name="cantidad_venta_producto" ColumnName="cantidad_venta_producto" />
+                <ScalarProperty Name="precio_producto" ColumnName="precio_producto" />
+                <ScalarProperty Name="Subtotal" ColumnName="Subtotal" />
+                <ScalarProperty Name="precio_total_pedido" ColumnName="precio_total_pedido" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
