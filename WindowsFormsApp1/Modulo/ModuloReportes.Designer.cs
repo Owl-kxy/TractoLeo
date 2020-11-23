@@ -29,17 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.SP_ReportePedidosxFecha_ResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.SP_BuscarPedidosCliente_ResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.clientesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dNIDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.direccionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telefonoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.correoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sPReporteClientesResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.btnImprimir = new FontAwesome.Sharp.IconButton();
@@ -49,33 +47,26 @@
             this.btnProductosReporte = new FontAwesome.Sharp.IconButton();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.nombredelproductoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.marcaDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.serieDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stockDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sPReporteProductosResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.idpedidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreclienteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechapedidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombremarcaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreserieDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreproductoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidadventaproductoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precioproductoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.subtotalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.preciototalpedidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sPReportePedidosResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnPedidosReport = new FontAwesome.Sharp.IconButton();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.btnCargarReportexFecha = new FontAwesome.Sharp.IconButton();
+            this.dpFechaFin = new System.Windows.Forms.DateTimePicker();
+            this.dpFechaIni = new System.Windows.Forms.DateTimePicker();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.reportViewer2 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnVerClientexPedido = new FontAwesome.Sharp.IconButton();
+            this.CbxClientePedido = new System.Windows.Forms.ComboBox();
             this.cachedClientesReport1 = new WindowsFormsApp1.CachedClientesReport();
             this.sPReporteFacturaResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.dpFechaIni = new System.Windows.Forms.DateTimePicker();
-            this.dpFechaFin = new System.Windows.Forms.DateTimePicker();
-            this.btnCargarReportexFecha = new FontAwesome.Sharp.IconButton();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.SP_ReportePedidosxFecha_ResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label1 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.SP_ReportePedidosxFecha_ResultBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SP_BuscarPedidosCliente_ResultBindingSource)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -92,9 +83,9 @@
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPReportePedidosResultBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sPReporteFacturaResultBindingSource)).BeginInit();
             this.tabPage4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.SP_ReportePedidosxFecha_ResultBindingSource)).BeginInit();
+            this.tabPage5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sPReporteFacturaResultBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -103,6 +94,7 @@
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
@@ -161,12 +153,6 @@
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.clientesDataGridViewTextBoxColumn,
-            this.dNIDataGridViewTextBoxColumn,
-            this.direccionDataGridViewTextBoxColumn,
-            this.telefonoDataGridViewTextBoxColumn,
-            this.correoDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.sPReporteClientesResultBindingSource;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(53, 28);
@@ -175,45 +161,6 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(902, 451);
             this.dataGridView1.TabIndex = 2;
-            // 
-            // clientesDataGridViewTextBoxColumn
-            // 
-            this.clientesDataGridViewTextBoxColumn.DataPropertyName = "Clientes";
-            this.clientesDataGridViewTextBoxColumn.HeaderText = "Clientes";
-            this.clientesDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.clientesDataGridViewTextBoxColumn.Name = "clientesDataGridViewTextBoxColumn";
-            // 
-            // dNIDataGridViewTextBoxColumn
-            // 
-            this.dNIDataGridViewTextBoxColumn.DataPropertyName = "DNI";
-            this.dNIDataGridViewTextBoxColumn.HeaderText = "DNI";
-            this.dNIDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.dNIDataGridViewTextBoxColumn.Name = "dNIDataGridViewTextBoxColumn";
-            // 
-            // direccionDataGridViewTextBoxColumn
-            // 
-            this.direccionDataGridViewTextBoxColumn.DataPropertyName = "Direccion";
-            this.direccionDataGridViewTextBoxColumn.HeaderText = "Direccion";
-            this.direccionDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.direccionDataGridViewTextBoxColumn.Name = "direccionDataGridViewTextBoxColumn";
-            // 
-            // telefonoDataGridViewTextBoxColumn
-            // 
-            this.telefonoDataGridViewTextBoxColumn.DataPropertyName = "Telefono";
-            this.telefonoDataGridViewTextBoxColumn.HeaderText = "Telefono";
-            this.telefonoDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.telefonoDataGridViewTextBoxColumn.Name = "telefonoDataGridViewTextBoxColumn";
-            // 
-            // correoDataGridViewTextBoxColumn
-            // 
-            this.correoDataGridViewTextBoxColumn.DataPropertyName = "Correo";
-            this.correoDataGridViewTextBoxColumn.HeaderText = "Correo";
-            this.correoDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.correoDataGridViewTextBoxColumn.Name = "correoDataGridViewTextBoxColumn";
-            // 
-            // sPReporteClientesResultBindingSource
-            // 
-            this.sPReporteClientesResultBindingSource.DataSource = typeof(WindowsFormsApp1.SP_ReporteClientes_Result);
             // 
             // tableLayoutPanel3
             // 
@@ -334,11 +281,6 @@
             this.dataGridView3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView3.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.nombredelproductoDataGridViewTextBoxColumn1,
-            this.marcaDataGridViewTextBoxColumn1,
-            this.serieDataGridViewTextBoxColumn1,
-            this.stockDataGridViewTextBoxColumn1});
             this.dataGridView3.DataSource = this.sPReporteProductosResultBindingSource;
             this.dataGridView3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView3.Location = new System.Drawing.Point(53, 28);
@@ -347,38 +289,6 @@
             this.dataGridView3.RowTemplate.Height = 24;
             this.dataGridView3.Size = new System.Drawing.Size(907, 455);
             this.dataGridView3.TabIndex = 1;
-            // 
-            // nombredelproductoDataGridViewTextBoxColumn1
-            // 
-            this.nombredelproductoDataGridViewTextBoxColumn1.DataPropertyName = "Nombre_del_producto";
-            this.nombredelproductoDataGridViewTextBoxColumn1.HeaderText = "Nombre_del_producto";
-            this.nombredelproductoDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.nombredelproductoDataGridViewTextBoxColumn1.Name = "nombredelproductoDataGridViewTextBoxColumn1";
-            // 
-            // marcaDataGridViewTextBoxColumn1
-            // 
-            this.marcaDataGridViewTextBoxColumn1.DataPropertyName = "Marca";
-            this.marcaDataGridViewTextBoxColumn1.HeaderText = "Marca";
-            this.marcaDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.marcaDataGridViewTextBoxColumn1.Name = "marcaDataGridViewTextBoxColumn1";
-            // 
-            // serieDataGridViewTextBoxColumn1
-            // 
-            this.serieDataGridViewTextBoxColumn1.DataPropertyName = "Serie";
-            this.serieDataGridViewTextBoxColumn1.HeaderText = "Serie";
-            this.serieDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.serieDataGridViewTextBoxColumn1.Name = "serieDataGridViewTextBoxColumn1";
-            // 
-            // stockDataGridViewTextBoxColumn1
-            // 
-            this.stockDataGridViewTextBoxColumn1.DataPropertyName = "Stock";
-            this.stockDataGridViewTextBoxColumn1.HeaderText = "Stock";
-            this.stockDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.stockDataGridViewTextBoxColumn1.Name = "stockDataGridViewTextBoxColumn1";
-            // 
-            // sPReporteProductosResultBindingSource
-            // 
-            this.sPReporteProductosResultBindingSource.DataSource = typeof(WindowsFormsApp1.SP_ReporteProductos_Result);
             // 
             // tabPage2
             // 
@@ -395,17 +305,6 @@
             // 
             this.dataGridView2.AutoGenerateColumns = false;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idpedidoDataGridViewTextBoxColumn,
-            this.nombreclienteDataGridViewTextBoxColumn,
-            this.fechapedidoDataGridViewTextBoxColumn,
-            this.nombremarcaDataGridViewTextBoxColumn,
-            this.nombreserieDataGridViewTextBoxColumn,
-            this.nombreproductoDataGridViewTextBoxColumn,
-            this.cantidadventaproductoDataGridViewTextBoxColumn,
-            this.precioproductoDataGridViewTextBoxColumn,
-            this.subtotalDataGridViewTextBoxColumn,
-            this.preciototalpedidoDataGridViewTextBoxColumn});
             this.dataGridView2.DataSource = this.sPReportePedidosResultBindingSource;
             this.dataGridView2.Location = new System.Drawing.Point(31, 56);
             this.dataGridView2.Name = "dataGridView2";
@@ -413,90 +312,6 @@
             this.dataGridView2.RowTemplate.Height = 24;
             this.dataGridView2.Size = new System.Drawing.Size(923, 461);
             this.dataGridView2.TabIndex = 1;
-            // 
-            // idpedidoDataGridViewTextBoxColumn
-            // 
-            this.idpedidoDataGridViewTextBoxColumn.DataPropertyName = "id_pedido";
-            this.idpedidoDataGridViewTextBoxColumn.HeaderText = "id_pedido";
-            this.idpedidoDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.idpedidoDataGridViewTextBoxColumn.Name = "idpedidoDataGridViewTextBoxColumn";
-            this.idpedidoDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // nombreclienteDataGridViewTextBoxColumn
-            // 
-            this.nombreclienteDataGridViewTextBoxColumn.DataPropertyName = "nombre_cliente";
-            this.nombreclienteDataGridViewTextBoxColumn.HeaderText = "nombre_cliente";
-            this.nombreclienteDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.nombreclienteDataGridViewTextBoxColumn.Name = "nombreclienteDataGridViewTextBoxColumn";
-            this.nombreclienteDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // fechapedidoDataGridViewTextBoxColumn
-            // 
-            this.fechapedidoDataGridViewTextBoxColumn.DataPropertyName = "fecha_pedido";
-            this.fechapedidoDataGridViewTextBoxColumn.HeaderText = "fecha_pedido";
-            this.fechapedidoDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.fechapedidoDataGridViewTextBoxColumn.Name = "fechapedidoDataGridViewTextBoxColumn";
-            this.fechapedidoDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // nombremarcaDataGridViewTextBoxColumn
-            // 
-            this.nombremarcaDataGridViewTextBoxColumn.DataPropertyName = "nombre_marca";
-            this.nombremarcaDataGridViewTextBoxColumn.HeaderText = "nombre_marca";
-            this.nombremarcaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.nombremarcaDataGridViewTextBoxColumn.Name = "nombremarcaDataGridViewTextBoxColumn";
-            this.nombremarcaDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // nombreserieDataGridViewTextBoxColumn
-            // 
-            this.nombreserieDataGridViewTextBoxColumn.DataPropertyName = "nombre_serie";
-            this.nombreserieDataGridViewTextBoxColumn.HeaderText = "nombre_serie";
-            this.nombreserieDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.nombreserieDataGridViewTextBoxColumn.Name = "nombreserieDataGridViewTextBoxColumn";
-            this.nombreserieDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // nombreproductoDataGridViewTextBoxColumn
-            // 
-            this.nombreproductoDataGridViewTextBoxColumn.DataPropertyName = "nombre_producto";
-            this.nombreproductoDataGridViewTextBoxColumn.HeaderText = "nombre_producto";
-            this.nombreproductoDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.nombreproductoDataGridViewTextBoxColumn.Name = "nombreproductoDataGridViewTextBoxColumn";
-            this.nombreproductoDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // cantidadventaproductoDataGridViewTextBoxColumn
-            // 
-            this.cantidadventaproductoDataGridViewTextBoxColumn.DataPropertyName = "cantidad_venta_producto";
-            this.cantidadventaproductoDataGridViewTextBoxColumn.HeaderText = "cantidad_venta_producto";
-            this.cantidadventaproductoDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.cantidadventaproductoDataGridViewTextBoxColumn.Name = "cantidadventaproductoDataGridViewTextBoxColumn";
-            this.cantidadventaproductoDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // precioproductoDataGridViewTextBoxColumn
-            // 
-            this.precioproductoDataGridViewTextBoxColumn.DataPropertyName = "precio_producto";
-            this.precioproductoDataGridViewTextBoxColumn.HeaderText = "precio_producto";
-            this.precioproductoDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.precioproductoDataGridViewTextBoxColumn.Name = "precioproductoDataGridViewTextBoxColumn";
-            this.precioproductoDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // subtotalDataGridViewTextBoxColumn
-            // 
-            this.subtotalDataGridViewTextBoxColumn.DataPropertyName = "Subtotal";
-            this.subtotalDataGridViewTextBoxColumn.HeaderText = "Subtotal";
-            this.subtotalDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.subtotalDataGridViewTextBoxColumn.Name = "subtotalDataGridViewTextBoxColumn";
-            this.subtotalDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // preciototalpedidoDataGridViewTextBoxColumn
-            // 
-            this.preciototalpedidoDataGridViewTextBoxColumn.DataPropertyName = "precio_total_pedido";
-            this.preciototalpedidoDataGridViewTextBoxColumn.HeaderText = "precio_total_pedido";
-            this.preciototalpedidoDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.preciototalpedidoDataGridViewTextBoxColumn.Name = "preciototalpedidoDataGridViewTextBoxColumn";
-            this.preciototalpedidoDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // sPReportePedidosResultBindingSource
-            // 
-            this.sPReportePedidosResultBindingSource.DataSource = typeof(WindowsFormsApp1.SP_ReportePedidos_Result);
             // 
             // btnPedidosReport
             // 
@@ -527,21 +342,17 @@
             this.tabPage4.Text = "tabPage4";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // dpFechaIni
+            // reportViewer1
             // 
-            this.dpFechaIni.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dpFechaIni.Location = new System.Drawing.Point(89, 62);
-            this.dpFechaIni.Name = "dpFechaIni";
-            this.dpFechaIni.Size = new System.Drawing.Size(200, 28);
-            this.dpFechaIni.TabIndex = 0;
-            // 
-            // dpFechaFin
-            // 
-            this.dpFechaFin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dpFechaFin.Location = new System.Drawing.Point(499, 62);
-            this.dpFechaFin.Name = "dpFechaFin";
-            this.dpFechaFin.Size = new System.Drawing.Size(200, 28);
-            this.dpFechaFin.TabIndex = 1;
+            reportDataSource1.Name = "PedxFechaDS";
+            reportDataSource1.Value = this.SP_ReportePedidosxFecha_ResultBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "WindowsFormsApp1.RepPedxFecha.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(69, 140);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.ServerReport.BearerToken = null;
+            this.reportViewer1.Size = new System.Drawing.Size(855, 449);
+            this.reportViewer1.TabIndex = 3;
             // 
             // btnCargarReportexFecha
             // 
@@ -558,21 +369,89 @@
             this.btnCargarReportexFecha.UseVisualStyleBackColor = true;
             this.btnCargarReportexFecha.Click += new System.EventHandler(this.btnCargarReportexFecha_Click);
             // 
-            // reportViewer1
+            // dpFechaFin
             // 
-            reportDataSource3.Name = "PedxFechaDS";
-            reportDataSource3.Value = this.SP_ReportePedidosxFecha_ResultBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource3);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "WindowsFormsApp1.RepPedxFecha.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(72, 146);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(855, 449);
-            this.reportViewer1.TabIndex = 3;
+            this.dpFechaFin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dpFechaFin.Location = new System.Drawing.Point(499, 62);
+            this.dpFechaFin.Name = "dpFechaFin";
+            this.dpFechaFin.Size = new System.Drawing.Size(200, 28);
+            this.dpFechaFin.TabIndex = 1;
             // 
-            // SP_ReportePedidosxFecha_ResultBindingSource
+            // dpFechaIni
             // 
-            this.SP_ReportePedidosxFecha_ResultBindingSource.DataSource = typeof(WindowsFormsApp1.SP_ReportePedidosxFecha_Result);
+            this.dpFechaIni.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dpFechaIni.Location = new System.Drawing.Point(89, 62);
+            this.dpFechaIni.Name = "dpFechaIni";
+            this.dpFechaIni.Size = new System.Drawing.Size(200, 28);
+            this.dpFechaIni.TabIndex = 0;
+            // 
+            // tabPage5
+            // 
+            this.tabPage5.Controls.Add(this.label1);
+            this.tabPage5.Controls.Add(this.reportViewer2);
+            this.tabPage5.Controls.Add(this.label2);
+            this.tabPage5.Controls.Add(this.btnVerClientexPedido);
+            this.tabPage5.Controls.Add(this.CbxClientePedido);
+            this.tabPage5.Location = new System.Drawing.Point(4, 30);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(1021, 649);
+            this.tabPage5.TabIndex = 5;
+            this.tabPage5.Text = "tabPage5";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // reportViewer2
+            // 
+            reportDataSource2.Name = "ClientexPedidoDS";
+            reportDataSource2.Value = this.SP_BuscarPedidosCliente_ResultBindingSource;
+            this.reportViewer2.LocalReport.DataSources.Add(reportDataSource2);
+            this.reportViewer2.LocalReport.ReportEmbeddedResource = "WindowsFormsApp1.RepClientexPedido.rdlc";
+            this.reportViewer2.Location = new System.Drawing.Point(64, 194);
+            this.reportViewer2.Name = "reportViewer2";
+            this.reportViewer2.ServerReport.BearerToken = null;
+            this.reportViewer2.Size = new System.Drawing.Size(860, 318);
+            this.reportViewer2.TabIndex = 4;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(195, 102);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(60, 21);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "label2";
+            // 
+            // btnVerClientexPedido
+            // 
+            this.btnVerClientexPedido.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnVerClientexPedido.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnVerClientexPedido.IconColor = System.Drawing.Color.Black;
+            this.btnVerClientexPedido.IconSize = 16;
+            this.btnVerClientexPedido.Location = new System.Drawing.Point(736, 91);
+            this.btnVerClientexPedido.Name = "btnVerClientexPedido";
+            this.btnVerClientexPedido.Rotation = 0D;
+            this.btnVerClientexPedido.Size = new System.Drawing.Size(179, 29);
+            this.btnVerClientexPedido.TabIndex = 1;
+            this.btnVerClientexPedido.Text = "iconButton1";
+            this.btnVerClientexPedido.UseVisualStyleBackColor = true;
+            this.btnVerClientexPedido.Click += new System.EventHandler(this.btnVerClientexPedido_Click);
+            // 
+            // CbxClientePedido
+            // 
+            this.CbxClientePedido.FormattingEnabled = true;
+            this.CbxClientePedido.Location = new System.Drawing.Point(290, 99);
+            this.CbxClientePedido.Name = "CbxClientePedido";
+            this.CbxClientePedido.Size = new System.Drawing.Size(358, 29);
+            this.CbxClientePedido.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(195, 140);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(60, 21);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "label1";
             // 
             // ModuloReportes
             // 
@@ -583,6 +462,8 @@
             this.Name = "ModuloReportes";
             this.Text = "ModuloReportes";
             this.Load += new System.EventHandler(this.ModuloReportes_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.SP_ReportePedidosxFecha_ResultBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SP_BuscarPedidosCliente_ResultBindingSource)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -599,9 +480,10 @@
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPReportePedidosResultBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sPReporteFacturaResultBindingSource)).EndInit();
             this.tabPage4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.SP_ReportePedidosxFecha_ResultBindingSource)).EndInit();
+            this.tabPage5.ResumeLayout(false);
+            this.tabPage5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sPReporteFacturaResultBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -654,5 +536,12 @@
         private System.Windows.Forms.DateTimePicker dpFechaFin;
         private System.Windows.Forms.DateTimePicker dpFechaIni;
         private System.Windows.Forms.BindingSource SP_ReportePedidosxFecha_ResultBindingSource;
+        private System.Windows.Forms.BindingSource SP_BuscarPedidosCliente_ResultBindingSource;
+        private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.ComboBox CbxClientePedido;
+        private System.Windows.Forms.Label label2;
+        private FontAwesome.Sharp.IconButton btnVerClientexPedido;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer2;
+        private System.Windows.Forms.Label label1;
     }
 }

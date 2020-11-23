@@ -157,6 +157,21 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RClientePedidoReporte.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RClientePedidoReporte.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RClientePedidoReporte.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RClientePedidoReporte.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RClientePedidoReporte.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RClientePedidoReporte.edmx</DependentUpon>
+    </Compile>
     <Compile Include="RClientesReporte.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -265,6 +280,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RProductosReporte.edmx</DependentUpon>
     </Compile>
+    <Compile Include="SP_BuscarPedidosCliente_Result.cs">
+      <DependentUpon>RClientePedidoReporte.tt</DependentUpon>
+    </Compile>
     <Compile Include="SP_FacturaCompleta_Result.cs">
       <DependentUpon>RFacturaInfoCompleta.tt</DependentUpon>
     </Compile>
@@ -327,6 +345,8 @@
     <EmbeddedResource Include="RepClientes.resx">
       <DependentUpon>RepClientes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RepClientexPedido.rdlc" />
+    <EmbeddedResource Include="RepClixPed.rdlc" />
     <EmbeddedResource Include="RepFactur.rdlc" />
     <EmbeddedResource Include="RepFacturaInfo.rdlc" />
     <EmbeddedResource Include="RepPedidos.rdlc" />
@@ -341,6 +361,7 @@
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Conexion.datasource" />
     <None Include="Properties\DataSources\RClientesEntities.datasource" />
+    <None Include="Properties\DataSources\SP_BuscarPedidosCliente_Result.datasource" />
     <None Include="Properties\DataSources\SP_FacturaCompleta_Result1.datasource" />
     <None Include="Properties\DataSources\SP_ReporteClientes_Result.datasource" />
     <None Include="Properties\DataSources\SP_ReporteFactura_Result.datasource" />
@@ -360,6 +381,13 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>RClientesReporte.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <EntityDeploy Include="RClientePedidoReporte.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>RClientePedidoReporte.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="RClientePedidoReporte.edmx.diagram">
+      <DependentUpon>RClientePedidoReporte.edmx</DependentUpon>
+    </None>
     <None Include="RClientesReporte.edmx.diagram">
       <DependentUpon>RClientesReporte.edmx</DependentUpon>
     </None>
@@ -408,6 +436,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="pos.ico" />
+    <Content Include="RClientePedidoReporte.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>RClientePedidoReporte.edmx</DependentUpon>
+      <LastGenOutput>RClientePedidoReporte.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="RClientePedidoReporte.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>RClientePedidoReporte.edmx</DependentUpon>
+      <LastGenOutput>RClientePedidoReporte.cs</LastGenOutput>
+    </Content>
     <Content Include="RClientesReporte.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>RClientesReporte.edmx</DependentUpon>

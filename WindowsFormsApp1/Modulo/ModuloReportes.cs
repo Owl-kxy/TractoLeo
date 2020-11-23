@@ -7,14 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace WindowsFormsApp1.Modulo
 {
     public partial class ModuloReportes : Form
     {
+
+        Conexion con = new Conexion();
         public ModuloReportes()
         {
             InitializeComponent();
+            AutocompletarCbxClientePedido();
         }
 
         private void btnImprimir_Click(object sender, EventArgs e)
@@ -81,14 +85,13 @@ namespace WindowsFormsApp1.Modulo
             using (PedidosEntities dped = new PedidosEntities())
                 sPReportePedidosResultBindingSource.DataSource = dped.SP_ReportePedidos().ToList();
             this.reportViewer1.RefreshReport();
+            this.reportViewer2.RefreshReport();
         }
 
         private void btnCargarReportexFecha_Click(object sender, EventArgs e)
         {
             using (PxFEntities fechaPed = new PxFEntities())
             {
-                double x = -1;
-
                 SP_ReportePedidosxFecha_ResultBindingSource.DataSource = fechaPed.SP_ReportePedidosxFecha(dpFechaIni.Value, dpFechaFin.Value).ToList();
                 Microsoft.Reporting.WinForms.ReportParameter[] parametros = new Microsoft.Reporting.WinForms.ReportParameter[]
                 {
@@ -100,5 +103,52 @@ namespace WindowsFormsApp1.Modulo
                 reportViewer1.RefreshReport();
             }
         }
+
+        private void btnVerClientexPedido_Click(object sender, EventArgs e)
+        {
+            using (ClientePedidoEntities cliped = new ClientePedidoEntities())
+            {
+                if (CbxClientePedido.SelectedIndex != -1)
+                {
+                    label2.Text = CbxClientePedido.SelectedValue.ToString();
+                    label1.Text = CbxClientePedido.Text.ToString();
+                }
+
+                SP_BuscarPedidosCliente_ResultBindingSource.DataSource = cliped.SP_BuscarPedidosCliente(Convert.ToInt32(CbxClientePedido.SelectedValue));
+                Microsoft.Reporting.WinForms.ReportParameter[] dato = new Microsoft.Reporting.WinForms.ReportParameter[]
+                {
+                    new Microsoft.Reporting.WinForms.ReportParameter("idcliente",CbxClientePedido.SelectedValue.ToString()),
+                    new Microsoft.Reporting.WinForms.ReportParameter("nombre",label1.Text)
+                };
+
+                reportViewer2.LocalReport.SetParameters(dato);
+                reportViewer2.RefreshReport();
+            }
+        }
+
+        private void AutocompletarCbxClientePedido()
+        {
+            SqlCommand cmd = new SqlCommand("SP_AutocompletarNombreCliente", con.cadenaSql);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+
+            da.Fill(dt);
+
+            CbxClientePedido.DataSource = dt;
+            CbxClientePedido.DisplayMember = "NombreCompleto";
+            CbxClientePedido.ValueMember = "id_cliente";
+
+            // Seccion de autocompletado
+            AutoCompleteStringCollection listaClientes = new AutoCompleteStringCollection();
+
+            foreach (DataRow dr in dt.Rows)
+                listaClientes.Add(Convert.ToString(dr["NombreCompleto"]));
+
+            CbxClientePedido.AutoCompleteCustomSource = listaClientes;
+            CbxClientePedido.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            CbxClientePedido.AutoCompleteSource = AutoCompleteSource.CustomSource;
+        }
+
+
     }
 }
