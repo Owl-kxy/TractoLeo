@@ -178,6 +178,12 @@
     <Compile Include="RepClientes.Designer.cs">
       <DependentUpon>RepClientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="RepPedidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RepPedidos.Designer.cs">
+      <DependentUpon>RepPedidos.cs</DependentUpon>
+    </Compile>
     <Compile Include="RepProductos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -214,6 +220,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RFacturaReporte.edmx</DependentUpon>
     </Compile>
+    <Compile Include="RPedidosReporte.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RPedidosReporte.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RPedidosReporte.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RPedidosReporte.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RPedidosReporte.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RPedidosReporte.edmx</DependentUpon>
+    </Compile>
     <Compile Include="RProductosReporte.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -237,6 +258,9 @@
     </Compile>
     <Compile Include="SP_ReporteFactura_Result.cs">
       <DependentUpon>RFacturaReporte.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_ReportePedidos_Result.cs">
+      <DependentUpon>RPedidosReporte.tt</DependentUpon>
     </Compile>
     <Compile Include="SP_ReporteProductos_Result.cs">
       <DependentUpon>RProductosReporte.tt</DependentUpon>
@@ -287,6 +311,11 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RepFactur.rdlc" />
     <EmbeddedResource Include="RepFacturaInfo.rdlc" />
+    <EmbeddedResource Include="RepPedidoFecha.rdlc" />
+    <EmbeddedResource Include="RepPedidos.rdlc" />
+    <EmbeddedResource Include="RepPedidos.resx">
+      <DependentUpon>RepPedidos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RepProductos.rdlc" />
     <EmbeddedResource Include="RepProductos.resx">
       <DependentUpon>RepProductos.cs</DependentUpon>
@@ -297,6 +326,8 @@
     <None Include="Properties\DataSources\SP_FacturaCompleta_Result1.datasource" />
     <None Include="Properties\DataSources\SP_ReporteClientes_Result.datasource" />
     <None Include="Properties\DataSources\SP_ReporteFactura_Result.datasource" />
+    <None Include="Properties\DataSources\SP_ReportePedidosxFecha_Result.datasource" />
+    <None Include="Properties\DataSources\SP_ReportePedidos_Result.datasource" />
     <None Include="Properties\DataSources\SP_ReporteProductos_Result.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -331,6 +362,13 @@
     </None>
     <None Include="RFacturaReporte.edmx.diagram">
       <DependentUpon>RFacturaReporte.edmx</DependentUpon>
+    </None>
+    <EntityDeploy Include="RPedidosReporte.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>RPedidosReporte.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="RPedidosReporte.edmx.diagram">
+      <DependentUpon>RPedidosReporte.edmx</DependentUpon>
     </None>
     <None Include="RProductosReporte.edmx.diagram">
       <DependentUpon>RProductosReporte.edmx</DependentUpon>
@@ -374,6 +412,16 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>RFacturaReporte.edmx</DependentUpon>
       <LastGenOutput>RFacturaReporte.cs</LastGenOutput>
+    </Content>
+    <Content Include="RPedidosReporte.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>RPedidosReporte.edmx</DependentUpon>
+      <LastGenOutput>RPedidosReporte.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="RPedidosReporte.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>RPedidosReporte.edmx</DependentUpon>
+      <LastGenOutput>RPedidosReporte.cs</LastGenOutput>
     </Content>
     <Content Include="RProductosReporte.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

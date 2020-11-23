@@ -29,16 +29,17 @@ namespace WindowsFormsApp1.Modulo
             }
         }
 
-        private void ModuloReportes_Load(object sender, EventArgs e)
+        private void btnPedidosReport_Click(object sender, EventArgs e)
         {
-            using (ReportClientesEntities db = new ReportClientesEntities())
-                sPReporteClientesResultBindingSource.DataSource = db.SP_ReporteClientes().ToList();
-
-            using (ProductosEntities dprod = new ProductosEntities())
-                sPReporteProductosResultBindingSource.DataSource = dprod.SP_ReporteProductos().ToList();
-
-            using (ReportClientesEntities dcli = new ReportClientesEntities())
-                sPReporteClientesResultBindingSource.DataSource = dcli.SP_ReporteClientes().ToList();
+            List<SP_ReportePedidos_Result> listpedidos = sPReportePedidosResultBindingSource.DataSource as List<SP_ReportePedidos_Result>;
+            if (listpedidos !=null)
+            {
+                using (RepPedidos frp = new RepPedidos(listpedidos))
+                { 
+                    frp.ShowDialog(); 
+                }
+                    
+            }
         }
 
         private void btnProductosReporte_Click(object sender, EventArgs e)
@@ -64,5 +65,22 @@ namespace WindowsFormsApp1.Modulo
                 }
             }
         }
+
+
+        private void ModuloReportes_Load(object sender, EventArgs e)
+        {
+            using (ReportClientesEntities db = new ReportClientesEntities())
+                sPReporteClientesResultBindingSource.DataSource = db.SP_ReporteClientes().ToList();
+
+            using (ProductosEntities dprod = new ProductosEntities())
+                sPReporteProductosResultBindingSource.DataSource = dprod.SP_ReporteProductos().ToList();
+
+            using (ReportClientesEntities dcli = new ReportClientesEntities())
+                sPReporteClientesResultBindingSource.DataSource = dcli.SP_ReporteClientes().ToList();
+
+            using (PedidosEntities dped = new PedidosEntities())
+                sPReportePedidosResultBindingSource.DataSource = dped.SP_ReportePedidos().ToList();
+        }
+
     }
 }

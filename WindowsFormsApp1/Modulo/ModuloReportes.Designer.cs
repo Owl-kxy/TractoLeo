@@ -34,42 +34,58 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.cachedClientesReport1 = new WindowsFormsApp1.CachedClientesReport();
             this.clientesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dNIDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.direccionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.telefonoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.correoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sPReporteClientesResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.btnImprimir = new FontAwesome.Sharp.IconButton();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.btnProductosReporte = new FontAwesome.Sharp.IconButton();
-            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.nombredelproductoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.marcaDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.serieDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stockDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sPReporteProductosResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.cachedClientesReport1 = new WindowsFormsApp1.CachedClientesReport();
+            this.btnPedidosReport = new FontAwesome.Sharp.IconButton();
             this.sPReporteFacturaResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.sPReportePedidosResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.idpedidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreclienteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechapedidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombremarcaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreserieDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreproductoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidadventaproductoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precioproductoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.subtotalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.preciototalpedidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sPReporteClientesResultBindingSource)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sPReporteClientesResultBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPReporteProductosResultBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPReporteFacturaResultBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sPReportePedidosResultBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -150,45 +166,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(902, 451);
             this.dataGridView1.TabIndex = 2;
             // 
-            // clientesDataGridViewTextBoxColumn
-            // 
-            this.clientesDataGridViewTextBoxColumn.DataPropertyName = "Clientes";
-            this.clientesDataGridViewTextBoxColumn.HeaderText = "Clientes";
-            this.clientesDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.clientesDataGridViewTextBoxColumn.Name = "clientesDataGridViewTextBoxColumn";
-            // 
-            // dNIDataGridViewTextBoxColumn
-            // 
-            this.dNIDataGridViewTextBoxColumn.DataPropertyName = "DNI";
-            this.dNIDataGridViewTextBoxColumn.HeaderText = "DNI";
-            this.dNIDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.dNIDataGridViewTextBoxColumn.Name = "dNIDataGridViewTextBoxColumn";
-            // 
-            // direccionDataGridViewTextBoxColumn
-            // 
-            this.direccionDataGridViewTextBoxColumn.DataPropertyName = "Direccion";
-            this.direccionDataGridViewTextBoxColumn.HeaderText = "Direccion";
-            this.direccionDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.direccionDataGridViewTextBoxColumn.Name = "direccionDataGridViewTextBoxColumn";
-            // 
-            // telefonoDataGridViewTextBoxColumn
-            // 
-            this.telefonoDataGridViewTextBoxColumn.DataPropertyName = "Telefono";
-            this.telefonoDataGridViewTextBoxColumn.HeaderText = "Telefono";
-            this.telefonoDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.telefonoDataGridViewTextBoxColumn.Name = "telefonoDataGridViewTextBoxColumn";
-            // 
-            // correoDataGridViewTextBoxColumn
-            // 
-            this.correoDataGridViewTextBoxColumn.DataPropertyName = "Correo";
-            this.correoDataGridViewTextBoxColumn.HeaderText = "Correo";
-            this.correoDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.correoDataGridViewTextBoxColumn.Name = "correoDataGridViewTextBoxColumn";
-            // 
-            // sPReporteClientesResultBindingSource
-            // 
-            this.sPReporteClientesResultBindingSource.DataSource = typeof(WindowsFormsApp1.SP_ReporteClientes_Result);
-            // 
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.ColumnCount = 5;
@@ -207,22 +184,6 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(1009, 123);
             this.tableLayoutPanel3.TabIndex = 1;
-            // 
-            // btnImprimir
-            // 
-            this.btnImprimir.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btnImprimir.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnImprimir.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btnImprimir.IconColor = System.Drawing.Color.Black;
-            this.btnImprimir.IconSize = 16;
-            this.btnImprimir.Location = new System.Drawing.Point(405, 44);
-            this.btnImprimir.Name = "btnImprimir";
-            this.btnImprimir.Rotation = 0D;
-            this.btnImprimir.Size = new System.Drawing.Size(195, 34);
-            this.btnImprimir.TabIndex = 1;
-            this.btnImprimir.Text = "&Imprimir reporte";
-            this.btnImprimir.UseVisualStyleBackColor = true;
-            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
             // tabPage3
             // 
@@ -269,22 +230,6 @@
             this.tableLayoutPanel5.Size = new System.Drawing.Size(1015, 124);
             this.tableLayoutPanel5.TabIndex = 0;
             // 
-            // btnProductosReporte
-            // 
-            this.btnProductosReporte.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btnProductosReporte.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProductosReporte.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btnProductosReporte.IconColor = System.Drawing.Color.Black;
-            this.btnProductosReporte.IconSize = 16;
-            this.btnProductosReporte.Location = new System.Drawing.Point(409, 44);
-            this.btnProductosReporte.Name = "btnProductosReporte";
-            this.btnProductosReporte.Rotation = 0D;
-            this.btnProductosReporte.Size = new System.Drawing.Size(197, 35);
-            this.btnProductosReporte.TabIndex = 0;
-            this.btnProductosReporte.Text = "&Imprimir reporte";
-            this.btnProductosReporte.UseVisualStyleBackColor = true;
-            this.btnProductosReporte.Click += new System.EventHandler(this.btnProductosReporte_Click);
-            // 
             // tableLayoutPanel6
             // 
             this.tableLayoutPanel6.ColumnCount = 3;
@@ -322,6 +267,88 @@
             this.dataGridView3.Size = new System.Drawing.Size(907, 455);
             this.dataGridView3.TabIndex = 1;
             // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.dataGridView2);
+            this.tabPage2.Controls.Add(this.btnPedidosReport);
+            this.tabPage2.Location = new System.Drawing.Point(4, 30);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Size = new System.Drawing.Size(1021, 649);
+            this.tabPage2.TabIndex = 3;
+            this.tabPage2.Text = "ReportePedidos";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // clientesDataGridViewTextBoxColumn
+            // 
+            this.clientesDataGridViewTextBoxColumn.DataPropertyName = "Clientes";
+            this.clientesDataGridViewTextBoxColumn.HeaderText = "Clientes";
+            this.clientesDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.clientesDataGridViewTextBoxColumn.Name = "clientesDataGridViewTextBoxColumn";
+            // 
+            // dNIDataGridViewTextBoxColumn
+            // 
+            this.dNIDataGridViewTextBoxColumn.DataPropertyName = "DNI";
+            this.dNIDataGridViewTextBoxColumn.HeaderText = "DNI";
+            this.dNIDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.dNIDataGridViewTextBoxColumn.Name = "dNIDataGridViewTextBoxColumn";
+            // 
+            // direccionDataGridViewTextBoxColumn
+            // 
+            this.direccionDataGridViewTextBoxColumn.DataPropertyName = "Direccion";
+            this.direccionDataGridViewTextBoxColumn.HeaderText = "Direccion";
+            this.direccionDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.direccionDataGridViewTextBoxColumn.Name = "direccionDataGridViewTextBoxColumn";
+            // 
+            // telefonoDataGridViewTextBoxColumn
+            // 
+            this.telefonoDataGridViewTextBoxColumn.DataPropertyName = "Telefono";
+            this.telefonoDataGridViewTextBoxColumn.HeaderText = "Telefono";
+            this.telefonoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.telefonoDataGridViewTextBoxColumn.Name = "telefonoDataGridViewTextBoxColumn";
+            // 
+            // correoDataGridViewTextBoxColumn
+            // 
+            this.correoDataGridViewTextBoxColumn.DataPropertyName = "Correo";
+            this.correoDataGridViewTextBoxColumn.HeaderText = "Correo";
+            this.correoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.correoDataGridViewTextBoxColumn.Name = "correoDataGridViewTextBoxColumn";
+            // 
+            // sPReporteClientesResultBindingSource
+            // 
+            this.sPReporteClientesResultBindingSource.DataSource = typeof(WindowsFormsApp1.SP_ReporteClientes_Result);
+            // 
+            // btnImprimir
+            // 
+            this.btnImprimir.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnImprimir.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImprimir.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnImprimir.IconColor = System.Drawing.Color.Black;
+            this.btnImprimir.IconSize = 16;
+            this.btnImprimir.Location = new System.Drawing.Point(405, 44);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Rotation = 0D;
+            this.btnImprimir.Size = new System.Drawing.Size(195, 34);
+            this.btnImprimir.TabIndex = 1;
+            this.btnImprimir.Text = "&Imprimir reporte";
+            this.btnImprimir.UseVisualStyleBackColor = true;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
+            // 
+            // btnProductosReporte
+            // 
+            this.btnProductosReporte.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnProductosReporte.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProductosReporte.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnProductosReporte.IconColor = System.Drawing.Color.Black;
+            this.btnProductosReporte.IconSize = 16;
+            this.btnProductosReporte.Location = new System.Drawing.Point(409, 44);
+            this.btnProductosReporte.Name = "btnProductosReporte";
+            this.btnProductosReporte.Rotation = 0D;
+            this.btnProductosReporte.Size = new System.Drawing.Size(197, 35);
+            this.btnProductosReporte.TabIndex = 0;
+            this.btnProductosReporte.Text = "&Imprimir reporte";
+            this.btnProductosReporte.UseVisualStyleBackColor = true;
+            this.btnProductosReporte.Click += new System.EventHandler(this.btnProductosReporte_Click);
+            // 
             // nombredelproductoDataGridViewTextBoxColumn1
             // 
             this.nombredelproductoDataGridViewTextBoxColumn1.DataPropertyName = "Nombre_del_producto";
@@ -354,14 +381,127 @@
             // 
             this.sPReporteProductosResultBindingSource.DataSource = typeof(WindowsFormsApp1.SP_ReporteProductos_Result);
             // 
-            // tabPage2
+            // btnPedidosReport
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 30);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Size = new System.Drawing.Size(1021, 649);
-            this.tabPage2.TabIndex = 3;
-            this.tabPage2.Text = "ReportePedidos";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.btnPedidosReport.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnPedidosReport.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnPedidosReport.IconColor = System.Drawing.Color.Black;
+            this.btnPedidosReport.IconSize = 16;
+            this.btnPedidosReport.Location = new System.Drawing.Point(366, 523);
+            this.btnPedidosReport.Name = "btnPedidosReport";
+            this.btnPedidosReport.Rotation = 0D;
+            this.btnPedidosReport.Size = new System.Drawing.Size(267, 63);
+            this.btnPedidosReport.TabIndex = 0;
+            this.btnPedidosReport.Text = "Ver Pedidos";
+            this.btnPedidosReport.UseVisualStyleBackColor = true;
+            this.btnPedidosReport.Click += new System.EventHandler(this.btnPedidosReport_Click);
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AutoGenerateColumns = false;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idpedidoDataGridViewTextBoxColumn,
+            this.nombreclienteDataGridViewTextBoxColumn,
+            this.fechapedidoDataGridViewTextBoxColumn,
+            this.nombremarcaDataGridViewTextBoxColumn,
+            this.nombreserieDataGridViewTextBoxColumn,
+            this.nombreproductoDataGridViewTextBoxColumn,
+            this.cantidadventaproductoDataGridViewTextBoxColumn,
+            this.precioproductoDataGridViewTextBoxColumn,
+            this.subtotalDataGridViewTextBoxColumn,
+            this.preciototalpedidoDataGridViewTextBoxColumn});
+            this.dataGridView2.DataSource = this.sPReportePedidosResultBindingSource;
+            this.dataGridView2.Location = new System.Drawing.Point(31, 56);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersWidth = 51;
+            this.dataGridView2.RowTemplate.Height = 24;
+            this.dataGridView2.Size = new System.Drawing.Size(923, 461);
+            this.dataGridView2.TabIndex = 1;
+            // 
+            // sPReportePedidosResultBindingSource
+            // 
+            this.sPReportePedidosResultBindingSource.DataSource = typeof(WindowsFormsApp1.SP_ReportePedidos_Result);
+            // 
+            // idpedidoDataGridViewTextBoxColumn
+            // 
+            this.idpedidoDataGridViewTextBoxColumn.DataPropertyName = "id_pedido";
+            this.idpedidoDataGridViewTextBoxColumn.HeaderText = "id_pedido";
+            this.idpedidoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.idpedidoDataGridViewTextBoxColumn.Name = "idpedidoDataGridViewTextBoxColumn";
+            this.idpedidoDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // nombreclienteDataGridViewTextBoxColumn
+            // 
+            this.nombreclienteDataGridViewTextBoxColumn.DataPropertyName = "nombre_cliente";
+            this.nombreclienteDataGridViewTextBoxColumn.HeaderText = "nombre_cliente";
+            this.nombreclienteDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.nombreclienteDataGridViewTextBoxColumn.Name = "nombreclienteDataGridViewTextBoxColumn";
+            this.nombreclienteDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // fechapedidoDataGridViewTextBoxColumn
+            // 
+            this.fechapedidoDataGridViewTextBoxColumn.DataPropertyName = "fecha_pedido";
+            this.fechapedidoDataGridViewTextBoxColumn.HeaderText = "fecha_pedido";
+            this.fechapedidoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.fechapedidoDataGridViewTextBoxColumn.Name = "fechapedidoDataGridViewTextBoxColumn";
+            this.fechapedidoDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // nombremarcaDataGridViewTextBoxColumn
+            // 
+            this.nombremarcaDataGridViewTextBoxColumn.DataPropertyName = "nombre_marca";
+            this.nombremarcaDataGridViewTextBoxColumn.HeaderText = "nombre_marca";
+            this.nombremarcaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.nombremarcaDataGridViewTextBoxColumn.Name = "nombremarcaDataGridViewTextBoxColumn";
+            this.nombremarcaDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // nombreserieDataGridViewTextBoxColumn
+            // 
+            this.nombreserieDataGridViewTextBoxColumn.DataPropertyName = "nombre_serie";
+            this.nombreserieDataGridViewTextBoxColumn.HeaderText = "nombre_serie";
+            this.nombreserieDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.nombreserieDataGridViewTextBoxColumn.Name = "nombreserieDataGridViewTextBoxColumn";
+            this.nombreserieDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // nombreproductoDataGridViewTextBoxColumn
+            // 
+            this.nombreproductoDataGridViewTextBoxColumn.DataPropertyName = "nombre_producto";
+            this.nombreproductoDataGridViewTextBoxColumn.HeaderText = "nombre_producto";
+            this.nombreproductoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.nombreproductoDataGridViewTextBoxColumn.Name = "nombreproductoDataGridViewTextBoxColumn";
+            this.nombreproductoDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // cantidadventaproductoDataGridViewTextBoxColumn
+            // 
+            this.cantidadventaproductoDataGridViewTextBoxColumn.DataPropertyName = "cantidad_venta_producto";
+            this.cantidadventaproductoDataGridViewTextBoxColumn.HeaderText = "cantidad_venta_producto";
+            this.cantidadventaproductoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.cantidadventaproductoDataGridViewTextBoxColumn.Name = "cantidadventaproductoDataGridViewTextBoxColumn";
+            this.cantidadventaproductoDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // precioproductoDataGridViewTextBoxColumn
+            // 
+            this.precioproductoDataGridViewTextBoxColumn.DataPropertyName = "precio_producto";
+            this.precioproductoDataGridViewTextBoxColumn.HeaderText = "precio_producto";
+            this.precioproductoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.precioproductoDataGridViewTextBoxColumn.Name = "precioproductoDataGridViewTextBoxColumn";
+            this.precioproductoDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // subtotalDataGridViewTextBoxColumn
+            // 
+            this.subtotalDataGridViewTextBoxColumn.DataPropertyName = "Subtotal";
+            this.subtotalDataGridViewTextBoxColumn.HeaderText = "Subtotal";
+            this.subtotalDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.subtotalDataGridViewTextBoxColumn.Name = "subtotalDataGridViewTextBoxColumn";
+            this.subtotalDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // preciototalpedidoDataGridViewTextBoxColumn
+            // 
+            this.preciototalpedidoDataGridViewTextBoxColumn.DataPropertyName = "precio_total_pedido";
+            this.preciototalpedidoDataGridViewTextBoxColumn.HeaderText = "precio_total_pedido";
+            this.preciototalpedidoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.preciototalpedidoDataGridViewTextBoxColumn.Name = "preciototalpedidoDataGridViewTextBoxColumn";
+            this.preciototalpedidoDataGridViewTextBoxColumn.Width = 125;
             // 
             // ModuloReportes
             // 
@@ -377,15 +517,18 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sPReporteClientesResultBindingSource)).EndInit();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.sPReporteClientesResultBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPReporteProductosResultBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPReporteFacturaResultBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sPReportePedidosResultBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -419,5 +562,18 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
         private System.Windows.Forms.TabPage tabPage2;
+        private FontAwesome.Sharp.IconButton btnPedidosReport;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idpedidoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreclienteDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechapedidoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombremarcaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreserieDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreproductoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cantidadventaproductoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn precioproductoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn subtotalDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn preciototalpedidoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource sPReportePedidosResultBindingSource;
     }
 }

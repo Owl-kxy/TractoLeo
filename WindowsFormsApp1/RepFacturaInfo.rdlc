@@ -223,6 +223,7 @@
                     <Style>
                       <FontFamily>consolas</FontFamily>
                       <FontSize>12pt</FontSize>
+                      <Format>D</Format>
                     </Style>
                   </TextRun>
                 </TextRuns>
