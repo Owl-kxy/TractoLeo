@@ -80,7 +80,25 @@ namespace WindowsFormsApp1.Modulo
 
             using (PedidosEntities dped = new PedidosEntities())
                 sPReportePedidosResultBindingSource.DataSource = dped.SP_ReportePedidos().ToList();
+            this.reportViewer1.RefreshReport();
         }
 
+        private void btnCargarReportexFecha_Click(object sender, EventArgs e)
+        {
+            using (PxFEntities fechaPed = new PxFEntities())
+            {
+                double x = -1;
+
+                SP_ReportePedidosxFecha_ResultBindingSource.DataSource = fechaPed.SP_ReportePedidosxFecha(dpFechaIni.Value, dpFechaFin.Value).ToList();
+                Microsoft.Reporting.WinForms.ReportParameter[] parametros = new Microsoft.Reporting.WinForms.ReportParameter[]
+                {
+                    new Microsoft.Reporting.WinForms.ReportParameter("FechaIni",dpFechaIni.Value.Date.ToShortDateString()),
+                    new Microsoft.Reporting.WinForms.ReportParameter("FechaFin",dpFechaFin.Value.Date.ToShortDateString())
+                };
+
+                reportViewer1.LocalReport.SetParameters(parametros);
+                reportViewer1.RefreshReport();
+            }
+        }
     }
 }

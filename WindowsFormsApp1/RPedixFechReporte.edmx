@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="PxFModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <Function Name="SP_ReportePedidosxFecha" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="FechaIni" Type="datetime" Mode="In" />
+          <Parameter Name="FechaFin" Type="datetime" Mode="In" />
+        </Function>
+        <EntityContainer Name="PxFModelStoreContainer" />
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PxFModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="PxFEntities" annotation:LazyLoadingEnabled="true" >
+          <FunctionImport Name="SP_ReportePedidosxFecha" ReturnType="Collection(PxFModel.SP_ReportePedidosxFecha_Result)">
+            <Parameter Name="FechaIni" Mode="In" Type="DateTime" />
+            <Parameter Name="FechaFin" Mode="In" Type="DateTime" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="SP_ReportePedidosxFecha_Result">
+          <Property Type="Int32" Name="id_pedido" Nullable="true" />
+          <Property Type="String" Name="nombre_cliente" Nullable="true" MaxLength="100" />
+          <Property Type="DateTime" Name="fecha_pedido" Nullable="true" />
+          <Property Type="String" Name="nombre_marca" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="nombre_serie" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="nombre_producto" Nullable="true" MaxLength="100" />
+          <Property Type="Int32" Name="cantidad_venta_producto" Nullable="true" />
+          <Property Type="Decimal" Name="precio_producto" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="Subtotal" Nullable="true" Precision="29" Scale="2" />
+          <Property Type="Decimal" Name="precio_total_pedido" Nullable="true" Precision="18" Scale="2" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PxFModelStoreContainer" CdmEntityContainer="PxFEntities" >
+          <FunctionImportMapping FunctionImportName="SP_ReportePedidosxFecha" FunctionName="PxFModel.Store.SP_ReportePedidosxFecha">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="PxFModel.SP_ReportePedidosxFecha_Result">
+                <ScalarProperty Name="id_pedido" ColumnName="id_pedido" />
+                <ScalarProperty Name="nombre_cliente" ColumnName="nombre_cliente" />
+                <ScalarProperty Name="fecha_pedido" ColumnName="fecha_pedido" />
+                <ScalarProperty Name="nombre_marca" ColumnName="nombre_marca" />
+                <ScalarProperty Name="nombre_serie" ColumnName="nombre_serie" />
+                <ScalarProperty Name="nombre_producto" ColumnName="nombre_producto" />
+                <ScalarProperty Name="cantidad_venta_producto" ColumnName="cantidad_venta_producto" />
+                <ScalarProperty Name="precio_producto" ColumnName="precio_producto" />
+                <ScalarProperty Name="Subtotal" ColumnName="Subtotal" />
+                <ScalarProperty Name="precio_total_pedido" ColumnName="precio_total_pedido" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

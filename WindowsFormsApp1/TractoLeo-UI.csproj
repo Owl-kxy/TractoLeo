@@ -235,6 +235,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RPedidosReporte.edmx</DependentUpon>
     </Compile>
+    <Compile Include="RPedixFechReporte.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RPedixFechReporte.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RPedixFechReporte.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RPedixFechReporte.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RPedixFechReporte.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RPedixFechReporte.edmx</DependentUpon>
+    </Compile>
     <Compile Include="RProductosReporte.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -258,6 +273,9 @@
     </Compile>
     <Compile Include="SP_ReporteFactura_Result.cs">
       <DependentUpon>RFacturaReporte.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_ReportePedidosxFecha_Result.cs">
+      <DependentUpon>RPedixFechReporte.tt</DependentUpon>
     </Compile>
     <Compile Include="SP_ReportePedidos_Result.cs">
       <DependentUpon>RPedidosReporte.tt</DependentUpon>
@@ -311,11 +329,11 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RepFactur.rdlc" />
     <EmbeddedResource Include="RepFacturaInfo.rdlc" />
-    <EmbeddedResource Include="RepPedidoFecha.rdlc" />
     <EmbeddedResource Include="RepPedidos.rdlc" />
     <EmbeddedResource Include="RepPedidos.resx">
       <DependentUpon>RepPedidos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RepPedxFecha.rdlc" />
     <EmbeddedResource Include="RepProductos.rdlc" />
     <EmbeddedResource Include="RepProductos.resx">
       <DependentUpon>RepProductos.cs</DependentUpon>
@@ -370,6 +388,13 @@
     <None Include="RPedidosReporte.edmx.diagram">
       <DependentUpon>RPedidosReporte.edmx</DependentUpon>
     </None>
+    <EntityDeploy Include="RPedixFechReporte.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>RPedixFechReporte.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="RPedixFechReporte.edmx.diagram">
+      <DependentUpon>RPedixFechReporte.edmx</DependentUpon>
+    </None>
     <None Include="RProductosReporte.edmx.diagram">
       <DependentUpon>RProductosReporte.edmx</DependentUpon>
     </None>
@@ -422,6 +447,16 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>RPedidosReporte.edmx</DependentUpon>
       <LastGenOutput>RPedidosReporte.cs</LastGenOutput>
+    </Content>
+    <Content Include="RPedixFechReporte.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>RPedixFechReporte.edmx</DependentUpon>
+      <LastGenOutput>RPedixFechReporte.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="RPedixFechReporte.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>RPedixFechReporte.edmx</DependentUpon>
+      <LastGenOutput>RPedixFechReporte.cs</LastGenOutput>
     </Content>
     <Content Include="RProductosReporte.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
