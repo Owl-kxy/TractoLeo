@@ -346,7 +346,6 @@
       <DependentUpon>RepClientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RepClientexPedido.rdlc" />
-    <EmbeddedResource Include="RepClixPed.rdlc" />
     <EmbeddedResource Include="RepFactur.rdlc" />
     <EmbeddedResource Include="RepFacturaInfo.rdlc" />
     <EmbeddedResource Include="RepPedidos.rdlc" />
