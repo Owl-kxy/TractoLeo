@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="FacturaInfoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <Function Name="SP_FacturaCompleta" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idped" Type="int" Mode="In" />
+        </Function>
+        <EntityContainer Name="FacturaInfoModelStoreContainer" />
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="FacturaInfoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="FacturaInfoEntities" annotation:LazyLoadingEnabled="true" >
+          <FunctionImport Name="SP_FacturaCompleta" ReturnType="Collection(FacturaInfoModel.SP_FacturaCompleta_Result)">
+            <Parameter Name="idped" Mode="In" Type="Int32" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="SP_FacturaCompleta_Result">
+          <Property Type="Int32" Name="Idpedido" Nullable="true" />
+          <Property Type="String" Name="Nombre" Nullable="false" MaxLength="152" />
+          <Property Type="DateTime" Name="Fecha" Nullable="true" />
+          <Property Type="Int32" Name="Producto" Nullable="false" />
+          <Property Type="String" Name="NomProd" Nullable="true" MaxLength="100" />
+          <Property Type="Int32" Name="CantidadProd" Nullable="true" />
+          <Property Type="Decimal" Name="PrecParcial" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="PrecUnit" Nullable="true" Precision="18" Scale="2" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="FacturaInfoModelStoreContainer" CdmEntityContainer="FacturaInfoEntities" >
+          <FunctionImportMapping FunctionImportName="SP_FacturaCompleta" FunctionName="FacturaInfoModel.Store.SP_FacturaCompleta">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="FacturaInfoModel.SP_FacturaCompleta_Result">
+                <ScalarProperty Name="Idpedido" ColumnName="Idpedido" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="Producto" ColumnName="Producto" />
+                <ScalarProperty Name="NomProd" ColumnName="NomProd" />
+                <ScalarProperty Name="CantidadProd" ColumnName="CantidadProd" />
+                <ScalarProperty Name="PrecParcial" ColumnName="PrecParcial" />
+                <ScalarProperty Name="PrecUnit" ColumnName="PrecUnit" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

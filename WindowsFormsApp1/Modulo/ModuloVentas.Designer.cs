@@ -52,7 +52,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.lblIdPedido = new System.Windows.Forms.Label();
             this.lblGetIdCliente = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.DpfechaPedido = new System.Windows.Forms.DateTimePicker();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
@@ -380,17 +380,17 @@
             this.lblGetIdCliente.TabIndex = 36;
             this.lblGetIdCliente.Visible = false;
             // 
-            // dateTimePicker1
+            // DpfechaPedido
             // 
-            this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.CalendarForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(1)))));
-            this.dateTimePicker1.Enabled = false;
-            this.dateTimePicker1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(227, 34);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(150, 28);
-            this.dateTimePicker1.TabIndex = 37;
+            this.DpfechaPedido.CalendarFont = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DpfechaPedido.CalendarForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(1)))));
+            this.DpfechaPedido.Enabled = false;
+            this.DpfechaPedido.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DpfechaPedido.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DpfechaPedido.Location = new System.Drawing.Point(227, 34);
+            this.DpfechaPedido.Name = "DpfechaPedido";
+            this.DpfechaPedido.Size = new System.Drawing.Size(150, 28);
+            this.DpfechaPedido.TabIndex = 37;
             // 
             // tableLayoutPanel1
             // 
@@ -674,7 +674,7 @@
             this.tableLayoutPanel10.Controls.Add(this.label6, 6, 5);
             this.tableLayoutPanel10.Controls.Add(this.txtProdVentaStock, 8, 5);
             this.tableLayoutPanel10.Controls.Add(this.txtQtyVenta, 4, 7);
-            this.tableLayoutPanel10.Controls.Add(this.dateTimePicker1, 4, 1);
+            this.tableLayoutPanel10.Controls.Add(this.DpfechaPedido, 4, 1);
             this.tableLayoutPanel10.Controls.Add(this.label16, 1, 1);
             this.tableLayoutPanel10.Controls.Add(this.lblGetIdCliente, 8, 1);
             this.tableLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -913,7 +913,7 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label lblIdPedido;
         private System.Windows.Forms.Label lblGetIdCliente;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker DpfechaPedido;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;

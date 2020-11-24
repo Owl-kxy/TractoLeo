@@ -392,11 +392,17 @@ namespace WindowsFormsApp1.Modulo
                 InformacionPedido();
                 InformacionLogs();
 
-                String idPedido = lblIdPedido.Text;
-                String preciototal = lblTotalPedido.Text;
+                //String idPedido = lblIdPedido.Text;
+                //String preciototal = lblTotalPedido.Text;
 
-                RepFactura rpf = new RepFactura(idPedido,preciototal);
-                rpf.Show();
+                //RepFactura rpf = new RepFactura(idPedido,preciototal);
+                //rpf.Show();
+
+                String idPedidoF = lblIdPedido.Text;
+               // String totalpedido = lblTotalPedido.Text;
+                RepFacturaInfo rpfi = new RepFacturaInfo(idPedidoF);
+             //   RepFacturaInfo rpfi = new RepFacturaInfo();
+                rpfi.Show();
             }
         }
 
@@ -413,6 +419,7 @@ namespace WindowsFormsApp1.Modulo
             cmd.Parameters.Add("@idcli", SqlDbType.Int).Value = lblGetIdCliente.Text;
             cmd.Parameters.Add("@nomcli", SqlDbType.VarChar, (100)).Value = cbxCliente.Text;
             cmd.Parameters.Add(new SqlParameter("@prectotal", SqlDbType.Decimal) { Precision = 18, Scale = 2 }).Value = lblTotalPedido.Text;
+            cmd.Parameters.Add("@fechaped", SqlDbType.Date).Value = DpfechaPedido.Value;
             cmd.ExecuteNonQuery();
 
             con.desconecta();
@@ -429,7 +436,8 @@ namespace WindowsFormsApp1.Modulo
             cmd.CommandText = "SP_ActualizarInformacionPedido";
             cmd.Parameters.Add("@idpedido", SqlDbType.Int).Value = lblIdPedido.Text;
             cmd.Parameters.Add("@idcliente", SqlDbType.Int).Value = lblGetIdCliente.Text;
-            cmd.Parameters.Add("@nomcliente", SqlDbType.VarChar, (100)).Value = cbxCliente.Text;           
+            cmd.Parameters.Add("@nomcliente", SqlDbType.VarChar, (100)).Value = cbxCliente.Text;
+            cmd.Parameters.Add("@fechapedido", SqlDbType.Date).Value = DpfechaPedido.Value;
             cmd.ExecuteNonQuery();
 
             con.desconecta();

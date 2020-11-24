@@ -30,7 +30,6 @@ namespace WindowsFormsApp1.Modulo
         {
 
             this.reportViewer1.RefreshReport();
-            this.reportViewer1.RefreshReport();
         }
 
         private void btnCargar_Click(object sender, EventArgs e)

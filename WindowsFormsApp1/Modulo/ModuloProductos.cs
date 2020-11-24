@@ -98,6 +98,7 @@ namespace WindowsFormsApp1.Modulo
             cmd.Parameters.Add("@stock_prod", SqlDbType.VarChar, (100)).Value = txtStockNuevo.Text;
             cmd.Parameters.Add("@ubicacion", SqlDbType.VarChar, (100)).Value = txtUbicacionNuevo.Text;
             cmd.Parameters.Add(new SqlParameter("@precio_prod", SqlDbType.Decimal) {Precision=18, Scale=2 }).Value= txtPrecioNuevo.Text;
+            cmd.Parameters.Add(new SqlParameter("@precioreal", SqlDbType.Decimal) { Precision = 18, Scale = 2 }).Value = txtPrecioRealNuevo.Text;
 
             cmd.ExecuteNonQuery();
 
@@ -128,7 +129,6 @@ namespace WindowsFormsApp1.Modulo
             txtDescripcionEdit.Text = gridViewProductos.CurrentRow.Cells[8].Value.ToString();
             txtCodigoEdit.Text = gridViewProductos.CurrentRow.Cells[5].Value.ToString();
             txtUbicacionEdit.Text = gridViewProductos.CurrentRow.Cells[9].Value.ToString();
-
         }
 
         private void RellenarProductos()
@@ -144,6 +144,7 @@ namespace WindowsFormsApp1.Modulo
 
             gridViewProductos.Columns["imagen"].Visible = false;
             gridViewProductos.Columns["Id"].Visible = false;
+            gridViewProductos.Columns["PrecReal"].Visible = false;
 
             con.desconecta();
         }
@@ -162,6 +163,7 @@ namespace WindowsFormsApp1.Modulo
 
             gridViewProductos.Columns["imagen"].Visible = false;
             gridViewProductos.Columns["Id"].Visible = false;
+            gridViewProductos.Columns["PrecReal"].Visible = false;
 
             con.desconecta();
 
@@ -181,6 +183,7 @@ namespace WindowsFormsApp1.Modulo
 
             gridViewProductos.Columns["imagen"].Visible = false;
             gridViewProductos.Columns["Id"].Visible = false;
+            gridViewProductos.Columns["PrecReal"].Visible = false;
 
             con.desconecta();
         }
@@ -199,6 +202,7 @@ namespace WindowsFormsApp1.Modulo
 
             gridViewProductos.Columns["imagen"].Visible = false;
             gridViewProductos.Columns["Id"].Visible = false;
+            gridViewProductos.Columns["PrecReal"].Visible = false;
 
             con.desconecta();
         }
@@ -217,6 +221,7 @@ namespace WindowsFormsApp1.Modulo
 
             gridViewProductos.Columns["imagen"].Visible = false;
             gridViewProductos.Columns["Id"].Visible = false;
+            gridViewProductos.Columns["PrecReal"].Visible = false;
 
             con.desconecta();
         }
@@ -419,6 +424,7 @@ namespace WindowsFormsApp1.Modulo
             cmd.Parameters.Add("@descripcion", SqlDbType.VarChar, (100)).Value = txtDescripcionEdit.Text;
             cmd.Parameters.Add(new SqlParameter("@precio", SqlDbType.Decimal) { Precision = 18, Scale = 2 }).Value = txtPrecioEdit.Text;
             cmd.Parameters.Add("@ubicacion", SqlDbType.VarChar, (100)).Value = txtUbicacionEdit.Text;
+            cmd.Parameters.Add(new SqlParameter("@precioreal", SqlDbType.Decimal) { Precision = 18, Scale = 2 }).Value = txtPrecioRealEdit.Text;
 
             cmd.ExecuteNonQuery();
 
@@ -427,10 +433,41 @@ namespace WindowsFormsApp1.Modulo
             MessageBox.Show("Informacion editada");
         }
 
+        private void EliminarInformacionProductos()
+        {
+            SqlCommand cmd = new SqlCommand();
+
+            con.conecta();
+
+            cmd.Connection = con.cadenaSql;
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "SP_EliminarProducto";
+
+            cmd.Parameters.Add("@idprod", SqlDbType.Int).Value = lblidproducto.Text;
+            cmd.ExecuteNonQuery();
+            con.desconecta();
+
+            MessageBox.Show("Producto eliminado");
+        }
+
         private void tabPage2_Click(object sender, EventArgs e)
         {
 
         }
 
+        private void btnEliminarProd_Click(object sender, EventArgs e)
+        {
+            EliminarInformacionProductos();
+        }
+
+        private void rbtnVer_CheckedChanged(object sender, EventArgs e)
+        {
+            txtPrecioRealEdit.Text = gridViewProductos.CurrentRow.Cells[10].Value.ToString();
+        }
+
+        private void rbtnNo_CheckedChanged(object sender, EventArgs e)
+        {
+            txtPrecioRealEdit.Text = "";
+        }
     }
 }
