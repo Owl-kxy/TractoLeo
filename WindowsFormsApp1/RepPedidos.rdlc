@@ -1419,8 +1419,8 @@
                 <TextRun>
                   <Value>="Fecha de reporte: " &amp; Today()</Value>
                   <Style>
-                    <FontFamily>CONSOlas</FontFamily>
-                    <FontSize>12pt</FontSize>
+                    <FontFamily>Century Gothic</FontFamily>
+                    <FontSize>11pt</FontSize>
                   </Style>
                 </TextRun>
               </TextRuns>
