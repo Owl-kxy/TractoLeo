@@ -680,7 +680,6 @@
                         <rd:FormatSymbolCulture>es-PE</rd:FormatSymbolCulture>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -1297,7 +1296,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Reporte de </Value>
+                  <Value>Reporte de pedidos</Value>
                   <Style>
                     <FontFamily>century Gothic</FontFamily>
                     <FontSize>13pt</FontSize>
