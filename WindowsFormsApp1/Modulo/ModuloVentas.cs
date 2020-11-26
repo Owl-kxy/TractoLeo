@@ -387,27 +387,35 @@ namespace WindowsFormsApp1.Modulo
         private void btnTerminarVenta_Click(object sender, EventArgs e)
         {
             if (lblIdPedido.Text == "")
-                MessageBox.Show("Antes de terminar cree una venta por favor");
+                MessageBox.Show("Antes de terminar cree una venta por favor, Click en nueva venta");
 
             else
             {
-                VerTotalPedido();
-                ActualizarStockPostVenta();
-                InformacionPedido();
-                InformacionLogs();
+                if (lblGetIdCliente.Text == "System.Data.DataRowView")
+                    MessageBox.Show("Seleccione o escriba el nombre de un cliente");
 
-                //String idPedido = lblIdPedido.Text;
-                //String preciototal = lblTotalPedido.Text;
+                else
+                {
+                    VerTotalPedido();
+                    ActualizarStockPostVenta();
+                    InformacionPedido();
+                    InformacionLogs();
 
-                //RepFactura rpf = new RepFactura(idPedido,preciototal);
-                //rpf.Show();
+                    //String idPedido = lblIdPedido.Text;
+                    //String preciototal = lblTotalPedido.Text;
 
-                String idPedidoF = lblIdPedido.Text;
-               // String totalpedido = lblTotalPedido.Text;
-                RepFacturaInfo rpfi = new RepFacturaInfo(idPedidoF);
-             //   RepFacturaInfo rpfi = new RepFacturaInfo();
-                rpfi.Show();
+                    //RepFactura rpf = new RepFactura(idPedido,preciototal);
+                    //rpf.Show();
+
+                    String idPedidoF = lblIdPedido.Text;
+                    // String totalpedido = lblTotalPedido.Text;
+                    RepFacturaInfo rpfi = new RepFacturaInfo(idPedidoF);
+                    //   RepFacturaInfo rpfi = new RepFacturaInfo();
+                    rpfi.Show();
+                }
+
             }
+            
         }
 
         private void InformacionLogs()
@@ -510,9 +518,10 @@ namespace WindowsFormsApp1.Modulo
             cbxCliente.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             cbxCliente.AutoCompleteSource = AutoCompleteSource.CustomSource;
         }
-        
+
         private void cbxCliente_SelectedIndexChanged(object sender, EventArgs e)
         {
+
             lblGetIdCliente.Text = cbxCliente.SelectedValue.ToString();
         }
 
