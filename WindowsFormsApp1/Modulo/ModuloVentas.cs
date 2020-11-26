@@ -105,7 +105,8 @@ namespace WindowsFormsApp1.Modulo
 
                 con.desconecta();
 
-                gridViewVerProds.Columns["Stock"].Visible = false;
+                gridViewVerProds.Columns["Stock"].Visible = true;
+                gridViewVerProds.Columns["Id"].Visible = false;
             }
 
             if (string.IsNullOrEmpty(txtProdVenta.Text) == false)
@@ -124,6 +125,7 @@ namespace WindowsFormsApp1.Modulo
 
                 con.desconecta();
                 gridViewVerProds.Columns["Stock"].Visible = false;
+                gridViewVerProds.Columns["Id"].Visible = false;
             }
         }
 
@@ -275,6 +277,8 @@ namespace WindowsFormsApp1.Modulo
             da.Fill(dt);
             gridviewVentas.DataSource = dt;
 
+            gridViewVerProds.Columns["Id"].Visible = true;
+
             con.desconecta();
         }
 
@@ -383,27 +387,35 @@ namespace WindowsFormsApp1.Modulo
         private void btnTerminarVenta_Click(object sender, EventArgs e)
         {
             if (lblIdPedido.Text == "")
-                MessageBox.Show("Antes de terminar cree una venta por favor");
+                MessageBox.Show("Antes de terminar cree una venta por favor, Click en nueva venta");
 
             else
             {
-                VerTotalPedido();
-                ActualizarStockPostVenta();
-                InformacionPedido();
-                InformacionLogs();
+                if (lblGetIdCliente.Text == "System.Data.DataRowView")
+                    MessageBox.Show("Seleccione o escriba el nombre de un cliente");
 
-                //String idPedido = lblIdPedido.Text;
-                //String preciototal = lblTotalPedido.Text;
+                else
+                {
+                    VerTotalPedido();
+                    ActualizarStockPostVenta();
+                    InformacionPedido();
+                    InformacionLogs();
 
-                //RepFactura rpf = new RepFactura(idPedido,preciototal);
-                //rpf.Show();
+                    //String idPedido = lblIdPedido.Text;
+                    //String preciototal = lblTotalPedido.Text;
 
-                String idPedidoF = lblIdPedido.Text;
-               // String totalpedido = lblTotalPedido.Text;
-                RepFacturaInfo rpfi = new RepFacturaInfo(idPedidoF);
-             //   RepFacturaInfo rpfi = new RepFacturaInfo();
-                rpfi.Show();
+                    //RepFactura rpf = new RepFactura(idPedido,preciototal);
+                    //rpf.Show();
+
+                    String idPedidoF = lblIdPedido.Text;
+                    // String totalpedido = lblTotalPedido.Text;
+                    RepFacturaInfo rpfi = new RepFacturaInfo(idPedidoF);
+                    //   RepFacturaInfo rpfi = new RepFacturaInfo();
+                    rpfi.Show();
+                }
+
             }
+            
         }
 
         private void InformacionLogs()
@@ -506,9 +518,10 @@ namespace WindowsFormsApp1.Modulo
             cbxCliente.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             cbxCliente.AutoCompleteSource = AutoCompleteSource.CustomSource;
         }
-        
+
         private void cbxCliente_SelectedIndexChanged(object sender, EventArgs e)
         {
+
             lblGetIdCliente.Text = cbxCliente.SelectedValue.ToString();
         }
 
@@ -520,6 +533,76 @@ namespace WindowsFormsApp1.Modulo
         private void tableLayoutPanel17_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btnEliminarCompra_Click(object sender, EventArgs e)
+        {
+            EliminarProdDL();
+            EliminarProdDP();
+            VerVenta();
+        }
+
+        private void EliminarProdDL()
+        {
+            decimal preciounitario;
+            int cantidadventa;
+            decimal preciosubtotal;
+            int pedido;
+            int productoid;
+
+            pedido = Convert.ToInt32(lblIdPedido.Text);
+            productoid = Convert.ToInt32(idProdVenta.Text);
+            preciounitario = Convert.ToDecimal(txtxPrecioUnitVenta.Text);
+            cantidadventa = Convert.ToInt32(txtQtyVenta.Text);
+
+            preciosubtotal = preciounitario * cantidadventa;
+
+            SqlCommand cmd = new SqlCommand();
+
+            con.conecta();
+
+            cmd.Connection = con.cadenaSql;
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "SP_EliminarProdVentaDL";
+            cmd.Parameters.Add("@idpedido", SqlDbType.Int).Value = pedido;
+            cmd.Parameters.Add("@idproducto", SqlDbType.Int).Value = productoid;
+            cmd.Parameters.Add("@cantidadventa", SqlDbType.Int).Value = cantidadventa;
+            cmd.Parameters.Add(new SqlParameter("@preciounit", SqlDbType.Decimal) { Precision = 18, Scale = 2 }).Value = txtxPrecioUnitVenta.Text;
+            cmd.Parameters.Add(new SqlParameter("@preciosubtotal", SqlDbType.Decimal) { Precision = 18, Scale = 2 }).Value = preciosubtotal;
+
+            cmd.ExecuteNonQuery();
+
+            con.desconecta();
+        }
+
+        private void EliminarProdDP()
+        {
+            decimal preciounitario;
+            int cantidadventa;
+            int pedido;
+            int productoid;
+
+            pedido = Convert.ToInt32(lblIdPedido.Text);
+            productoid = Convert.ToInt32(idProdVenta.Text);
+            preciounitario = Convert.ToDecimal(txtxPrecioUnitVenta.Text);
+            cantidadventa = Convert.ToInt32(txtQtyVenta.Text);
+
+
+            SqlCommand cmd = new SqlCommand();
+
+            con.conecta();
+
+            cmd.Connection = con.cadenaSql;
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "SP_EliminarProdVentaDp";
+            cmd.Parameters.Add("@idpedido", SqlDbType.Int).Value = pedido;
+            cmd.Parameters.Add("@idproducto", SqlDbType.Int).Value = productoid;
+            cmd.Parameters.Add("@nombreproducto", SqlDbType.VarChar, (100)).Value = txtProductVenta.Text;
+            cmd.Parameters.Add("@cantidadventa", SqlDbType.Int).Value = cantidadventa;
+            cmd.Parameters.Add(new SqlParameter("@preciounit", SqlDbType.Decimal) { Precision = 18, Scale = 2 }).Value = txtxPrecioUnitVenta.Text;
+            cmd.ExecuteNonQuery();
+
+            con.desconecta();
         }
     }
 }

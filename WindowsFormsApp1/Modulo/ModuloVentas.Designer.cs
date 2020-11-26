@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gridviewVentas = new System.Windows.Forms.DataGridView();
             this.gridViewVerProds = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
@@ -74,6 +76,7 @@
             this.label16 = new System.Windows.Forms.Label();
             this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnEliminarCompra = new FontAwesome.Sharp.IconButton();
             this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel14 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
@@ -106,6 +109,14 @@
             // 
             this.gridviewVentas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gridviewVentas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridviewVentas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.gridviewVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridviewVentas.Location = new System.Drawing.Point(43, 17);
             this.gridviewVentas.Name = "gridviewVentas";
@@ -119,6 +130,14 @@
             // 
             this.gridViewVerProds.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gridViewVerProds.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridViewVerProds.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.gridViewVerProds.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridViewVerProds.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridViewVerProds.Location = new System.Drawing.Point(43, 19);
@@ -254,9 +273,9 @@
             this.btnAgregarProds.Location = new System.Drawing.Point(42, 3);
             this.btnAgregarProds.Name = "btnAgregarProds";
             this.btnAgregarProds.Rotation = 0D;
-            this.btnAgregarProds.Size = new System.Drawing.Size(312, 49);
+            this.btnAgregarProds.Size = new System.Drawing.Size(206, 49);
             this.btnAgregarProds.TabIndex = 19;
-            this.btnAgregarProds.Text = "Agregar a la venta";
+            this.btnAgregarProds.Text = "Agregar";
             this.btnAgregarProds.UseVisualStyleBackColor = true;
             this.btnAgregarProds.Click += new System.EventHandler(this.btnAgregarProds_Click);
             // 
@@ -296,12 +315,12 @@
             this.btnActualizarVenta.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnActualizarVenta.IconColor = System.Drawing.Color.Black;
             this.btnActualizarVenta.IconSize = 16;
-            this.btnActualizarVenta.Location = new System.Drawing.Point(439, 3);
+            this.btnActualizarVenta.Location = new System.Drawing.Point(544, 3);
             this.btnActualizarVenta.Name = "btnActualizarVenta";
             this.btnActualizarVenta.Rotation = 0D;
-            this.btnActualizarVenta.Size = new System.Drawing.Size(312, 49);
+            this.btnActualizarVenta.Size = new System.Drawing.Size(206, 49);
             this.btnActualizarVenta.TabIndex = 23;
-            this.btnActualizarVenta.Text = "Actualizar Venta";
+            this.btnActualizarVenta.Text = "Actualizar ";
             this.btnActualizarVenta.UseVisualStyleBackColor = true;
             this.btnActualizarVenta.Click += new System.EventHandler(this.btnActualizarVenta_Click);
             // 
@@ -376,8 +395,9 @@
             this.lblGetIdCliente.AutoSize = true;
             this.lblGetIdCliente.Location = new System.Drawing.Point(633, 31);
             this.lblGetIdCliente.Name = "lblGetIdCliente";
-            this.lblGetIdCliente.Size = new System.Drawing.Size(0, 17);
+            this.lblGetIdCliente.Size = new System.Drawing.Size(16, 17);
             this.lblGetIdCliente.TabIndex = 36;
+            this.lblGetIdCliente.Text = "0";
             this.lblGetIdCliente.Visible = false;
             // 
             // DpfechaPedido
@@ -723,14 +743,17 @@
             // 
             // tableLayoutPanel12
             // 
-            this.tableLayoutPanel12.ColumnCount = 5;
-            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.tableLayoutPanel12.ColumnCount = 7;
+            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5.01002F));
+            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.65331F));
+            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5.01002F));
+            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.65331F));
+            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5.01002F));
+            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.65331F));
+            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5.01002F));
             this.tableLayoutPanel12.Controls.Add(this.btnAgregarProds, 1, 0);
-            this.tableLayoutPanel12.Controls.Add(this.btnActualizarVenta, 3, 0);
+            this.tableLayoutPanel12.Controls.Add(this.btnActualizarVenta, 5, 0);
+            this.tableLayoutPanel12.Controls.Add(this.btnEliminarCompra, 3, 0);
             this.tableLayoutPanel12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel12.Location = new System.Drawing.Point(3, 6);
             this.tableLayoutPanel12.Name = "tableLayoutPanel12";
@@ -738,6 +761,22 @@
             this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel12.Size = new System.Drawing.Size(797, 62);
             this.tableLayoutPanel12.TabIndex = 0;
+            // 
+            // btnEliminarCompra
+            // 
+            this.btnEliminarCompra.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnEliminarCompra.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminarCompra.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnEliminarCompra.IconColor = System.Drawing.Color.Black;
+            this.btnEliminarCompra.IconSize = 16;
+            this.btnEliminarCompra.Location = new System.Drawing.Point(293, 3);
+            this.btnEliminarCompra.Name = "btnEliminarCompra";
+            this.btnEliminarCompra.Rotation = 0D;
+            this.btnEliminarCompra.Size = new System.Drawing.Size(206, 49);
+            this.btnEliminarCompra.TabIndex = 24;
+            this.btnEliminarCompra.Text = "Eliminar";
+            this.btnEliminarCompra.UseVisualStyleBackColor = true;
+            this.btnEliminarCompra.Click += new System.EventHandler(this.btnEliminarCompra_Click);
             // 
             // tableLayoutPanel13
             // 
@@ -942,5 +981,6 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel16;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel17;
+        private FontAwesome.Sharp.IconButton btnEliminarCompra;
     }
 }

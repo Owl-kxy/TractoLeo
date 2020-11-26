@@ -74,6 +74,7 @@ namespace WindowsFormsApp1.Modulo
             txtEditDireccion.Text = gridViewClientes.CurrentRow.Cells[6].Value.ToString();
             txtEditDNI.Text = gridViewClientes.CurrentRow.Cells[7].Value.ToString();
             txtEditRUC.Text = gridViewClientes.CurrentRow.Cells[8].Value.ToString();
+            txtEditCiudad.Text = gridViewClientes.CurrentRow.Cells[9].Value.ToString();
         }
 
         private void Crear_Cliente()
@@ -93,6 +94,7 @@ namespace WindowsFormsApp1.Modulo
             cmd.Parameters.Add("@direccion_cliente", SqlDbType.VarChar, (100)).Value = txtDireccion.Text;
             cmd.Parameters.Add("@dni_cliente", SqlDbType.VarChar, (8)).Value = txtDNI.Text;
             cmd.Parameters.Add("@ruc_cliente", SqlDbType.VarChar, (11)).Value = txtRUC.Text;
+            cmd.Parameters.Add("@ciudad", SqlDbType.VarChar, (100)).Value = txtCiudad.Text;
 
             cmd.ExecuteNonQuery();
 
@@ -111,6 +113,7 @@ namespace WindowsFormsApp1.Modulo
             txtDireccion.Text = string.Empty;
             txtDNI.Text = string.Empty;
             txtRUC.Text = string.Empty;
+            txtCiudad.Text = string.Empty;
         }
 
         private void Limpiar_CamposEdit()
@@ -123,6 +126,7 @@ namespace WindowsFormsApp1.Modulo
             txtEditDireccion.Text = string.Empty;
             txtEditDNI.Text = string.Empty;
             txtEditRUC.Text = string.Empty;
+            txtEditCiudad.Text = string.Empty;
         }
 
         private void VerClientes()
@@ -205,6 +209,7 @@ namespace WindowsFormsApp1.Modulo
             cmd.Parameters.Add("@direccion_cliente", SqlDbType.VarChar, (100)).Value = txtEditDireccion.Text;
             cmd.Parameters.Add("@dni_cliente", SqlDbType.VarChar, (8)).Value = txtEditDNI.Text;
             cmd.Parameters.Add("@ruc_cliente", SqlDbType.VarChar, (11)).Value = txtEditRUC.Text;
+            cmd.Parameters.Add("@ciudad", SqlDbType.VarChar, (11)).Value = txtEditCiudad.Text;
 
             cmd.ExecuteNonQuery();
 
