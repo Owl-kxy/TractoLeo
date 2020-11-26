@@ -30,12 +30,16 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.SP_FacturaCompleta_ResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.btnFacturaCompleta = new FontAwesome.Sharp.IconButton();
-            this.SP_FacturaCompleta_ResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.SP_FacturaCompleta_ResultBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // SP_FacturaCompleta_ResultBindingSource
+            // 
+            this.SP_FacturaCompleta_ResultBindingSource.DataSource = typeof(WindowsFormsApp1.SP_FacturaCompleta_Result);
             // 
             // reportViewer1
             // 
@@ -64,10 +68,6 @@
             this.btnFacturaCompleta.UseVisualStyleBackColor = true;
             this.btnFacturaCompleta.Click += new System.EventHandler(this.btnFacturaCompleta_Click);
             // 
-            // SP_FacturaCompleta_ResultBindingSource
-            // 
-            this.SP_FacturaCompleta_ResultBindingSource.DataSource = typeof(WindowsFormsApp1.SP_FacturaCompleta_Result);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -81,7 +81,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(992, 600);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnFacturaCompleta);
             this.Controls.Add(this.reportViewer1);

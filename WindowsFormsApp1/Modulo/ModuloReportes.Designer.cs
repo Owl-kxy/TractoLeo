@@ -29,16 +29,24 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource7 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource8 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource5 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource4 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource6 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.SP_ReportePedidosxFecha_ResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.SP_BuscarPedidosCliente_ResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.SP_ReporteTotalVendidoxTop5_ResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sPReporteClientesResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sPReporteClientesResultBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.btnImprimir = new FontAwesome.Sharp.IconButton();
             this.tabPage3 = new System.Windows.Forms.TabPage();
@@ -47,10 +55,28 @@
             this.btnProductosReporte = new FontAwesome.Sharp.IconButton();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.nombredelproductoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.marcaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.serieDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stockDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sPReporteProductosResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sPReporteProductosResultBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel16 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.sPReportePedidosResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sPReportePedidosResultBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.tableLayoutPanel17 = new System.Windows.Forms.TableLayoutPanel();
             this.btnPedidosReport = new FontAwesome.Sharp.IconButton();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
@@ -74,19 +100,25 @@
             this.label3 = new System.Windows.Forms.Label();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
             this.btnVerClientexPedido = new FontAwesome.Sharp.IconButton();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.btnVerRepProductos = new FontAwesome.Sharp.IconButton();
+            this.reportViewer3 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.sPReportePedidosResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cachedClientesReport1 = new WindowsFormsApp1.CachedClientesReport();
             this.sPReporteFacturaResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel16 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel17 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel18 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel19 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel20 = new System.Windows.Forms.TableLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.SP_ReportePedidosxFecha_ResultBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SP_BuscarPedidosCliente_ResultBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SP_ReporteTotalVendidoxTop5_ResultBindingSource)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPReporteClientesResultBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sPReporteClientesResultBindingSource1)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
@@ -94,9 +126,13 @@
             this.tableLayoutPanel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPReporteProductosResultBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sPReporteProductosResultBindingSource1)).BeginInit();
             this.tabPage2.SuspendLayout();
+            this.tableLayoutPanel15.SuspendLayout();
+            this.tableLayoutPanel16.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sPReportePedidosResultBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sPReportePedidosResultBindingSource1)).BeginInit();
+            this.tableLayoutPanel17.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.tableLayoutPanel11.SuspendLayout();
             this.tableLayoutPanel12.SuspendLayout();
@@ -107,10 +143,12 @@
             this.tableLayoutPanel8.SuspendLayout();
             this.tableLayoutPanel9.SuspendLayout();
             this.tableLayoutPanel10.SuspendLayout();
+            this.tabPage6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sPReportePedidosResultBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPReporteFacturaResultBindingSource)).BeginInit();
-            this.tableLayoutPanel15.SuspendLayout();
-            this.tableLayoutPanel16.SuspendLayout();
-            this.tableLayoutPanel17.SuspendLayout();
+            this.tableLayoutPanel18.SuspendLayout();
+            this.tableLayoutPanel19.SuspendLayout();
+            this.tableLayoutPanel20.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -120,6 +158,7 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage5);
+            this.tabControl1.Controls.Add(this.tabPage6);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
@@ -178,6 +217,12 @@
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5});
             this.dataGridView1.DataSource = this.sPReporteClientesResultBindingSource;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(53, 28);
@@ -186,6 +231,49 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(902, 451);
             this.dataGridView1.TabIndex = 2;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Clientes";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Clientes";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "DNI";
+            this.dataGridViewTextBoxColumn2.HeaderText = "DNI";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Direccion";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Direccion";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Telefono";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Telefono";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "Correo";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Correo";
+            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            // 
+            // sPReporteClientesResultBindingSource
+            // 
+            this.sPReporteClientesResultBindingSource.DataSource = this.sPReporteClientesResultBindingSource1;
+            // 
+            // sPReporteClientesResultBindingSource1
+            // 
+            this.sPReporteClientesResultBindingSource1.DataSource = typeof(WindowsFormsApp1.SP_ReporteClientes_Result);
             // 
             // tableLayoutPanel3
             // 
@@ -306,6 +394,11 @@
             this.dataGridView3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView3.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nombredelproductoDataGridViewTextBoxColumn,
+            this.marcaDataGridViewTextBoxColumn,
+            this.serieDataGridViewTextBoxColumn,
+            this.stockDataGridViewTextBoxColumn});
             this.dataGridView3.DataSource = this.sPReporteProductosResultBindingSource;
             this.dataGridView3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView3.Location = new System.Drawing.Point(53, 28);
@@ -314,6 +407,42 @@
             this.dataGridView3.RowTemplate.Height = 24;
             this.dataGridView3.Size = new System.Drawing.Size(907, 455);
             this.dataGridView3.TabIndex = 1;
+            // 
+            // nombredelproductoDataGridViewTextBoxColumn
+            // 
+            this.nombredelproductoDataGridViewTextBoxColumn.DataPropertyName = "Nombre_del_producto";
+            this.nombredelproductoDataGridViewTextBoxColumn.HeaderText = "Nombre_del_producto";
+            this.nombredelproductoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.nombredelproductoDataGridViewTextBoxColumn.Name = "nombredelproductoDataGridViewTextBoxColumn";
+            // 
+            // marcaDataGridViewTextBoxColumn
+            // 
+            this.marcaDataGridViewTextBoxColumn.DataPropertyName = "Marca";
+            this.marcaDataGridViewTextBoxColumn.HeaderText = "Marca";
+            this.marcaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.marcaDataGridViewTextBoxColumn.Name = "marcaDataGridViewTextBoxColumn";
+            // 
+            // serieDataGridViewTextBoxColumn
+            // 
+            this.serieDataGridViewTextBoxColumn.DataPropertyName = "Serie";
+            this.serieDataGridViewTextBoxColumn.HeaderText = "Serie";
+            this.serieDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.serieDataGridViewTextBoxColumn.Name = "serieDataGridViewTextBoxColumn";
+            // 
+            // stockDataGridViewTextBoxColumn
+            // 
+            this.stockDataGridViewTextBoxColumn.DataPropertyName = "Stock";
+            this.stockDataGridViewTextBoxColumn.HeaderText = "Stock";
+            this.stockDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.stockDataGridViewTextBoxColumn.Name = "stockDataGridViewTextBoxColumn";
+            // 
+            // sPReporteProductosResultBindingSource
+            // 
+            this.sPReporteProductosResultBindingSource.DataSource = this.sPReporteProductosResultBindingSource1;
+            // 
+            // sPReporteProductosResultBindingSource1
+            // 
+            this.sPReporteProductosResultBindingSource1.DataSource = typeof(WindowsFormsApp1.SP_ReporteProductos_Result);
             // 
             // tabPage2
             // 
@@ -325,11 +454,55 @@
             this.tabPage2.Text = "ReportePedidos";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // tableLayoutPanel15
+            // 
+            this.tableLayoutPanel15.ColumnCount = 1;
+            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel15.Controls.Add(this.tableLayoutPanel16, 0, 0);
+            this.tableLayoutPanel15.Controls.Add(this.tableLayoutPanel17, 0, 1);
+            this.tableLayoutPanel15.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel15.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel15.Name = "tableLayoutPanel15";
+            this.tableLayoutPanel15.RowCount = 2;
+            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
+            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel15.Size = new System.Drawing.Size(1021, 649);
+            this.tableLayoutPanel15.TabIndex = 2;
+            // 
+            // tableLayoutPanel16
+            // 
+            this.tableLayoutPanel16.ColumnCount = 3;
+            this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 90F));
+            this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.tableLayoutPanel16.Controls.Add(this.dataGridView2, 1, 1);
+            this.tableLayoutPanel16.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel16.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel16.Name = "tableLayoutPanel16";
+            this.tableLayoutPanel16.RowCount = 3;
+            this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90F));
+            this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.tableLayoutPanel16.Size = new System.Drawing.Size(1015, 513);
+            this.tableLayoutPanel16.TabIndex = 0;
+            // 
             // dataGridView2
             // 
             this.dataGridView2.AutoGenerateColumns = false;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.DataSource = this.sPReportePedidosResultBindingSource;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn9,
+            this.dataGridViewTextBoxColumn10,
+            this.dataGridViewTextBoxColumn11,
+            this.dataGridViewTextBoxColumn12,
+            this.dataGridViewTextBoxColumn13,
+            this.dataGridViewTextBoxColumn14,
+            this.dataGridViewTextBoxColumn15});
+            this.dataGridView2.DataSource = this.sPReportePedidosResultBindingSource1;
             this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView2.Location = new System.Drawing.Point(53, 28);
             this.dataGridView2.Name = "dataGridView2";
@@ -337,6 +510,109 @@
             this.dataGridView2.RowTemplate.Height = 24;
             this.dataGridView2.Size = new System.Drawing.Size(907, 455);
             this.dataGridView2.TabIndex = 1;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "id_pedido";
+            this.dataGridViewTextBoxColumn6.HeaderText = "id_pedido";
+            this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "nombre_cliente";
+            this.dataGridViewTextBoxColumn7.HeaderText = "nombre_cliente";
+            this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "fecha_pedido";
+            this.dataGridViewTextBoxColumn8.HeaderText = "fecha_pedido";
+            this.dataGridViewTextBoxColumn8.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "nombre_marca";
+            this.dataGridViewTextBoxColumn9.HeaderText = "nombre_marca";
+            this.dataGridViewTextBoxColumn9.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "nombre_serie";
+            this.dataGridViewTextBoxColumn10.HeaderText = "nombre_serie";
+            this.dataGridViewTextBoxColumn10.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.DataPropertyName = "nombre_producto";
+            this.dataGridViewTextBoxColumn11.HeaderText = "nombre_producto";
+            this.dataGridViewTextBoxColumn11.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.dataGridViewTextBoxColumn11.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            this.dataGridViewTextBoxColumn12.DataPropertyName = "cantidad_venta_producto";
+            this.dataGridViewTextBoxColumn12.HeaderText = "cantidad_venta_producto";
+            this.dataGridViewTextBoxColumn12.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            this.dataGridViewTextBoxColumn12.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn13
+            // 
+            this.dataGridViewTextBoxColumn13.DataPropertyName = "precio_producto";
+            this.dataGridViewTextBoxColumn13.HeaderText = "precio_producto";
+            this.dataGridViewTextBoxColumn13.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            this.dataGridViewTextBoxColumn13.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn14
+            // 
+            this.dataGridViewTextBoxColumn14.DataPropertyName = "Subtotal";
+            this.dataGridViewTextBoxColumn14.HeaderText = "Subtotal";
+            this.dataGridViewTextBoxColumn14.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            this.dataGridViewTextBoxColumn14.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn15
+            // 
+            this.dataGridViewTextBoxColumn15.DataPropertyName = "precio_total_pedido";
+            this.dataGridViewTextBoxColumn15.HeaderText = "precio_total_pedido";
+            this.dataGridViewTextBoxColumn15.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
+            this.dataGridViewTextBoxColumn15.Width = 125;
+            // 
+            // sPReportePedidosResultBindingSource1
+            // 
+            this.sPReportePedidosResultBindingSource1.DataSource = typeof(WindowsFormsApp1.SP_ReportePedidos_Result);
+            // 
+            // tableLayoutPanel17
+            // 
+            this.tableLayoutPanel17.ColumnCount = 5;
+            this.tableLayoutPanel17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel17.Controls.Add(this.btnPedidosReport, 2, 1);
+            this.tableLayoutPanel17.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel17.Location = new System.Drawing.Point(3, 522);
+            this.tableLayoutPanel17.Name = "tableLayoutPanel17";
+            this.tableLayoutPanel17.RowCount = 3;
+            this.tableLayoutPanel17.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel17.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel17.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel17.Size = new System.Drawing.Size(1015, 124);
+            this.tableLayoutPanel17.TabIndex = 1;
             // 
             // btnPedidosReport
             // 
@@ -400,9 +676,9 @@
             // reportViewer1
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource7.Name = "PedxFechaDS";
-            reportDataSource7.Value = this.SP_ReportePedidosxFecha_ResultBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource7);
+            reportDataSource5.Name = "PedxFechaDS";
+            reportDataSource5.Value = this.SP_ReportePedidosxFecha_ResultBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource5);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "WindowsFormsApp1.RepPedxFecha.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(53, 28);
             this.reportViewer1.Name = "reportViewer1";
@@ -569,9 +845,9 @@
             // reportViewer2
             // 
             this.reportViewer2.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource8.Name = "ClientexPedidoDS";
-            reportDataSource8.Value = this.SP_BuscarPedidosCliente_ResultBindingSource;
-            this.reportViewer2.LocalReport.DataSources.Add(reportDataSource8);
+            reportDataSource4.Name = "ClientexPedidoDS";
+            reportDataSource4.Value = this.SP_BuscarPedidosCliente_ResultBindingSource;
+            this.reportViewer2.LocalReport.DataSources.Add(reportDataSource4);
             this.reportViewer2.LocalReport.ReportEmbeddedResource = "WindowsFormsApp1.RepClientexPedido.rdlc";
             this.reportViewer2.Location = new System.Drawing.Point(53, 28);
             this.reportViewer2.Name = "reportViewer2";
@@ -648,57 +924,96 @@
             this.btnVerClientexPedido.UseVisualStyleBackColor = true;
             this.btnVerClientexPedido.Click += new System.EventHandler(this.btnVerClientexPedido_Click);
             // 
-            // tableLayoutPanel15
+            // tabPage6
             // 
-            this.tableLayoutPanel15.ColumnCount = 1;
-            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel15.Controls.Add(this.tableLayoutPanel16, 0, 0);
-            this.tableLayoutPanel15.Controls.Add(this.tableLayoutPanel17, 0, 1);
-            this.tableLayoutPanel15.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel15.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel15.Name = "tableLayoutPanel15";
-            this.tableLayoutPanel15.RowCount = 2;
-            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
-            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel15.Size = new System.Drawing.Size(1021, 649);
-            this.tableLayoutPanel15.TabIndex = 2;
+            this.tabPage6.Controls.Add(this.tableLayoutPanel18);
+            this.tabPage6.Location = new System.Drawing.Point(4, 30);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage6.Size = new System.Drawing.Size(1021, 649);
+            this.tabPage6.TabIndex = 6;
+            this.tabPage6.Text = "Productos + vendidos";
+            this.tabPage6.UseVisualStyleBackColor = true;
             // 
-            // tableLayoutPanel16
+            // btnVerRepProductos
             // 
-            this.tableLayoutPanel16.ColumnCount = 3;
-            this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 90F));
-            this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tableLayoutPanel16.Controls.Add(this.dataGridView2, 1, 1);
-            this.tableLayoutPanel16.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel16.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel16.Name = "tableLayoutPanel16";
-            this.tableLayoutPanel16.RowCount = 3;
-            this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90F));
-            this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tableLayoutPanel16.Size = new System.Drawing.Size(1015, 513);
-            this.tableLayoutPanel16.TabIndex = 0;
+            this.btnVerRepProductos.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnVerRepProductos.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnVerRepProductos.IconColor = System.Drawing.Color.Black;
+            this.btnVerRepProductos.IconSize = 16;
+            this.btnVerRepProductos.Location = new System.Drawing.Point(405, 43);
+            this.btnVerRepProductos.Name = "btnVerRepProductos";
+            this.btnVerRepProductos.Rotation = 0D;
+            this.btnVerRepProductos.Size = new System.Drawing.Size(195, 34);
+            this.btnVerRepProductos.TabIndex = 1;
+            this.btnVerRepProductos.Text = "Ver Informe";
+            this.btnVerRepProductos.UseVisualStyleBackColor = true;
+            this.btnVerRepProductos.Click += new System.EventHandler(this.btnVerRepProductos_Click);
             // 
-            // tableLayoutPanel17
+            // reportViewer3
             // 
-            this.tableLayoutPanel17.ColumnCount = 5;
-            this.tableLayoutPanel17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel17.Controls.Add(this.btnPedidosReport, 2, 1);
-            this.tableLayoutPanel17.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel17.Location = new System.Drawing.Point(3, 522);
-            this.tableLayoutPanel17.Name = "tableLayoutPanel17";
-            this.tableLayoutPanel17.RowCount = 3;
-            this.tableLayoutPanel17.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel17.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel17.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel17.Size = new System.Drawing.Size(1015, 124);
-            this.tableLayoutPanel17.TabIndex = 1;
+            this.reportViewer3.Dock = System.Windows.Forms.DockStyle.Fill;
+            reportDataSource6.Name = "TopVentaDS";
+            reportDataSource6.Value = this.SP_ReporteTotalVendidoxTop5_ResultBindingSource;
+            this.reportViewer3.LocalReport.DataSources.Add(reportDataSource6);
+            this.reportViewer3.LocalReport.ReportEmbeddedResource = "WindowsFormsApp1.RepVentaProds.rdlc";
+            this.reportViewer3.Location = new System.Drawing.Point(53, 28);
+            this.reportViewer3.Name = "reportViewer3";
+            this.reportViewer3.ServerReport.BearerToken = null;
+            this.reportViewer3.Size = new System.Drawing.Size(902, 451);
+            this.reportViewer3.TabIndex = 0;
+            // 
+            // tableLayoutPanel18
+            // 
+            this.tableLayoutPanel18.ColumnCount = 1;
+            this.tableLayoutPanel18.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel18.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel18.Controls.Add(this.tableLayoutPanel19, 0, 0);
+            this.tableLayoutPanel18.Controls.Add(this.tableLayoutPanel20, 0, 1);
+            this.tableLayoutPanel18.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel18.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel18.Name = "tableLayoutPanel18";
+            this.tableLayoutPanel18.RowCount = 2;
+            this.tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
+            this.tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel18.Size = new System.Drawing.Size(1015, 643);
+            this.tableLayoutPanel18.TabIndex = 2;
+            // 
+            // tableLayoutPanel19
+            // 
+            this.tableLayoutPanel19.ColumnCount = 3;
+            this.tableLayoutPanel19.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.tableLayoutPanel19.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 90F));
+            this.tableLayoutPanel19.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.tableLayoutPanel19.Controls.Add(this.reportViewer3, 1, 1);
+            this.tableLayoutPanel19.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel19.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel19.Name = "tableLayoutPanel19";
+            this.tableLayoutPanel19.RowCount = 3;
+            this.tableLayoutPanel19.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.tableLayoutPanel19.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90F));
+            this.tableLayoutPanel19.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.tableLayoutPanel19.Size = new System.Drawing.Size(1009, 508);
+            this.tableLayoutPanel19.TabIndex = 0;
+            // 
+            // tableLayoutPanel20
+            // 
+            this.tableLayoutPanel20.ColumnCount = 5;
+            this.tableLayoutPanel20.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel20.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel20.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel20.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel20.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel20.Controls.Add(this.btnVerRepProductos, 2, 1);
+            this.tableLayoutPanel20.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel20.Location = new System.Drawing.Point(3, 517);
+            this.tableLayoutPanel20.Name = "tableLayoutPanel20";
+            this.tableLayoutPanel20.RowCount = 3;
+            this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel20.Size = new System.Drawing.Size(1009, 123);
+            this.tableLayoutPanel20.TabIndex = 1;
             // 
             // ModuloReportes
             // 
@@ -711,12 +1026,14 @@
             this.Load += new System.EventHandler(this.ModuloReportes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.SP_ReportePedidosxFecha_ResultBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SP_BuscarPedidosCliente_ResultBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SP_ReporteTotalVendidoxTop5_ResultBindingSource)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPReporteClientesResultBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sPReporteClientesResultBindingSource1)).EndInit();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
@@ -724,9 +1041,13 @@
             this.tableLayoutPanel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPReporteProductosResultBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sPReporteProductosResultBindingSource1)).EndInit();
             this.tabPage2.ResumeLayout(false);
+            this.tableLayoutPanel15.ResumeLayout(false);
+            this.tableLayoutPanel16.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sPReportePedidosResultBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sPReportePedidosResultBindingSource1)).EndInit();
+            this.tableLayoutPanel17.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
             this.tableLayoutPanel11.ResumeLayout(false);
             this.tableLayoutPanel12.ResumeLayout(false);
@@ -740,10 +1061,12 @@
             this.tableLayoutPanel9.ResumeLayout(false);
             this.tableLayoutPanel9.PerformLayout();
             this.tableLayoutPanel10.ResumeLayout(false);
+            this.tabPage6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.sPReportePedidosResultBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPReporteFacturaResultBindingSource)).EndInit();
-            this.tableLayoutPanel15.ResumeLayout(false);
-            this.tableLayoutPanel16.ResumeLayout(false);
-            this.tableLayoutPanel17.ResumeLayout(false);
+            this.tableLayoutPanel18.ResumeLayout(false);
+            this.tableLayoutPanel19.ResumeLayout(false);
+            this.tableLayoutPanel20.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -755,7 +1078,6 @@
         private FontAwesome.Sharp.IconButton btnImprimir;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource sPReporteClientesResultBindingSource;
-        private System.Windows.Forms.BindingSource sPReporteProductosResultBindingSource;
         private CachedClientesReport cachedClientesReport1;
         private System.Windows.Forms.TabPage tabPage3;
         private FontAwesome.Sharp.IconButton btnProductosReporte;
@@ -797,6 +1119,7 @@
         private System.Windows.Forms.DateTimePicker dpFechaIni;
         private System.Windows.Forms.BindingSource SP_ReportePedidosxFecha_ResultBindingSource;
         private System.Windows.Forms.BindingSource SP_BuscarPedidosCliente_ResultBindingSource;
+        private System.Windows.Forms.BindingSource SP_ReporteTotalVendidoxTop5_ResultBindingSource;
         private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.ComboBox CbxClientePedido;
         private System.Windows.Forms.Label label2;
@@ -817,5 +1140,34 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel15;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel16;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel17;
+        private System.Windows.Forms.BindingSource sPReporteClientesResultBindingSource1;
+        private System.Windows.Forms.BindingSource sPReporteProductosResultBindingSource1;
+        private System.Windows.Forms.BindingSource sPReporteProductosResultBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombredelproductoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn marcaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn serieDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn stockDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
+        private System.Windows.Forms.BindingSource sPReportePedidosResultBindingSource1;
+        private System.Windows.Forms.TabPage tabPage6;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer3;
+        private FontAwesome.Sharp.IconButton btnVerRepProductos;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel18;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel19;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel20;
     }
 }

@@ -23,10 +23,10 @@ namespace WindowsFormsApp1.Modulo
 
         private void btnImprimir_Click(object sender, EventArgs e)
         {
-            List<SP_ReporteClientes_Result> list = sPReporteClientesResultBindingSource.DataSource as List<SP_ReporteClientes_Result>;
-            if (list!=null)
+            List<SP_ReporteClientes_Result> listclientes = sPReporteClientesResultBindingSource.DataSource as List<SP_ReporteClientes_Result>;
+            if (listclientes!=null)
             {
-                using (ImprimirClientes fic = new ImprimirClientes(list))
+                using (RepClientes fic = new RepClientes(listclientes))
                 {
                     fic.ShowDialog();
                 }
@@ -58,19 +58,6 @@ namespace WindowsFormsApp1.Modulo
             }
         }
 
-        private void btnClientesReporte_Click(object sender, EventArgs e)
-        {
-            List<SP_ReporteClientes_Result> listClientes = sPReporteClientesResultBindingSource.DataSource as List<SP_ReporteClientes_Result>;
-            if (listClientes != null)
-            {
-                using (RepClientes formCli = new RepClientes(listClientes))
-                {
-                    formCli.ShowDialog();
-                }
-            }
-        }
-
-
         private void ModuloReportes_Load(object sender, EventArgs e)
         {
             using (ReportClientesEntities db = new ReportClientesEntities())
@@ -84,8 +71,10 @@ namespace WindowsFormsApp1.Modulo
 
             using (PedidosEntities dped = new PedidosEntities())
                 sPReportePedidosResultBindingSource.DataSource = dped.SP_ReportePedidos().ToList();
+
             this.reportViewer1.RefreshReport();
             this.reportViewer2.RefreshReport();
+            this.reportViewer3.RefreshReport();
         }
 
         private void btnCargarReportexFecha_Click(object sender, EventArgs e)
@@ -118,7 +107,7 @@ namespace WindowsFormsApp1.Modulo
                 Microsoft.Reporting.WinForms.ReportParameter[] dato = new Microsoft.Reporting.WinForms.ReportParameter[]
                 {
                     new Microsoft.Reporting.WinForms.ReportParameter("idcliente",CbxClientePedido.SelectedValue.ToString()),
-                    new Microsoft.Reporting.WinForms.ReportParameter("nombre",label1.Text)
+                    new Microsoft.Reporting.WinForms.ReportParameter("nom",label1.Text)
                 };
 
                 reportViewer2.LocalReport.SetParameters(dato);
@@ -149,6 +138,14 @@ namespace WindowsFormsApp1.Modulo
             CbxClientePedido.AutoCompleteSource = AutoCompleteSource.CustomSource;
         }
 
+        private void btnVerRepProductos_Click(object sender, EventArgs e)
+        {
+            using (TopProdsEntities dTprods = new TopProdsEntities())
+            {
+                SP_ReporteTotalVendidoxTop5_ResultBindingSource.DataSource = dTprods.SP_ReporteTotalVendidoxTop5().ToList();
 
+                this.reportViewer3.RefreshReport();
+            }
+        }
     }
 }

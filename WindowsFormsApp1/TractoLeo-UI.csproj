@@ -265,6 +265,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RPedixFechReporte.edmx</DependentUpon>
     </Compile>
+    <Compile Include="RProductosMasVendidosReporte.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RProductosMasVendidosReporte.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RProductosMasVendidosReporte.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RProductosMasVendidosReporte.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RProductosMasVendidosReporte.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RProductosMasVendidosReporte.edmx</DependentUpon>
+    </Compile>
     <Compile Include="RProductosReporte.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -300,6 +315,9 @@
     </Compile>
     <Compile Include="SP_ReporteProductos_Result.cs">
       <DependentUpon>RProductosReporte.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_ReporteTotalVendidoxTop5_Result.cs">
+      <DependentUpon>RProductosMasVendidosReporte.tt</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="ClientesReport.rpt">
@@ -357,6 +375,7 @@
     <EmbeddedResource Include="RepProductos.resx">
       <DependentUpon>RepProductos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RepVentaProds.rdlc" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Conexion.datasource" />
     <None Include="Properties\DataSources\RClientesEntities.datasource" />
@@ -367,6 +386,8 @@
     <None Include="Properties\DataSources\SP_ReportePedidosxFecha_Result.datasource" />
     <None Include="Properties\DataSources\SP_ReportePedidos_Result.datasource" />
     <None Include="Properties\DataSources\SP_ReporteProductos_Result.datasource" />
+    <None Include="Properties\DataSources\SP_ReporteTotalVendidoxProd_Result.datasource" />
+    <None Include="Properties\DataSources\SP_ReporteTotalVendidoxTop5_Result.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -421,6 +442,13 @@
     </EntityDeploy>
     <None Include="RPedixFechReporte.edmx.diagram">
       <DependentUpon>RPedixFechReporte.edmx</DependentUpon>
+    </None>
+    <EntityDeploy Include="RProductosMasVendidosReporte.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>RProductosMasVendidosReporte.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="RProductosMasVendidosReporte.edmx.diagram">
+      <DependentUpon>RProductosMasVendidosReporte.edmx</DependentUpon>
     </None>
     <None Include="RProductosReporte.edmx.diagram">
       <DependentUpon>RProductosReporte.edmx</DependentUpon>
@@ -494,6 +522,16 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>RPedixFechReporte.edmx</DependentUpon>
       <LastGenOutput>RPedixFechReporte.cs</LastGenOutput>
+    </Content>
+    <Content Include="RProductosMasVendidosReporte.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>RProductosMasVendidosReporte.edmx</DependentUpon>
+      <LastGenOutput>RProductosMasVendidosReporte.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="RProductosMasVendidosReporte.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>RProductosMasVendidosReporte.edmx</DependentUpon>
+      <LastGenOutput>RProductosMasVendidosReporte.cs</LastGenOutput>
     </Content>
     <Content Include="RProductosReporte.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

@@ -388,6 +388,7 @@ namespace WindowsFormsApp1.Modulo
             txtCodigoEdit.ReadOnly = false;
             txtDescripcionEdit.ReadOnly = false;
             txtUbicacionEdit.ReadOnly = false;
+            txtPrecioRealEdit.ReadOnly = false;
         }
 
         private void btnActualizarProds_Click(object sender, EventArgs e)
