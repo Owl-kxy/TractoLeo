@@ -11,9 +11,8 @@ namespace WindowsFormsApp1
 {
     class Conexion
     {
-        public SqlConnection cadenaSql = new SqlConnection("Data Source=SQL5101.site4now.net;Initial Catalog=DB_A6EB38_TractoLeo;User Id=DB_A6EB38_TractoLeo_admin;Password=Elpsykongro145");
-        
-        //public SqlConnection cadenaSql = new SqlConnection("Data Source=.\\SQLEXPRESS;Initial Catalog=TractoLeo-Test;Integrated Security=True");
+                
+        public SqlConnection cadenaSql = new SqlConnection("Data Source=.\\SQLEXPRESS;Initial Catalog=TractoLeo-Test;Integrated Security=True");
         public void conecta()
         {
             try
