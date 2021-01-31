@@ -271,23 +271,31 @@ namespace WindowsFormsApp1.Modulo
 
         private void RellenarcbxMarcaProd()
         {
-            con.conecta();
+            try
+            {
+                con.conecta();
 
-            DataTable dt = new DataTable();
-            SqlCommand cmd = new SqlCommand();
+                DataTable dt = new DataTable();
+                SqlCommand cmd = new SqlCommand();
 
-            cmd.Connection = con.cadenaSql;
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = "SP_RellenarCbxMarca";
+                cmd.Connection = con.cadenaSql;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "SP_RellenarCbxMarca";
 
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(dt);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
 
-            con.desconecta();
+                con.desconecta();
 
-            cbxMarcaProd.DataSource = dt;
-            cbxMarcaProd.DisplayMember = "nombre_marca";
-            cbxMarcaProd.ValueMember = "id_marca";
+                cbxMarcaProd.DataSource = dt;
+                cbxMarcaProd.DisplayMember = "nombre_marca";
+                cbxMarcaProd.ValueMember = "id_marca";
+            }
+
+            catch
+            {
+                MessageBox.Show("Los datos no pueden ser cargados porque no hay conexion a internet");
+            }
         }
 
         private void RellenarcbxMarcaProdCreado()
